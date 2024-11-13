@@ -89,7 +89,6 @@ namespace home
 
         private void MenuItemAccountView_Click(object sender, EventArgs e)
         {
-            //tao đối tượng kết nối với cơ sỏ dữ liệu
             //DatabaseConnection dbCon = new DatabaseConnection();
             //dbCon.MoKetNoi();
             //SqlCommand sqlCommand = new SqlCommand();
