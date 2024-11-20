@@ -128,5 +128,11 @@ namespace home
         {
 
         }
+
+        private void tsmiDanhSachTG_Click(object sender, EventArgs e)
+        {
+            DanhSachTacGia danhSachTacGia = new DanhSachTacGia();
+            danhSachTacGia.ShowDialog();
+        }
     }
 }
