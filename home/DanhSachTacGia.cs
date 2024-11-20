@@ -51,25 +51,26 @@ namespace home
         {
             if (FormValidate())
             {
-                            DataRow row = ds.Tables["ListAuthor"].NewRow();
-            row["MaTG"] = setMaTG();
-            row["TenTG"] = txtName.Text.Trim();
-            row["QueQuan"] = txtCountry.Text.Trim();
+                DataRow row = ds.Tables["ListAuthor"].NewRow();
+                row["MaTG"] = setMaTG();
+                row["TenTG"] = txtName.Text.Trim();
+                row["QueQuan"] = txtCountry.Text.Trim();
 
-            ds.Tables["ListAuthor"].Rows.Add(row);
+                ds.Tables["ListAuthor"].Rows.Add(row);
 
-            int kq = adapter.Update(ds.Tables["ListAuthor"]);
-            if (kq > 0)
-            {
-                MessageBox.Show("Thêm tác giả thành công!", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                HienThiDanhSach();
-            }
-            else
-            {
-                MessageBox.Show("Thêm tác giả không thành công!", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            txtCountry.Text = "";
-            txtName.Text = "";
+                int kq = adapter.Update(ds.Tables["ListAuthor"]);
+                if (kq > 0)
+                {
+                    MessageBox.Show("Thêm tác giả thành công!", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HienThiDanhSach();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm tác giả không thành công!", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                txtCountry.Text = "";
+                txtName.Text = "";
             }
         }
 
@@ -119,6 +120,8 @@ namespace home
             {
                 txtCountry.Text = "";
                 txtName.Text = "";
+                btnEdit.Enabled = false;
+                btnDelete.Enabled = false;
             }
         }
 
@@ -160,7 +163,6 @@ namespace home
                 {
                     DataRow row = ds.Tables["ListAuthor"].Rows[vt];
                     row.BeginEdit();
-                    row["MaTG"] = row["MaTG"];
                     row["TenTG"] = txtName.Text.Trim();
                     row["QueQuan"] = txtCountry.Text.Trim();
                     row.EndEdit();
@@ -185,30 +187,58 @@ namespace home
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //if(vt==)
             DataRow row = ds.Tables["ListAuthor"].Rows[vt];
+            bool isbook = IsEmptyBook(row["MaTG"].ToString());
 
-            DialogResult dialog = MessageBox.Show("Bạn có thực sự muốn xóa tác giả: '" + row["TenTG"] +"' không?", "Hộp thoại", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialog == DialogResult.Yes)
+            if (isbook)
             {
-                row.Delete();
-
-                int kq = adapter.Update(ds.Tables["ListAuthor"]);
-
-                if (kq > 0)
+                MessageBox.Show("Không thể xóa tác giả này.", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                btnEdit.Enabled = false;
+                btnDelete.Enabled = false;
+                txtCountry.Text = "";
+                txtName.Text = "";
+                HienThiDanhSach();
+                return;
+            }
+            else
+            {
+                DialogResult dialog = MessageBox.Show("Bạn có thực sự muốn xóa tác giả: '" + row["TenTG"] + "' không?", "Hộp thoại", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialog == DialogResult.Yes)
                 {
-                    MessageBox.Show("Xóa tác giả thành công!", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    btnEdit.Enabled = false;
-                    btnDelete.Enabled = false;
-                    txtCountry.Text = "";
-                    txtName.Text = "";
-                    HienThiDanhSach();
-                }
-                else
-                {
-                    MessageBox.Show("Xóa tác giả không thành công!", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    row.Delete();
+
+                    int kq = adapter.Update(ds.Tables["ListAuthor"]);
+
+                    if (kq > 0)
+                    {
+                        MessageBox.Show("Xóa tác giả thành công!", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        btnEdit.Enabled = false;
+                        btnDelete.Enabled = false;
+                        txtCountry.Text = "";
+                        txtName.Text = "";
+                        HienThiDanhSach();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa tác giả không thành công!", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
+
+        }
+
+        private bool IsEmptyBook(string maTG)
+        {
+            DatabaseConnection dbcon = new DatabaseConnection();
+            dbcon.MoKetNoi();
+            string query = "select * from Sach";
+            SqlDataAdapter adapter1 = new SqlDataAdapter(query, dbcon.slqCon);
+            SqlCommandBuilder buider = new SqlCommandBuilder(adapter1);
+            DataSet ds1 = new DataSet();
+            adapter1.Fill(ds1, "ListBooks");
+            DataTable booksTable = ds1.Tables["ListBooks"];
+            bool hasBooks = booksTable.AsEnumerable().Any(book => book["MaTG"].ToString() == maTG);
+            return hasBooks;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
