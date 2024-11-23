@@ -18,7 +18,7 @@ namespace home
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new DanhSachTaiKhoan());
             Application.Run(new Login());
-            //Application.Run(new DanhSachTacGia());
+            //Application.Run(new DanhSachDocGia());
         }
     }
 }

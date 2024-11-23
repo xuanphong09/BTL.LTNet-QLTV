@@ -535,7 +535,7 @@
             // 
             this.cmRoleTK.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmRoleTK.FormattingEnabled = true;
-            this.cmRoleTK.Location = new System.Drawing.Point(567, 47);
+            this.cmRoleTK.Location = new System.Drawing.Point(726, 47);
             this.cmRoleTK.Name = "cmRoleTK";
             this.cmRoleTK.Size = new System.Drawing.Size(186, 31);
             this.cmRoleTK.TabIndex = 3;
@@ -543,7 +543,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(451, 54);
+            this.label3.Location = new System.Drawing.Point(610, 54);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 23);
             this.label3.TabIndex = 2;
@@ -552,15 +552,15 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 47);
+            this.label2.Location = new System.Drawing.Point(33, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 23);
+            this.label2.Size = new System.Drawing.Size(222, 23);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Tên đăng nhập:";
+            this.label2.Text = "Nhập thông tin tìm kiếm:";
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(197, 47);
+            this.txtSearch.Location = new System.Drawing.Point(261, 47);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(172, 30);
             this.txtSearch.TabIndex = 1;
@@ -691,7 +691,9 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "DanhSachTaiKhoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DanhSachTaiKhoan";

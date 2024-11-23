@@ -73,6 +73,12 @@
     <Compile Include="ChuongTrinhChinh.Designer.cs">
       <DependentUpon>ChuongTrinhChinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhSachDocGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhSachDocGia.Designer.cs">
+      <DependentUpon>DanhSachDocGia.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhSachTacGia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChuongTrinhChinh.resx">
       <DependentUpon>ChuongTrinhChinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhSachDocGia.resx">
+      <DependentUpon>DanhSachDocGia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhSachTacGia.resx">
       <DependentUpon>DanhSachTacGia.cs</DependentUpon>

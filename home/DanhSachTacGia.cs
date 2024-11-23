@@ -95,6 +95,10 @@ namespace home
                 newMaTG = "TG" + num.ToString("D3");
 
             }
+            else
+            {
+                newMaTG = "TG001";
+            }
             reader.Close();
             dbCon.DongKetNoi();
             return newMaTG;
@@ -192,7 +196,7 @@ namespace home
 
             if (isbook)
             {
-                MessageBox.Show("Không thể xóa tác giả này.", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tác giả này đang có thông tin trong hệ thống, không thể xóa", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 btnEdit.Enabled = false;
                 btnDelete.Enabled = false;
                 txtCountry.Text = "";
@@ -231,14 +235,18 @@ namespace home
         {
             DatabaseConnection dbcon = new DatabaseConnection();
             dbcon.MoKetNoi();
-            string query = "select * from Sach";
-            SqlDataAdapter adapter1 = new SqlDataAdapter(query, dbcon.slqCon);
-            SqlCommandBuilder buider = new SqlCommandBuilder(adapter1);
-            DataSet ds1 = new DataSet();
-            adapter1.Fill(ds1, "ListBooks");
-            DataTable booksTable = ds1.Tables["ListBooks"];
-            bool hasBooks = booksTable.AsEnumerable().Any(book => book["MaTG"].ToString() == maTG);
-            return hasBooks;
+            //kiem tra bang phieu phat
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.CommandText = "SELECT COUNT(1) FROM Sach WHERE MaTG = @maTG";
+            sqlCommand.Parameters.AddWithValue("@maTG", maTG);
+            sqlCommand.Connection = dbcon.slqCon;
+            int kq = (int)sqlCommand.ExecuteScalar();
+            dbcon.DongKetNoi();
+            if (kq > 0)
+            {
+                return true;
+            }
+            else return false;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -248,6 +256,8 @@ namespace home
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            err.SetError(txtName, null);
+            err.SetError(txtCountry, null);
             if (txtName.Text.Trim() != "" && txtCountry.Text.Trim()=="")
             {
                 TimKiemTheoTenTG();
