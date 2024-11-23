@@ -134,5 +134,11 @@ namespace home
             DanhSachTacGia danhSachTacGia = new DanhSachTacGia();
             danhSachTacGia.ShowDialog();
         }
+
+        private void tsmiDanhSachDG_Click(object sender, EventArgs e)
+        {
+            DanhSachDocGia danhSachDocGia = new DanhSachDocGia();
+            danhSachDocGia.ShowDialog();
+        }
     }
 }

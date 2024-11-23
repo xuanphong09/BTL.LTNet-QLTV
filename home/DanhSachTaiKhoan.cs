@@ -352,6 +352,10 @@ namespace home
                 num++;
                 newMaNV = "NV" + num.ToString("D3");
             }
+            else
+            {
+                newMaNV = "NV001";
+            }
             reader.Close();
             db.DongKetNoi();
             return newMaNV;
