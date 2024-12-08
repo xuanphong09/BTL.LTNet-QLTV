@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChinhSuaPhieuMuon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChinhSuaPhieuMuon.Designer.cs">
+      <DependentUpon>ChinhSuaPhieuMuon.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChiTietTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,42 @@
     </Compile>
     <Compile Include="DanhSachDocGia.Designer.cs">
       <DependentUpon>DanhSachDocGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DanhSachPhieuMuon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DanhSachPhieuMuon.Designer.cs">
+      <DependentUpon>DanhSachPhieuMuon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LapCTPhieuMuon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LapCTPhieuMuon.Designer.cs">
+      <DependentUpon>LapCTPhieuMuon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LapCTPhieuTra.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LapCTPhieuTra.Designer.cs">
+      <DependentUpon>LapCTPhieuTra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LapPhieuMuon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LapPhieuMuon.Designer.cs">
+      <DependentUpon>LapPhieuMuon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LapPhieuTra.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LapPhieuTra.Designer.cs">
+      <DependentUpon>LapPhieuTra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyPhieuMuon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyPhieuMuon.Designer.cs">
+      <DependentUpon>QuanLyPhieuMuon.cs</DependentUpon>
     </Compile>
     <Compile Include="DanhSachTacGia.cs">
       <SubType>Form</SubType>
@@ -124,6 +166,15 @@
     <Compile Include="QuenMatKhau.Designer.cs">
       <DependentUpon>QuenMatKhau.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThemMoiPhieuPhat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemMoiPhieuPhat.Designer.cs">
+      <DependentUpon>ThemMoiPhieuPhat.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ChinhSuaPhieuMuon.resx">
+      <DependentUpon>ChinhSuaPhieuMuon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChiTietTaiKhoan.resx">
       <DependentUpon>ChiTietTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +183,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhSachDocGia.resx">
       <DependentUpon>DanhSachDocGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhSachPhieuMuon.resx">
+      <DependentUpon>DanhSachPhieuMuon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LapCTPhieuMuon.resx">
+      <DependentUpon>LapCTPhieuMuon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LapCTPhieuTra.resx">
+      <DependentUpon>LapCTPhieuTra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LapPhieuMuon.resx">
+      <DependentUpon>LapPhieuMuon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LapPhieuTra.resx">
+      <DependentUpon>LapPhieuTra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyPhieuMuon.resx">
+      <DependentUpon>QuanLyPhieuMuon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhSachTacGia.resx">
       <DependentUpon>DanhSachTacGia.cs</DependentUpon>
@@ -163,6 +232,9 @@
     </Compile>
     <EmbeddedResource Include="QuenMatKhau.resx">
       <DependentUpon>QuenMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemMoiPhieuPhat.resx">
+      <DependentUpon>ThemMoiPhieuPhat.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -197,6 +269,15 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-plus-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-clear-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -140,5 +140,11 @@ namespace home
             DanhSachDocGia danhSachDocGia = new DanhSachDocGia();
             danhSachDocGia.ShowDialog();
         }
+
+        private void toolStripMenuItem26_Click(object sender, EventArgs e)
+        {
+            QuanLyPhieuMuon quanLyPhieuMuon = new QuanLyPhieuMuon(this.maNV);
+            quanLyPhieuMuon.ShowDialog();
+        }
     }
 }
