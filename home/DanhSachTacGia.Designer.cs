@@ -34,6 +34,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnExit = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -43,12 +44,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvListAuthor = new System.Windows.Forms.DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.MaTG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenTG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QueQuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -71,6 +71,7 @@
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -117,6 +118,16 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chức năng";
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(802, 79);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(87, 39);
+            this.btnExit.TabIndex = 8;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnCreate
             // 
@@ -208,16 +219,6 @@
             this.dgvListAuthor.TabIndex = 0;
             this.dgvListAuthor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListAuthor_CellClick);
             // 
-            // panel4
-            // 
-            this.panel4.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.panel4.Controls.Add(this.groupBox1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 196);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(948, 504);
-            this.panel4.TabIndex = 3;
-            // 
             // MaTG
             // 
             this.MaTG.DataPropertyName = "MaTG";
@@ -239,19 +240,19 @@
             this.QueQuan.MinimumWidth = 6;
             this.QueQuan.Name = "QueQuan";
             // 
+            // panel4
+            // 
+            this.panel4.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.panel4.Controls.Add(this.groupBox1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 196);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(948, 504);
+            this.panel4.TabIndex = 3;
+            // 
             // err
             // 
             this.err.ContainerControl = this;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(802, 79);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(87, 39);
-            this.btnExit.TabIndex = 8;
-            this.btnExit.Text = "Thoát";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // DanhSachTacGia
             // 
