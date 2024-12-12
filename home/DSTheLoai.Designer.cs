@@ -45,8 +45,7 @@
             this.dgvDSTheLoai = new System.Windows.Forms.DataGridView();
             this.MaTL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenTL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.theLoaiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -117,7 +116,7 @@
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(124, 35);
             this.btnThoat.TabIndex = 6;
-            this.btnThoat.Text = "Th&oát";
+            this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
@@ -128,7 +127,7 @@
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(113, 35);
             this.btnXoa.TabIndex = 5;
-            this.btnXoa.Text = "&Xóa";
+            this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -139,7 +138,7 @@
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(100, 35);
             this.btnLuu.TabIndex = 4;
-            this.btnLuu.Text = "&Lưu ";
+            this.btnLuu.Text = "Lưu ";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
@@ -150,7 +149,7 @@
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(146, 35);
             this.btnThem.TabIndex = 3;
-            this.btnThem.Text = "T&hêm Mới";
+            this.btnThem.Text = "Thêm Thể Loại";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -161,7 +160,7 @@
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(138, 35);
             this.btnTimKiem.TabIndex = 2;
-            this.btnTimKiem.Text = "&Tìm Kiếm";
+            this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
@@ -224,7 +223,25 @@
             this.dgvDSTheLoai.RowHeadersWidth = 51;
             this.dgvDSTheLoai.Size = new System.Drawing.Size(940, 428);
             this.dgvDSTheLoai.TabIndex = 0;
-            this.dgvDSTheLoai.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSTheLoai_CellContentClick);
+            this.dgvDSTheLoai.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSTheLoai_CellContentClick);
+            // 
+            // theLoaiBindingSource
+            // 
+            this.theLoaiBindingSource.DataMember = "TheLoai";
+            this.theLoaiBindingSource.DataSource = this.qLTVDataSet;
+            // 
+            // qLTVDataSet
+            // 
+            this.qLTVDataSet.DataSetName = "QLTVDataSet";
+            this.qLTVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // theLoaiTableAdapter
+            // 
+            this.theLoaiTableAdapter.ClearBeforeFill = true;
+            // 
+            // error
+            // 
+            this.error.ContainerControl = this;
             // 
             // MaTL
             // 
@@ -244,16 +261,19 @@
             // 
             // theLoaiBindingSource
             // 
-            this.theLoaiBindingSource.DataMember = "TheLoai";
+            // comboBox1
             // 
-            // error
-            // 
-            this.error.ContainerControl = this;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(652, 31);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(159, 33);
+            this.comboBox1.TabIndex = 8;
             // 
             // frmDanhSachTheLoai
             // 
             this.AcceptButton = this.btnTimKiem;
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnThoat;
             this.ClientSize = new System.Drawing.Size(948, 700);
             this.Controls.Add(this.panel3);
@@ -272,6 +292,7 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTheLoai)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.theLoaiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLTVDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.ResumeLayout(false);
 
@@ -285,7 +306,9 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private QLTVDataSet qLTVDataSet;
         private System.Windows.Forms.BindingSource theLoaiBindingSource;
+        private QLTVDataSetTableAdapters.TheLoaiTableAdapter theLoaiTableAdapter;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTKTenTL;
         private System.Windows.Forms.Button btnXoa;
@@ -293,9 +316,11 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvDSTheLoai;
         private System.Windows.Forms.ErrorProvider error;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTL;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenTL;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

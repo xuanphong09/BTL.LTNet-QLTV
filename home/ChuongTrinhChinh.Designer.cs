@@ -135,7 +135,7 @@
             // xemDanhSáchToolStripMenuItem
             // 
             this.xemDanhSáchToolStripMenuItem.Name = "xemDanhSáchToolStripMenuItem";
-            this.xemDanhSáchToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.xemDanhSáchToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.xemDanhSáchToolStripMenuItem.Text = "Xem danh sách";
             this.xemDanhSáchToolStripMenuItem.Click += new System.EventHandler(this.xemDanhSáchToolStripMenuItem_Click);
             // 

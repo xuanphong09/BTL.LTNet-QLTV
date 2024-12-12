@@ -103,6 +103,12 @@
     <Compile Include="QuanLyNXB.Designer.cs">
       <DependentUpon>QuanLyNXB.cs</DependentUpon>
     </Compile>
+    <Compile Include="DSTheLoai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSTheLoai.Designer.cs">
+      <DependentUpon>DSTheLoai.cs</DependentUpon>
+    </Compile>
     <Compile Include="LapCTPhieuMuon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNXB.resx">
       <DependentUpon>QuanLyNXB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSTheLoai.resx">
+      <DependentUpon>DSTheLoai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LapCTPhieuMuon.resx">
       <DependentUpon>LapCTPhieuMuon.cs</DependentUpon>

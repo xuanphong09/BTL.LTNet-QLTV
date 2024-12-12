@@ -147,6 +147,12 @@ namespace home
             quanLyPhieuMuon.ShowDialog();
         }
 
+        private void xemDanhSáchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDanhSachTheLoai danhSachTheLoai = new frmDanhSachTheLoai();
+            danhSachTheLoai.ShowDialog();
+        }
+
         private void nXBToolStripMenuItem_Click(object sender, EventArgs e)
         {
             QuanLyNXB NXB=new QuanLyNXB();
