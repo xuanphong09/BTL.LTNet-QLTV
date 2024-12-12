@@ -133,11 +133,6 @@
     <Compile Include="LapPhieuTra.Designer.cs">
       <DependentUpon>LapPhieuTra.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLTVDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLTVDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="QuanLyPhieuMuon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,17 +277,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="QLTVDataSet.xsc">
-      <DependentUpon>QLTVDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QLTVDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLTVDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLTVDataSet.xss">
-      <DependentUpon>QLTVDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Resources\eye-fill %281%29.png" />
   </ItemGroup>
   <ItemGroup>
