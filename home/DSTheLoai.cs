@@ -21,8 +21,6 @@ namespace home
 
         private void frmDanhSachTheLoai_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'qLTVDataSet.TheLoai' table. You can move, or remove it, as needed.
-            this.theLoaiTableAdapter.Fill(this.qLTVDataSet.TheLoai);
             btnLuu.Enabled = false;
             btnXoa.Enabled = false;
 
@@ -148,7 +146,7 @@ namespace home
         {
             DatabaseConnection dbcon = new DatabaseConnection();
             dbcon.MoKetNoi();
-            //kiem tra bang phieu phat
+            //kiem tra bang sach
             SqlCommand sqlCommand = new SqlCommand();
             sqlCommand.CommandText = "SELECT COUNT(1) FROM Sach WHERE MaTL = @maTL";
             sqlCommand.Parameters.AddWithValue("@maTL", maTL);
@@ -198,7 +196,7 @@ namespace home
 
             if (isbook)
             {
-                MessageBox.Show("Tác giả này đang có thông tin trong hệ thống, không thể xóa", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Thể loại này đang có thông tin trong hệ thống, không thể xóa", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 btnLuu.Enabled = false;
                 btnXoa.Enabled = false;
                 txtTKTenTL.Text = "";
@@ -207,7 +205,7 @@ namespace home
             }
             else
             {
-                DialogResult dialog = MessageBox.Show("Bạn có thực sự muốn xóa the loai: '" + row["TenTL"] + "' không?", "Hộp thoại", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult dialog = MessageBox.Show("Bạn có thực sự muốn xóa thể loại: '" + row["TenTL"] + "' không?", "Hộp thoại", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialog == DialogResult.Yes)
                 {
                     row.Delete();
@@ -216,7 +214,7 @@ namespace home
 
                     if (kq > 0)
                     {
-                        MessageBox.Show("Xóa the loai thành công!", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Xóa thể loại thành công!", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         btnLuu.Enabled = false;
                         btnXoa.Enabled = false;
                         txtTKTenTL.Text = "";
@@ -224,7 +222,7 @@ namespace home
                     }
                     else
                     {
-                        MessageBox.Show("Xóa the loai không thành công!", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Xóa thể loại không thành công!", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
