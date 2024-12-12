@@ -91,6 +91,12 @@
     <Compile Include="DanhSachPhieuMuon.Designer.cs">
       <DependentUpon>DanhSachPhieuMuon.cs</DependentUpon>
     </Compile>
+    <Compile Include="DSTheLoai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSTheLoai.Designer.cs">
+      <DependentUpon>DSTheLoai.cs</DependentUpon>
+    </Compile>
     <Compile Include="LapCTPhieuMuon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -114,6 +120,11 @@
     </Compile>
     <Compile Include="LapPhieuTra.Designer.cs">
       <DependentUpon>LapPhieuTra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLTVDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLTVDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="QuanLyPhieuMuon.cs">
       <SubType>Form</SubType>
@@ -187,6 +198,9 @@
     <EmbeddedResource Include="DanhSachPhieuMuon.resx">
       <DependentUpon>DanhSachPhieuMuon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DSTheLoai.resx">
+      <DependentUpon>DSTheLoai.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LapCTPhieuMuon.resx">
       <DependentUpon>LapCTPhieuMuon.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,6 +264,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QLTVDataSet.xsc">
+      <DependentUpon>QLTVDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLTVDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLTVDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLTVDataSet.xss">
+      <DependentUpon>QLTVDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\eye-fill %281%29.png" />
   </ItemGroup>
   <ItemGroup>
