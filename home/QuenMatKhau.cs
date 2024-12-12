@@ -19,10 +19,8 @@ namespace home
         public QuenMatKhau()
         {
             InitializeComponent();
-            //this.login = login;
         }
 
-        //private Form login;
         Random random = new Random();
         int otp;
         private string maNV = "";
@@ -62,7 +60,9 @@ namespace home
                     //gui ma xac thuc qua email
                     try
                     {
-                        SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com")
+                        
+                        //cấu hình và gửi email thông qua một máy chủ SMTP.
+                        SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com")//"smtp.gmail.com": Địa chỉ máy chủ SMTP của Gmail.
                         {
                             Port = 587,
                             Credentials = new NetworkCredential("phong13092005@gmail.com", "zetmhzkkcerfluoj"),
@@ -73,14 +73,17 @@ namespace home
                         MailMessage mail = new MailMessage
                         {
                             From = new MailAddress("phong13092005@gmail.com"),
-                            Subject = "Mã xác thực quên mật khẩu",
-                            Body = "Mã xác thực của bạn là: " + otp,
+                            Subject = "Mã xác thực quên mật khẩu", //tiêu đề email
+                            Body = "Mã xác thực của bạn là: " + otp, //nội dung email
                             IsBodyHtml = false,
 
                         };
+                        //email người nhận
                         mail.To.Add(txtEmail.Text);
 
+                        // Gửi email qua máy chủ SMTP đã cấu hình.
                         SmtpServer.Send(mail);
+
                         MessageBox.Show("Mã xác thực đã được gửi đến email của bạn","Hộp thoại",MessageBoxButtons.OK,MessageBoxIcon.Information);
                         btnCheck.Enabled = true;
                         btnSendCode.Enabled = false;
