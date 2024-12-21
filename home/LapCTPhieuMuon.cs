@@ -158,6 +158,8 @@ namespace home
             txtSLMuon.Text = "";
             txtTenSach.Text = "";
             txtSLTK.Text = "";
+            txtTenTG.Text = "";
+            txtTenNXB.Text = "";
             cbMaSach.Text = "";
             cbMaSach.Enabled = true;
             err.SetError(txtSLMuon, "");
@@ -201,6 +203,7 @@ namespace home
                     gbNTTS.Enabled = false;
                     btnSua.Enabled = false;
                     btnXoa.Enabled = false;
+                    btnThem.Enabled = true;
                     MessageBox.Show("Xóa sách thành công.", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     XoaDuLieu();
                     HienThiDSCTPM();
@@ -462,6 +465,13 @@ namespace home
             txtSLMuon.Text = row["SlMuon"].ToString();
             btnSua.Enabled=true;
             btnXoa.Enabled=true;
+        }
+
+        private void btnInPhieu_Click(object sender, EventArgs e)
+        {
+            InPhieuMuonTra inPhieuMuonTra = new InPhieuMuonTra();
+            inPhieuMuonTra.SetSoPM(this.soPM);
+            inPhieuMuonTra.ShowDialog();
         }
     }   
 }

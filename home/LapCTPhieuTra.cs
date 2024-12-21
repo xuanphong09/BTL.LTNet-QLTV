@@ -352,5 +352,13 @@ namespace home
             themMoiPhieuPhat.SetMaDG(txtMaDG.Text);
             themMoiPhieuPhat.ShowDialog();
         }
+
+        private void btnInPhieuMuon_Click(object sender, EventArgs e)
+        {
+            InPhieuMuonTra inPhieuMuonTra = new InPhieuMuonTra();
+            inPhieuMuonTra.SetSoPM(this.SoPM);
+            inPhieuMuonTra.ShowDialog();
+
+        }
     }
 }
