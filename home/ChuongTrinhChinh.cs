@@ -20,47 +20,16 @@ namespace home
         {
             InitializeComponent();
         }
-
-        private void sửaThểLoạiToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        public void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            isThoat = false;
-            DialogResult dialog = MessageBox.Show("Bạn có muốn đăng xuất không?", "Đăng xuất", MessageBoxButtons.YesNo);
-            if (dialog == DialogResult.Yes)
-            {
-                this.Close();
-
-                Login login = new Login();
-                login.Show();
-            }
-        }
-
-        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            isThoat = false;
-            DialogResult dialog = MessageBox.Show("Bạn có muốn thoát chương trình không?", "Thoát chương trình", MessageBoxButtons.YesNo);
-            if (dialog == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
-
+        
         public void SetRole(string role)
         {
             if (role == "admin")
             {
-                //MenuItemAccountCreate.Visible = true;
-                //MenuItemAccountEdit.Visible = true;
+
             }
             else if (role == "user")
             {
-                //MenuItemAccountEdit.Visible = true;
-                MenuItemAccountView.Visible = false;
-                //MenuItemAccountCreate.Visible = false;
+                mIQuanLyTaiKhoan.Visible = false;
             }
         }
 
@@ -108,6 +77,29 @@ namespace home
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            HienThiTen();
+
+        }
+
+        private void HienThiTen()
+        {
+            DatabaseConnection dbCon = new DatabaseConnection();
+
+            dbCon.MoKetNoi();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.CommandText = "select HoTen from NhanVien where maNV = @maNV";
+
+            sqlCommand.Parameters.AddWithValue("@maNV", maNV);
+            sqlCommand.Connection = dbCon.slqCon;
+
+            SqlDataReader reader = sqlCommand.ExecuteReader();
+            if (reader.Read())
+            {
+                tSMIName.Text ="Xin chào "+ reader.GetString(0)+"!";
+            }
+            reader.Close();
+            dbCon.DongKetNoi();
         }
 
         private void MenuItemAccountEdit_Click(object sender, EventArgs e)
@@ -153,17 +145,47 @@ namespace home
             danhSachTheLoai.ShowDialog();
         }
 
-        private void nXBToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tSMIChinhSuaThongTin_Click(object sender, EventArgs e)
         {
-            QuanLyNXB NXB=new QuanLyNXB();
-            NXB.ShowDialog(); 
+            ChiTietTaiKhoan chiTietTaiKhoan = new ChiTietTaiKhoan();
+            chiTietTaiKhoan.setMaNV(maNV);
+            chiTietTaiKhoan.ShowDialog();
         }
 
-        private void phiếuPhạtToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tSMIDoiMatKhau_Click(object sender, EventArgs e)
         {
-            QLPP QLPP = new QLPP();
-            QLPP.setMaNV(this.maNV);
-            QLPP.ShowDialog();
+            DoiMatKhauUser doiMatKhauUser = new DoiMatKhauUser(this);
+            doiMatKhauUser.setMaNV(maNV);
+            doiMatKhauUser.ShowDialog();
+        }
+
+        private void tSMIDangXuat_Click(object sender, EventArgs e)
+        {
+            isThoat = false;
+            DialogResult dialog = MessageBox.Show("Bạn có muốn đăng xuất không?", "Đăng xuất", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                this.Close();
+
+                Login login = new Login();
+                login.Show();
+            }
+        }
+
+        private void tsMIThoat_Click(object sender, EventArgs e)
+        {
+            isThoat = false;
+            DialogResult dialog = MessageBox.Show("Bạn có muốn thoát chương trình không?", "Thoát chương trình", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void mIQuanLyTaiKhoan_Click(object sender, EventArgs e)
+        {
+            DanhSachTaiKhoan danhSachTaiKhoan = new DanhSachTaiKhoan();
+            danhSachTaiKhoan.ShowDialog();
         }
     }
 }
