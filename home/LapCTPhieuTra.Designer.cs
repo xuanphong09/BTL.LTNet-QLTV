@@ -55,6 +55,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnInPhieuMuon = new System.Windows.Forms.Button();
             this.btnLapPhieuPhat = new System.Windows.Forms.Button();
             this.btnQuayLai = new System.Windows.Forms.Button();
             this.btnHoanThanh = new System.Windows.Forms.Button();
@@ -326,6 +327,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnInPhieuMuon);
             this.groupBox1.Controls.Add(this.btnLapPhieuPhat);
             this.groupBox1.Controls.Add(this.btnQuayLai);
             this.groupBox1.Controls.Add(this.btnHoanThanh);
@@ -354,9 +356,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin phiếu mượn:";
             // 
+            // btnInPhieuMuon
+            // 
+            this.btnInPhieuMuon.Location = new System.Drawing.Point(444, 299);
+            this.btnInPhieuMuon.Name = "btnInPhieuMuon";
+            this.btnInPhieuMuon.Size = new System.Drawing.Size(96, 41);
+            this.btnInPhieuMuon.TabIndex = 20;
+            this.btnInPhieuMuon.Text = "&In phiếu";
+            this.btnInPhieuMuon.UseVisualStyleBackColor = true;
+            this.btnInPhieuMuon.Click += new System.EventHandler(this.btnInPhieuMuon_Click);
+            // 
             // btnLapPhieuPhat
             // 
-            this.btnLapPhieuPhat.Location = new System.Drawing.Point(185, 299);
+            this.btnLapPhieuPhat.Location = new System.Drawing.Point(154, 299);
             this.btnLapPhieuPhat.Name = "btnLapPhieuPhat";
             this.btnLapPhieuPhat.Size = new System.Drawing.Size(148, 41);
             this.btnLapPhieuPhat.TabIndex = 17;
@@ -376,7 +388,7 @@
             // 
             // btnHoanThanh
             // 
-            this.btnHoanThanh.Location = new System.Drawing.Point(539, 299);
+            this.btnHoanThanh.Location = new System.Drawing.Point(554, 299);
             this.btnHoanThanh.Name = "btnHoanThanh";
             this.btnHoanThanh.Size = new System.Drawing.Size(136, 41);
             this.btnHoanThanh.TabIndex = 19;
@@ -386,7 +398,7 @@
             // 
             // btnTraSach
             // 
-            this.btnTraSach.Location = new System.Drawing.Point(382, 299);
+            this.btnTraSach.Location = new System.Drawing.Point(316, 299);
             this.btnTraSach.Name = "btnTraSach";
             this.btnTraSach.Size = new System.Drawing.Size(114, 41);
             this.btnTraSach.TabIndex = 18;
@@ -649,5 +661,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayTra;
         private System.Windows.Forms.Button btnLapPhieuPhat;
         private System.Windows.Forms.Button btnQuayLai;
+        private System.Windows.Forms.Button btnInPhieuMuon;
     }
 }
