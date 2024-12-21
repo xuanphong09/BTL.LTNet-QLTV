@@ -32,6 +32,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.gbNTTS = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTenNXB = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtTenTG = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSLTK = new System.Windows.Forms.TextBox();
             this.cbMaSach = new System.Windows.Forms.ComboBox();
@@ -56,10 +60,7 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.btnQuayLai = new System.Windows.Forms.Button();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtTenTG = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtTenNXB = new System.Windows.Forms.TextBox();
+            this.btnInPhieu = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.gbNTTS.SuspendLayout();
@@ -113,6 +114,38 @@
             this.gbNTTS.TabIndex = 0;
             this.gbNTTS.TabStop = false;
             this.gbNTTS.Text = "Nhập thông tin sách:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(27, 212);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(130, 23);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Nhà xuất bản:";
+            // 
+            // txtTenNXB
+            // 
+            this.txtTenNXB.Location = new System.Drawing.Point(188, 208);
+            this.txtTenNXB.Name = "txtTenNXB";
+            this.txtTenNXB.Size = new System.Drawing.Size(176, 30);
+            this.txtTenNXB.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 168);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 23);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Tên tác giả:";
+            // 
+            // txtTenTG
+            // 
+            this.txtTenTG.Location = new System.Drawing.Point(188, 165);
+            this.txtTenTG.Name = "txtTenTG";
+            this.txtTenTG.Size = new System.Drawing.Size(176, 30);
+            this.txtTenTG.TabIndex = 5;
             // 
             // label1
             // 
@@ -279,6 +312,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnInPhieu);
             this.groupBox3.Controls.Add(this.btnXong);
             this.groupBox3.Controls.Add(this.btnXoa);
             this.groupBox3.Controls.Add(this.btnSua);
@@ -293,7 +327,7 @@
             // 
             // btnXong
             // 
-            this.btnXong.Location = new System.Drawing.Point(959, 29);
+            this.btnXong.Location = new System.Drawing.Point(956, 29);
             this.btnXong.Name = "btnXong";
             this.btnXong.Size = new System.Drawing.Size(108, 33);
             this.btnXong.TabIndex = 4;
@@ -303,7 +337,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(737, 29);
+            this.btnXoa.Location = new System.Drawing.Point(602, 29);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(108, 33);
             this.btnXoa.TabIndex = 3;
@@ -313,7 +347,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(515, 29);
+            this.btnSua.Location = new System.Drawing.Point(425, 29);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(108, 33);
             this.btnSua.TabIndex = 2;
@@ -323,7 +357,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(293, 29);
+            this.btnThem.Location = new System.Drawing.Point(248, 29);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(108, 33);
             this.btnThem.TabIndex = 1;
@@ -345,37 +379,15 @@
             // 
             this.err.ContainerControl = this;
             // 
-            // label2
+            // btnInPhieu
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 168);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 23);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Tên tác giả:";
-            // 
-            // txtTenTG
-            // 
-            this.txtTenTG.Location = new System.Drawing.Point(188, 165);
-            this.txtTenTG.Name = "txtTenTG";
-            this.txtTenTG.Size = new System.Drawing.Size(176, 30);
-            this.txtTenTG.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 212);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 23);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Nhà xuất bản:";
-            // 
-            // txtTenNXB
-            // 
-            this.txtTenNXB.Location = new System.Drawing.Point(188, 208);
-            this.txtTenNXB.Name = "txtTenNXB";
-            this.txtTenNXB.Size = new System.Drawing.Size(176, 30);
-            this.txtTenNXB.TabIndex = 7;
+            this.btnInPhieu.Location = new System.Drawing.Point(779, 29);
+            this.btnInPhieu.Name = "btnInPhieu";
+            this.btnInPhieu.Size = new System.Drawing.Size(108, 33);
+            this.btnInPhieu.TabIndex = 5;
+            this.btnInPhieu.Text = "&In phiếu";
+            this.btnInPhieu.UseVisualStyleBackColor = true;
+            this.btnInPhieu.Click += new System.EventHandler(this.btnInPhieu_Click);
             // 
             // LapCTPhieuMuon
             // 
@@ -435,5 +447,6 @@
         private System.Windows.Forms.TextBox txtTenNXB;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTenTG;
+        private System.Windows.Forms.Button btnInPhieu;
     }
 }

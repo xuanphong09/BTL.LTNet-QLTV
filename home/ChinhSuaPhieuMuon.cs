@@ -288,22 +288,32 @@ namespace home
         //hàm lưu thông tin sách trong sửa, thêm
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if(FormValidate())
+            string ThoiGianHienTai = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+            string NgayMuon = LayNgayMuon(sophieumuon);
+            TimeSpan KhoangTG = DateTime.Parse(ThoiGianHienTai) - DateTime.Parse(NgayMuon);
+            if (KhoangTG.TotalMinutes > 15)
             {
-                if (chucNang == 1)
+                MessageBox.Show("Không thể chỉnh sửa phiếu mượn sau 15 phút kể từ lúc mượn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            {
+                if (FormValidate())
                 {
-                    ThemSachCTPM();
+                    if (chucNang == 1)
+                    {
+                        ThemSachCTPM();
+                    }
+                    else if (chucNang == 2)
+                    {
+                        SuaSachCTPM();
+                    }
+                    btnThem.Enabled = true;
+                    XoaDuLieu();
+                    gbTTCTPM.Enabled = false;
+                    btnSua.Enabled = false;
+                    btnXoa.Enabled = false;
+                    dgvDSCTPM.CellClick += dgvDSCTPM_CellClick;
                 }
-                else if (chucNang == 2)
-                {
-                    SuaSachCTPM();
-                }
-                btnThem.Enabled = true;
-                XoaDuLieu();
-                gbTTCTPM.Enabled = false;
-                btnSua.Enabled = false;
-                btnXoa.Enabled = false;
-                dgvDSCTPM.CellClick += dgvDSCTPM_CellClick;
             }
         }
 
@@ -609,5 +619,11 @@ namespace home
             return count;
         }
 
+        private void btnInPhieu_Click(object sender, EventArgs e)
+        {
+            InPhieuMuonTra inPhieuMuonTra = new InPhieuMuonTra();
+            inPhieuMuonTra.SetSoPM(this.sophieumuon);
+            inPhieuMuonTra.ShowDialog();
+        }
     }
 }
