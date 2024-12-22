@@ -117,18 +117,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsPhieuMuonTra.xsd</DependentUpon>
     </Compile>
-    <Compile Include="QLPP.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QLPP.Designer.cs">
-      <DependentUpon>QLPP.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyNXB.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyNXB.Designer.cs">
-      <DependentUpon>QuanLyNXB.cs</DependentUpon>
-    </Compile>
     <Compile Include="DSTheLoai.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,12 +225,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhSachPhieuMuon.resx">
       <DependentUpon>DanhSachPhieuMuon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QLPP.resx">
-      <DependentUpon>QLPP.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyNXB.resx">
-      <DependentUpon>QuanLyNXB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DSTheLoai.resx">
       <DependentUpon>DSTheLoai.cs</DependentUpon>
