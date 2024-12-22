@@ -29,7 +29,7 @@ namespace home
             }
             else if (role == "user")
             {
-                mIQuanLyTaiKhoan.Visible = false;
+                tSMIQuanLyTaiKhoan.Visible = false;
             }
         }
 
@@ -139,12 +139,6 @@ namespace home
             quanLyPhieuMuon.ShowDialog();
         }
 
-        private void xemDanhSáchToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmDanhSachTheLoai danhSachTheLoai = new frmDanhSachTheLoai();
-            danhSachTheLoai.ShowDialog();
-        }
-
         private void tSMIChinhSuaThongTin_Click(object sender, EventArgs e)
         {
             ChiTietTaiKhoan chiTietTaiKhoan = new ChiTietTaiKhoan();
@@ -186,6 +180,31 @@ namespace home
         {
             DanhSachTaiKhoan danhSachTaiKhoan = new DanhSachTaiKhoan();
             danhSachTaiKhoan.ShowDialog();
+        }
+
+        private void tSMITacGia_Click(object sender, EventArgs e)
+        {
+            DanhSachTacGia danhSachTacGia = new DanhSachTacGia();
+            danhSachTacGia.ShowDialog();
+        }
+
+        private void tSMISach_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void tSMINhaXuatBan_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tsMITheLoai_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsMIPhieuPhat_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
