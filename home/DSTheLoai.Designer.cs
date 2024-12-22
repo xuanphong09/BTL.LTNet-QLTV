@@ -245,7 +245,6 @@
             // theLoaiBindingSource
             // 
             this.theLoaiBindingSource.DataMember = "TheLoai";
-            // qLTVData
             // 
             // error
             // 
@@ -254,8 +253,7 @@
             // frmDanhSachTheLoai
             // 
             this.AcceptButton = this.btnTimKiem;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.CancelButton = this.btnThoat;
             this.ClientSize = new System.Drawing.Size(948, 700);
             this.Controls.Add(this.panel3);

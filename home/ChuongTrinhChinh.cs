@@ -152,5 +152,11 @@ namespace home
             frmDanhSachTheLoai danhSachTheLoai = new frmDanhSachTheLoai();
             danhSachTheLoai.ShowDialog();
         }
+
+        private void toolStripMenuItem17_Click(object sender, EventArgs e)
+        {
+            frmSach danhMucSach = new frmSach();
+            danhMucSach.ShowDialog();
+        }
     }
 }
