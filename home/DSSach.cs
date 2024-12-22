@@ -26,9 +26,13 @@ namespace home
 
         private void frmSach_Load(object sender, EventArgs e)
         {
+            btnHuy.Enabled = false;
+            btnSua.Enabled = false;
             btnLuu.Enabled = false;
             btnXoa.Enabled = false;
+            
             txtDaMuon.Enabled = false;
+
 
             LoadDataGridView();
             FillCombo("SELECT * from theloai", cboMaTL, "MaTL", "TenTL");
@@ -114,6 +118,7 @@ namespace home
         private int vt = -1;
         private void dgvSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            ClearAllErrors();
             if (e.RowIndex < 0 || e.RowIndex >= ds.Tables["DMSach"].Rows.Count)
             {
                 ResetValues();
@@ -137,41 +142,23 @@ namespace home
             cboMaNXB.SelectedValue = row["MaNXB"].ToString();
 
             btnXoa.Enabled = true;
-            btnLuu.Enabled = true;
+            btnSua.Enabled = true;
+            btnLuu.Enabled = false;
             txtDaMuon.Enabled = true;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (FormValidate())
-            {
-                DataRow row = ds.Tables["DMSach"].NewRow();
-                row["MaSach"] = setMaSach();
-                row["TenSach"] = txtTenSach.Text.Trim();
-                row["SoLuong"] = int.Parse(txtSoLuong.Text.Trim());
-                row["DaMuon"] = "0";
-                txtDaMuon.Enabled = false;
-                row["NamXB"] = int.Parse(txtNamXB.Text.Trim());
-                row["MaTL"] = cboMaTL.SelectedValue.ToString();
-                row["MaTG"] = cboMaTG.SelectedValue.ToString();
-                row["MaNXB"] = cboMaNXB.SelectedValue.ToString();
-                row["GhiChu"] = txtGhiChu.Text.Trim();
-
-                ds.Tables["DMSach"].Rows.Add(row);
-
-                int kq = adapter.Update(ds.Tables["DMSach"]);
-                if (kq > 0)
-                {
-                    MessageBox.Show("Thêm sách thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadDataGridView();
-                }
-                else
-                {
-                    MessageBox.Show("Thêm sách không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-                ResetValues(); 
-            }
+            ClearAllErrors();
+            ResetFields();
+            plTTCT.Enabled = true;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+            btnLuu.Enabled = true;
+            btnHuy.Enabled = true;
+            txtDaMuon.Enabled=false;
+            dgvSach.CellClick -= dgvSach_CellClick;
+            txtTenSach.Focus();
         }
 
         private string setMaSach()
@@ -220,10 +207,10 @@ namespace home
                 err.SetError(txtTenSach, null);
             }
 
-            if (!int.TryParse(txtSoLuong.Text.Trim(), out _) || int.Parse(txtSoLuong.Text.Trim()) < 0)
+            if (!int.TryParse(txtSoLuong.Text.Trim(), out _) || int.Parse(txtSoLuong.Text.Trim()) <= 0)
             {
                 isValid = false;
-                err.SetError(txtSoLuong, "Số lượng phải là số nguyên không âm!");
+                err.SetError(txtSoLuong, "Số lượng phải lớn hơn 0!");
                 if (firstInvalidControl == null) firstInvalidControl = txtSoLuong;
             }
             else
@@ -293,53 +280,110 @@ namespace home
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (vt == -1)
+            if (btnThem.Enabled && !btnSua.Enabled) // Thêm sách
             {
-                MessageBox.Show("Vui lòng chọn sách để sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (int.Parse(txtSoLuong.Text) < int.Parse(txtDaMuon.Text))
-            {
-                MessageBox.Show("Số lượng mượn không được vượt quá số lượng sách!", "Lỗi dữ liệu");
-                return;
-            }
-
-            if (FormValidate())
-            {
-                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn sửa thông tin sách này không?", "Hộp thoại", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
+                if (FormValidate())
                 {
+                    if (!int.TryParse(txtSoLuong.Text.Trim(), out int soLuong) || !int.TryParse(txtNamXB.Text.Trim(), out int namXB))
+                    {
+                        MessageBox.Show("Số lượng và Năm xuất bản phải là số hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    DataRow row = ds.Tables["DMSach"].NewRow();
+                    row["MaSach"] = setMaSach();
+                    row["TenSach"] = txtTenSach.Text.Trim();
+                    row["SoLuong"] = soLuong;
+                    row["DaMuon"] = 0;
+                    txtDaMuon.Enabled = false;
+                    row["NamXB"] = namXB;
+                    row["MaTL"] = cboMaTL.SelectedValue.ToString();
+                    row["MaTG"] = cboMaTG.SelectedValue.ToString();
+                    row["MaNXB"] = cboMaNXB.SelectedValue.ToString();
+                    row["GhiChu"] = txtGhiChu.Text.Trim();
+
                     try
                     {
-                        DataRow row = ds.Tables["DMSach"].Rows[vt];
-                        row.BeginEdit();
-                        row["TenSach"] = txtTenSach.Text.Trim();
-                        row["MaTL"] = cboMaTL.SelectedValue.ToString();
-                        row["MaTG"] = cboMaTG.SelectedValue.ToString();
-                        row["MaNXB"] = cboMaNXB.SelectedValue.ToString();
-                        row["NamXB"] = txtNamXB.Text.Trim();
-                        row["SoLuong"] = int.Parse(txtSoLuong.Text.Trim());
-                        row["GhiChu"] = txtGhiChu.Text.Trim();
-                        row.EndEdit();
-
+                        ds.Tables["DMSach"].Rows.Add(row);
                         int kq = adapter.Update(ds.Tables["DMSach"]);
                         if (kq > 0)
                         {
-                            MessageBox.Show("Sửa thông tin sách thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Thêm sách thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             LoadDataGridView();
                             ResetFields();
                         }
                         else
                         {
-                            MessageBox.Show("Sửa thông tin sách không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Thêm sách không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Lỗi: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+
                 }
+                btnHuy.Enabled = false;
+                btnLuu.Enabled = false;
+                plTTCT.Enabled = false;
+            }
+            else if (!btnThem.Enabled && btnSua.Enabled) // Sửa sách
+            {
+                if (vt == -1)
+                {
+                    MessageBox.Show("Vui lòng chọn sách để sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (int.Parse(txtSoLuong.Text) < int.Parse(txtDaMuon.Text))
+                {
+                    MessageBox.Show("Số lượng mượn không được vượt quá số lượng sách!", "Lỗi dữ liệu");
+                    return;
+                }
+
+                if (FormValidate())
+                {
+                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn sửa thông tin sách này không?", "Hộp thoại", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            DataRow row = ds.Tables["DMSach"].Rows[vt];
+                            row.BeginEdit();
+                            row["TenSach"] = txtTenSach.Text.Trim();
+                            row["MaTL"] = cboMaTL.SelectedValue.ToString();
+                            row["MaTG"] = cboMaTG.SelectedValue.ToString();
+                            row["MaNXB"] = cboMaNXB.SelectedValue.ToString();
+                            row["NamXB"] = txtNamXB.Text.Trim();
+                            row["DaMuon"] = int.Parse(txtDaMuon.Text.Trim());
+                            row["SoLuong"] = int.Parse(txtSoLuong.Text.Trim());
+                            row["GhiChu"] = txtGhiChu.Text.Trim();
+                            row.EndEdit();
+
+                            int kq = adapter.Update(ds.Tables["DMSach"]);
+                            if (kq > 0)
+                            {
+                                MessageBox.Show("Sửa thông tin sách thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                LoadDataGridView();
+                                ResetFields();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Sửa thông tin sách không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Lỗi: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+
+                btnThem.Enabled=true;
+                btnLuu.Enabled=false;
+                btnXoa.Enabled=false;
+                btnSua.Enabled=false;
+                dgvSach.CellClick += dgvSach_CellClick;
             }
         }
 
@@ -357,6 +401,7 @@ namespace home
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            ClearAllErrors();
             if (vt == -1)
             {
                 MessageBox.Show("Vui lòng chọn sách để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -419,7 +464,7 @@ namespace home
         {
             if (string.IsNullOrWhiteSpace(txtTK.Text))
             {
-                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm.", "Thông báo");
+                LoadDataGridView();
                 return;
             }
 
@@ -462,6 +507,42 @@ namespace home
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            ClearAllErrors();
+            plTTCT.Enabled = true;
+            btnThem.Enabled = false;
+            btnXoa.Enabled = false;
+            btnLuu.Enabled = true;
+            btnHuy.Enabled = true;
+            dgvSach.CellClick -= dgvSach_CellClick;
+            txtTenSach.Focus();
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            ClearAllErrors();
+            plTTCT.Enabled = false;
+            btnSua.Enabled = false;
+            btnLuu.Enabled = false;
+            btnXoa.Enabled = false;
+            btnHuy.Enabled = false;
+            btnThem.Enabled= true;
+            txtDaMuon.Enabled = false;
+            dgvSach.CellClick += dgvSach_CellClick;
+        }
+
+        private void ClearAllErrors()
+        {
+            err.SetError(txtTenSach, null);
+            err.SetError(txtSoLuong, null);
+            err.SetError(txtDaMuon, null);
+            err.SetError(txtNamXB, null);
+            err.SetError(cboMaTL, null);
+            err.SetError(cboMaTG, null);
+            err.SetError(cboMaNXB, null);
         }
     }
 }
