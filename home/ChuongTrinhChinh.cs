@@ -146,5 +146,18 @@ namespace home
             QuanLyPhieuMuon quanLyPhieuMuon = new QuanLyPhieuMuon(this.maNV);
             quanLyPhieuMuon.ShowDialog();
         }
+
+        private void nXBToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QuanLyNXB NXB=new QuanLyNXB();
+            NXB.ShowDialog(); 
+        }
+
+        private void phiếuPhạtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QLPP QLPP = new QLPP();
+            QLPP.setMaNV(this.maNV);
+            QLPP.ShowDialog();
+        }
     }
 }

@@ -34,6 +34,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnExit = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -43,12 +44,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvListAuthor = new System.Windows.Forms.DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.MaTG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenTG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QueQuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -118,6 +118,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chức năng";
             // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(802, 79);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(87, 39);
+            this.btnExit.TabIndex = 8;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // btnCreate
             // 
             this.btnCreate.Location = new System.Drawing.Point(243, 79);
@@ -152,14 +162,14 @@
             // 
             this.txtCountry.Location = new System.Drawing.Point(641, 30);
             this.txtCountry.Name = "txtCountry";
-            this.txtCountry.Size = new System.Drawing.Size(220, 30);
+            this.txtCountry.Size = new System.Drawing.Size(220, 35);
             this.txtCountry.TabIndex = 3;
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(196, 30);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(220, 30);
+            this.txtName.Size = new System.Drawing.Size(220, 35);
             this.txtName.TabIndex = 1;
             // 
             // label4
@@ -167,7 +177,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(505, 34);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 23);
+            this.label4.Size = new System.Drawing.Size(127, 27);
             this.label4.TabIndex = 2;
             this.label4.Text = "Quê quán:";
             // 
@@ -176,7 +186,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(60, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 23);
+            this.label3.Size = new System.Drawing.Size(145, 27);
             this.label3.TabIndex = 0;
             this.label3.Text = "Tên tác giả: ";
             // 
@@ -200,23 +210,13 @@
             this.TenTG,
             this.QueQuan});
             this.dgvListAuthor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvListAuthor.Location = new System.Drawing.Point(3, 26);
+            this.dgvListAuthor.Location = new System.Drawing.Point(3, 31);
             this.dgvListAuthor.Name = "dgvListAuthor";
             this.dgvListAuthor.RowHeadersWidth = 51;
             this.dgvListAuthor.RowTemplate.Height = 24;
-            this.dgvListAuthor.Size = new System.Drawing.Size(942, 475);
+            this.dgvListAuthor.Size = new System.Drawing.Size(942, 470);
             this.dgvListAuthor.TabIndex = 0;
             this.dgvListAuthor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListAuthor_CellClick);
-            // 
-            // panel4
-            // 
-            this.panel4.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.panel4.Controls.Add(this.groupBox1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 196);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(948, 504);
-            this.panel4.TabIndex = 3;
             // 
             // MaTG
             // 
@@ -239,23 +239,23 @@
             this.QueQuan.MinimumWidth = 6;
             this.QueQuan.Name = "QueQuan";
             // 
+            // panel4
+            // 
+            this.panel4.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.panel4.Controls.Add(this.groupBox1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 196);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(948, 504);
+            this.panel4.TabIndex = 3;
+            // 
             // err
             // 
             this.err.ContainerControl = this;
             // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(802, 79);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(87, 39);
-            this.btnExit.TabIndex = 8;
-            this.btnExit.Text = "Thoát";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // DanhSachTacGia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 700);
             this.Controls.Add(this.panel4);
