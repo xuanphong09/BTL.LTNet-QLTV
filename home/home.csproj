@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -91,17 +91,17 @@
     <Compile Include="DanhSachPhieuMuon.Designer.cs">
       <DependentUpon>DanhSachPhieuMuon.cs</DependentUpon>
     </Compile>
-    <Compile Include="DSTheLoai.cs">
+    <Compile Include="QLPP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DSTheLoai.Designer.cs">
-      <DependentUpon>DSTheLoai.cs</DependentUpon>
+    <Compile Include="QLPP.Designer.cs">
+      <DependentUpon>QLPP.cs</DependentUpon>
     </Compile>
-    <Compile Include="DSSach.cs">
+    <Compile Include="QuanLyNXB.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DSSach.Designer.cs">
-      <DependentUpon>DSSach.cs</DependentUpon>
+    <Compile Include="QuanLyNXB.Designer.cs">
+      <DependentUpon>QuanLyNXB.cs</DependentUpon>
     </Compile>
     <Compile Include="LapCTPhieuMuon.cs">
       <SubType>UserControl</SubType>
@@ -204,11 +204,11 @@
     <EmbeddedResource Include="DanhSachPhieuMuon.resx">
       <DependentUpon>DanhSachPhieuMuon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DSTheLoai.resx">
-      <DependentUpon>DSTheLoai.cs</DependentUpon>
+    <EmbeddedResource Include="QLPP.resx">
+      <DependentUpon>QLPP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DSSach.resx">
-      <DependentUpon>DSSach.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLyNXB.resx">
+      <DependentUpon>QuanLyNXB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LapCTPhieuMuon.resx">
       <DependentUpon>LapCTPhieuMuon.cs</DependentUpon>

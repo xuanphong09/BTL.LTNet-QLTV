@@ -163,14 +163,14 @@
             // 
             this.txtCountry.Location = new System.Drawing.Point(641, 30);
             this.txtCountry.Name = "txtCountry";
-            this.txtCountry.Size = new System.Drawing.Size(220, 30);
+            this.txtCountry.Size = new System.Drawing.Size(220, 35);
             this.txtCountry.TabIndex = 3;
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(196, 30);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(220, 30);
+            this.txtName.Size = new System.Drawing.Size(220, 35);
             this.txtName.TabIndex = 1;
             // 
             // label4
@@ -178,7 +178,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(505, 34);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 23);
+            this.label4.Size = new System.Drawing.Size(127, 27);
             this.label4.TabIndex = 2;
             this.label4.Text = "Quê quán:";
             // 
@@ -187,7 +187,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(60, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 23);
+            this.label3.Size = new System.Drawing.Size(145, 27);
             this.label3.TabIndex = 0;
             this.label3.Text = "Tên tác giả: ";
             // 
@@ -211,11 +211,11 @@
             this.TenTG,
             this.QueQuan});
             this.dgvListAuthor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvListAuthor.Location = new System.Drawing.Point(3, 26);
+            this.dgvListAuthor.Location = new System.Drawing.Point(3, 31);
             this.dgvListAuthor.Name = "dgvListAuthor";
             this.dgvListAuthor.RowHeadersWidth = 51;
             this.dgvListAuthor.RowTemplate.Height = 24;
-            this.dgvListAuthor.Size = new System.Drawing.Size(942, 475);
+            this.dgvListAuthor.Size = new System.Drawing.Size(942, 470);
             this.dgvListAuthor.TabIndex = 0;
             this.dgvListAuthor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListAuthor_CellClick);
             // 
@@ -256,7 +256,7 @@
             // 
             // DanhSachTacGia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 700);
             this.Controls.Add(this.panel4);

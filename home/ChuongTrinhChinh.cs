@@ -147,16 +147,17 @@ namespace home
             quanLyPhieuMuon.ShowDialog();
         }
 
-        private void xemDanhSáchToolStripMenuItem_Click(object sender, EventArgs e)
+        private void nXBToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmDanhSachTheLoai danhSachTheLoai = new frmDanhSachTheLoai();
-            danhSachTheLoai.ShowDialog();
+            QuanLyNXB NXB=new QuanLyNXB();
+            NXB.ShowDialog(); 
         }
 
-        private void toolStripMenuItem17_Click(object sender, EventArgs e)
+        private void phiếuPhạtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmSach danhMucSach = new frmSach();
-            danhMucSach.ShowDialog();
+            QLPP QLPP = new QLPP();
+            QLPP.setMaNV(this.maNV);
+            QLPP.ShowDialog();
         }
     }
 }
