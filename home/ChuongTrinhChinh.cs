@@ -190,21 +190,26 @@ namespace home
 
         private void tSMISach_Click(object sender, EventArgs e)
         {
+            frmSach frmSach = new frmSach();
+            frmSach.ShowDialog();
         }
 
         private void tSMINhaXuatBan_Click(object sender, EventArgs e)
         {
-            
+            QuanLyNXB quanLyNXB = new QuanLyNXB();
+            quanLyNXB.ShowDialog();
         }
 
         private void tsMITheLoai_Click(object sender, EventArgs e)
         {
-
+            frmDanhSachTheLoai frmDanhSachTheLoai = new frmDanhSachTheLoai();
+            frmDanhSachTheLoai.ShowDialog();
         }
 
         private void tsMIPhieuPhat_Click(object sender, EventArgs e)
         {
-
+            QLPP qlpp = new QLPP();
+            qlpp.ShowDialog();
         }
     }
 }

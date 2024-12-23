@@ -79,6 +79,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DSSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSSach.Designer.cs">
+      <DependentUpon>DSSach.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DSSach.resx">
+      <DependentUpon>DSSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="QuanLyNXB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyNXB.Designer.cs">
+      <DependentUpon>QuanLyNXB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLPP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLPP.Designer.cs">
+      <DependentUpon>QLPP.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="QLPP.resx">
+      <DependentUpon>QLPP.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="ChinhSuaPhieuMuon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -226,9 +250,6 @@
     <EmbeddedResource Include="DanhSachPhieuMuon.resx">
       <DependentUpon>DanhSachPhieuMuon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLPP.resx">
-      <DependentUpon>QLPP.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNXB.resx">
       <DependentUpon>QuanLyNXB.cs</DependentUpon>
     </EmbeddedResource>
@@ -314,6 +335,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QLTVDataSet.xsc">
+      <DependentUpon>QLTVDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLTVDataSet.xss">
+      <DependentUpon>QLTVDataSet.xsd</DependentUpon>
+    </None>
+	  
+	  
     <None Include="Resources\eye-fill %281%29.png" />
   </ItemGroup>
   <ItemGroup>

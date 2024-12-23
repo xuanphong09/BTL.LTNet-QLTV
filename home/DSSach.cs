@@ -60,8 +60,8 @@ namespace home
 
             try
             {
-                string strCon = @"Data Source=DESKTOP-6DRK6CD;Initial Catalog=QLTV;Integrated Security=True;";
-                using (SqlConnection sqlCon = new SqlConnection(strCon))
+                DatabaseConnection dbCon = new DatabaseConnection();
+                using (SqlConnection sqlCon = new SqlConnection(dbCon.strCon))
                 {
                     SqlDataAdapter dap = new SqlDataAdapter(sql, sqlCon);
                     DataTable table = new DataTable();

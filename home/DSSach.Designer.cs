@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.qLTVDataSet = new home.QLTVDataSet();
+            //this.qLTVDataSet = new home.QLTVDataSet();
             this.sachBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sachTableAdapter = new home.QLTVDataSetTableAdapters.SachTableAdapter();
+            //this.sachTableAdapter = new home.QLTVDataSetTableAdapters.SachTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -78,7 +78,7 @@
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.qLTVDataSet)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.qLTVDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sachBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -95,17 +95,17 @@
             // 
             // qLTVDataSet
             // 
-            this.qLTVDataSet.DataSetName = "QLTVDataSet";
-            this.qLTVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            //this.qLTVDataSet.DataSetName = "QLTVDataSet";
+            //this.qLTVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // sachBindingSource
             // 
             this.sachBindingSource.DataMember = "Sach";
-            this.sachBindingSource.DataSource = this.qLTVDataSet;
+            //this.sachBindingSource.DataSource = this.qLTVDataSet;
             // 
             // sachTableAdapter
             // 
-            this.sachTableAdapter.ClearBeforeFill = true;
+            //this.sachTableAdapter.ClearBeforeFill = true;
             // 
             // panel1
             // 
@@ -580,7 +580,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sách";
             this.Load += new System.EventHandler(this.frmSach_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.qLTVDataSet)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.qLTVDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sachBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -600,9 +600,9 @@
         }
 
         #endregion
-        private QLTVDataSet qLTVDataSet;
+        //private QLTVDataSet qLTVDataSet;
         private System.Windows.Forms.BindingSource sachBindingSource;
-        private QLTVDataSetTableAdapters.SachTableAdapter sachTableAdapter;
+        //private QLTVDataSetTableAdapters.SachTableAdapter sachTableAdapter;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
