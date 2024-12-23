@@ -16,6 +16,7 @@ namespace home
     {
         public QuanLyNXB()
         {
+            this.CenterToParent();
             InitializeComponent();
         }
 

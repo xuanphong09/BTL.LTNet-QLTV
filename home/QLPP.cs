@@ -16,6 +16,7 @@ namespace home
     {
         public QLPP()
         {
+            this.CenterToParent();
             InitializeComponent();
         }
 
