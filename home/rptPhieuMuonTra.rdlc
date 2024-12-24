@@ -596,7 +596,7 @@
             <Top>5.80758cm</Top>
             <Left>1.04069cm</Left>
             <Height>1.84508cm</Height>
-            <Width>20.9515cm</Width>
+            <Width>20.95149cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -729,6 +729,7 @@
                     <Value>=Parameters!NgayMuon.Value</Value>
                     <Style>
                       <FontSize>13pt</FontSize>
+                      <Format>dd/MM/yyyy HH:mm</Format>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -879,6 +880,7 @@
                       <Value>=Globals!ExecutionTime</Value>
                       <Style>
                         <FontSize>13pt</FontSize>
+                        <Format>dd/MM/yyyy HH:mm</Format>
                       </Style>
                     </TextRun>
                   </TextRuns>

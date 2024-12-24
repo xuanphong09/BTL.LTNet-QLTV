@@ -27,7 +27,7 @@ namespace home
 
         private void QuenMatKhau_Load(object sender, EventArgs e)
         {
-           btnCheck.Enabled = false;
+           btnCheck.Visible = false;
            txtOtp.Enabled = false;
         }
 
@@ -85,8 +85,8 @@ namespace home
                         SmtpServer.Send(mail);
 
                         MessageBox.Show("Mã xác thực đã được gửi đến email của bạn","Hộp thoại",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                        btnCheck.Enabled = true;
-                        btnSendCode.Enabled = false;
+                        btnCheck.Visible = true;
+                        btnSendCode.Visible = false;
                         txtOtp.Enabled = true;
                         txtEmail.Enabled = false;
 
@@ -130,9 +130,13 @@ namespace home
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void QuenMatKhau_FormClosed(object sender, FormClosedEventArgs e)
+        {
             Login login = new Login();
             login.Show();
-            this.Close();
         }
     }
 }

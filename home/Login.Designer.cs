@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.ptbPass = new System.Windows.Forms.PictureBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,15 +41,22 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ptbPass = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbPass)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPass)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.linkLabel1);
             this.panel2.Controls.Add(this.ptbPass);
             this.panel2.Controls.Add(this.txtPassword);
@@ -67,24 +73,13 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(157, 228);
+            this.linkLabel1.Location = new System.Drawing.Point(184, 228);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(181, 27);
             this.linkLabel1.TabIndex = 5;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Quên mật khẩu";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // ptbPass
-            // 
-            this.ptbPass.Image = global::home.Properties.Resources.eye_slash_fill;
-            this.ptbPass.Location = new System.Drawing.Point(354, 171);
-            this.ptbPass.Name = "ptbPass";
-            this.ptbPass.Size = new System.Drawing.Size(23, 20);
-            this.ptbPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ptbPass.TabIndex = 4;
-            this.ptbPass.TabStop = false;
-            this.ptbPass.Click += new System.EventHandler(this.ptbPass_Click);
             // 
             // txtPassword
             // 
@@ -138,19 +133,27 @@
             // 
             // btnExit
             // 
+            this.btnExit.BackColor = System.Drawing.Color.Red;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Location = new System.Drawing.Point(220, 317);
             this.btnExit.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(145, 52);
             this.btnExit.TabIndex = 1;
             this.btnExit.Text = "Thoát";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnLogin
             // 
+            this.btnLogin.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnLogin.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.ImageKey = "(none)";
             this.btnLogin.Location = new System.Drawing.Point(29, 317);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -158,7 +161,7 @@
             this.btnLogin.Size = new System.Drawing.Size(163, 55);
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Đăng nhập";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // panel1
@@ -187,6 +190,35 @@
             // 
             this.err.ContainerControl = this;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::home.Properties.Resources._1735022671090;
+            this.pictureBox2.Location = new System.Drawing.Point(18, 165);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(37, 36);
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::home.Properties.Resources._1735022472971;
+            this.pictureBox1.Location = new System.Drawing.Point(20, 59);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(35, 36);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // ptbPass
+            // 
+            this.ptbPass.Image = global::home.Properties.Resources.eye_slash_fill;
+            this.ptbPass.Location = new System.Drawing.Point(354, 171);
+            this.ptbPass.Name = "ptbPass";
+            this.ptbPass.Size = new System.Drawing.Size(23, 20);
+            this.ptbPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbPass.TabIndex = 4;
+            this.ptbPass.TabStop = false;
+            this.ptbPass.Click += new System.EventHandler(this.ptbPass_Click);
+            // 
             // Login
             // 
             this.AcceptButton = this.btnLogin;
@@ -201,16 +233,20 @@
             this.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
             this.Load += new System.EventHandler(this.Login_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbPass)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPass)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -230,5 +266,7 @@
         private System.Windows.Forms.ErrorProvider err;
         private System.Windows.Forms.PictureBox ptbPass;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
