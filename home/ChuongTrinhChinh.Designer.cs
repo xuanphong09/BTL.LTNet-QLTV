@@ -32,18 +32,18 @@
             this.tSMIQuanLyTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
             this.tSMIQuanLySach = new System.Windows.Forms.ToolStripMenuItem();
             this.tSMISach = new System.Windows.Forms.ToolStripMenuItem();
+            this.tSMITacGia = new System.Windows.Forms.ToolStripMenuItem();
+            this.tSMINhaXuatBan = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsMITheLoai = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMIMuonTraSach = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMIThoat = new System.Windows.Forms.ToolStripMenuItem();
             this.tSMIName = new System.Windows.Forms.ToolStripMenuItem();
             this.tSMIChinhSuaThongTin = new System.Windows.Forms.ToolStripMenuItem();
             this.tSMIDoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
             this.tSMIDangXuat = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsMIPhieuPhat = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.tSMITacGia = new System.Windows.Forms.ToolStripMenuItem();
-            this.tSMINhaXuatBan = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsMITheLoai = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsMIPhieuPhat = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -92,6 +92,27 @@
             this.tSMISach.Text = "Sách";
             this.tSMISach.Click += new System.EventHandler(this.tSMISach_Click);
             // 
+            // tSMITacGia
+            // 
+            this.tSMITacGia.Name = "tSMITacGia";
+            this.tSMITacGia.Size = new System.Drawing.Size(231, 30);
+            this.tSMITacGia.Text = "Tác giả";
+            this.tSMITacGia.Click += new System.EventHandler(this.tSMITacGia_Click);
+            // 
+            // tSMINhaXuatBan
+            // 
+            this.tSMINhaXuatBan.Name = "tSMINhaXuatBan";
+            this.tSMINhaXuatBan.Size = new System.Drawing.Size(231, 30);
+            this.tSMINhaXuatBan.Text = "Nhà xuất bản";
+            this.tSMINhaXuatBan.Click += new System.EventHandler(this.tSMINhaXuatBan_Click);
+            // 
+            // tsMITheLoai
+            // 
+            this.tsMITheLoai.Name = "tsMITheLoai";
+            this.tsMITheLoai.Size = new System.Drawing.Size(231, 30);
+            this.tsMITheLoai.Text = "Thể loại";
+            this.tsMITheLoai.Click += new System.EventHandler(this.tsMITheLoai_Click);
+            // 
             // tsMIMuonTraSach
             // 
             this.tsMIMuonTraSach.Name = "tsMIMuonTraSach";
@@ -123,23 +144,30 @@
             // tSMIChinhSuaThongTin
             // 
             this.tSMIChinhSuaThongTin.Name = "tSMIChinhSuaThongTin";
-            this.tSMIChinhSuaThongTin.Size = new System.Drawing.Size(292, 30);
-            this.tSMIChinhSuaThongTin.Text = "Chỉnh sửa thông tin";
+            this.tSMIChinhSuaThongTin.Size = new System.Drawing.Size(234, 30);
+            this.tSMIChinhSuaThongTin.Text = "Xem thông tin";
             this.tSMIChinhSuaThongTin.Click += new System.EventHandler(this.tSMIChinhSuaThongTin_Click);
             // 
             // tSMIDoiMatKhau
             // 
             this.tSMIDoiMatKhau.Name = "tSMIDoiMatKhau";
-            this.tSMIDoiMatKhau.Size = new System.Drawing.Size(292, 30);
+            this.tSMIDoiMatKhau.Size = new System.Drawing.Size(234, 30);
             this.tSMIDoiMatKhau.Text = "Đổi mật khẩu";
             this.tSMIDoiMatKhau.Click += new System.EventHandler(this.tSMIDoiMatKhau_Click);
             // 
             // tSMIDangXuat
             // 
             this.tSMIDangXuat.Name = "tSMIDangXuat";
-            this.tSMIDangXuat.Size = new System.Drawing.Size(292, 30);
+            this.tSMIDangXuat.Size = new System.Drawing.Size(234, 30);
             this.tSMIDangXuat.Text = "Đăng xuất";
             this.tSMIDangXuat.Click += new System.EventHandler(this.tSMIDangXuat_Click);
+            // 
+            // tsMIPhieuPhat
+            // 
+            this.tsMIPhieuPhat.Name = "tsMIPhieuPhat";
+            this.tsMIPhieuPhat.Size = new System.Drawing.Size(132, 30);
+            this.tsMIPhieuPhat.Text = "Phiếu phạt";
+            this.tsMIPhieuPhat.Click += new System.EventHandler(this.tsMIPhieuPhat_Click);
             // 
             // panel1
             // 
@@ -164,34 +192,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Phần mềm quản lý thư viện";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tSMITacGia
-            // 
-            this.tSMITacGia.Name = "tSMITacGia";
-            this.tSMITacGia.Size = new System.Drawing.Size(231, 30);
-            this.tSMITacGia.Text = "Tác giả";
-            this.tSMITacGia.Click += new System.EventHandler(this.tSMITacGia_Click);
-            // 
-            // tSMINhaXuatBan
-            // 
-            this.tSMINhaXuatBan.Name = "tSMINhaXuatBan";
-            this.tSMINhaXuatBan.Size = new System.Drawing.Size(231, 30);
-            this.tSMINhaXuatBan.Text = "Nhà xuất bản";
-            this.tSMINhaXuatBan.Click += new System.EventHandler(this.tSMINhaXuatBan_Click);
-            // 
-            // tsMITheLoai
-            // 
-            this.tsMITheLoai.Name = "tsMITheLoai";
-            this.tsMITheLoai.Size = new System.Drawing.Size(231, 30);
-            this.tsMITheLoai.Text = "Thể loại";
-            this.tsMITheLoai.Click += new System.EventHandler(this.tsMITheLoai_Click);
-            // 
-            // tsMIPhieuPhat
-            // 
-            this.tsMIPhieuPhat.Name = "tsMIPhieuPhat";
-            this.tsMIPhieuPhat.Size = new System.Drawing.Size(132, 30);
-            this.tsMIPhieuPhat.Text = "Phiếu phạt";
-            this.tsMIPhieuPhat.Click += new System.EventHandler(this.tsMIPhieuPhat_Click);
             // 
             // Form1
             // 

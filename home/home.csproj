@@ -341,8 +341,6 @@
     <None Include="QLTVDataSet.xss">
       <DependentUpon>QLTVDataSet.xsd</DependentUpon>
     </None>
-	  
-	  
     <None Include="Resources\eye-fill %281%29.png" />
   </ItemGroup>
   <ItemGroup>
@@ -375,6 +373,11 @@
   <ItemGroup>
     <None Include="Resources\Thu-Vien-Trinity-Col.jpg" />
     <None Include="Resources\red-circle-logout-arrow-20586.png" />
+    <None Include="Resources\1735022472971.png" />
+    <None Include="Resources\1735022671090.png" />
+    <None Include="Resources\icons8-edit-property-32.png" />
+    <None Include="Resources\icons8-search-321.png" />
+    <None Include="Resources\icons8-delete-32.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

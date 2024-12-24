@@ -127,33 +127,42 @@
             // 
             // btnExit
             // 
+            this.btnExit.BackColor = System.Drawing.Color.Red;
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnExit.Location = new System.Drawing.Point(296, 210);
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Location = new System.Drawing.Point(246, 211);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(107, 35);
+            this.btnExit.Size = new System.Drawing.Size(88, 36);
             this.btnExit.TabIndex = 2;
             this.btnExit.Text = "Thoát";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnCheck
             // 
-            this.btnCheck.Location = new System.Drawing.Point(168, 209);
+            this.btnCheck.BackColor = System.Drawing.Color.Orange;
+            this.btnCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheck.ForeColor = System.Drawing.Color.White;
+            this.btnCheck.Location = new System.Drawing.Point(81, 211);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(110, 36);
             this.btnCheck.TabIndex = 1;
             this.btnCheck.Text = "Xác thực";
-            this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.UseVisualStyleBackColor = false;
             this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // btnSendCode
             // 
-            this.btnSendCode.Location = new System.Drawing.Point(30, 209);
+            this.btnSendCode.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSendCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSendCode.ForeColor = System.Drawing.Color.White;
+            this.btnSendCode.Location = new System.Drawing.Point(81, 211);
             this.btnSendCode.Name = "btnSendCode";
-            this.btnSendCode.Size = new System.Drawing.Size(99, 37);
+            this.btnSendCode.Size = new System.Drawing.Size(99, 36);
             this.btnSendCode.TabIndex = 0;
             this.btnSendCode.Text = "Gửi mã";
-            this.btnSendCode.UseVisualStyleBackColor = true;
+            this.btnSendCode.UseVisualStyleBackColor = false;
             this.btnSendCode.Click += new System.EventHandler(this.btnSendCode_Click);
             // 
             // err
@@ -175,7 +184,8 @@
             this.MinimizeBox = false;
             this.Name = "QuenMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "QuenMatKhau";
+            this.Text = "Quên mật khẩu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.QuenMatKhau_FormClosed);
             this.Load += new System.EventHandler(this.QuenMatKhau_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
