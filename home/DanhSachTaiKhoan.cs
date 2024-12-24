@@ -27,6 +27,12 @@ namespace home
             InitializeComponent();
         }
 
+        string MaNV = "";
+        public void setMaNV(string maNV)
+        {
+            this.MaNV = maNV;
+        }
+
         private void DanhSachTaiKhoan_Load(object sender, EventArgs e)
         {
             //an cac groupbox va button
@@ -34,6 +40,16 @@ namespace home
             btnEdit.Enabled = false;
             btnChangePass.Enabled = false;
             btnDelete.Enabled = false;
+
+            FillDuLieuCmbTieuChi();
+            cmTieuChiTK.SelectedIndex = 0;
+            
+
+        }
+
+        private void FillDuLieuCmbTieuChi()
+        {
+
             //lay gia tri co comboBox Role tim kiem
             dbCon.MoKetNoi();
             sqlCmd = new SqlCommand();
@@ -45,19 +61,32 @@ namespace home
             dt.Load(rd);
             rd.Close();
 
-            DataRow defaultRow = dt.NewRow();
-            defaultRow[dt.Columns[0].ColumnName] = ""; // Value to represent "no selection"
-            defaultRow[dt.Columns[1].ColumnName] = "Chọn vai trò"; // Default text
-            dt.Rows.InsertAt(defaultRow, 0);
+            DataRow row = dt.NewRow();
+            row[dt.Columns[0].ColumnName] = ""; // Value to represent "no selection"
+            row[dt.Columns[1].ColumnName] = "Chọn tiêu chí"; // Default text
+            dt.Rows.InsertAt(row, 0);
 
-            cmRoleTK.DataSource = dt;
-            cmRoleTK.DisplayMember = dt.Columns[1].ColumnName;
-            cmRoleTK.ValueMember = dt.Columns[0].ColumnName;
+            //thêm các trạng thái
+            row = dt.NewRow();
+            row[dt.Columns[0].ColumnName] = 0;
+            row[dt.Columns[1].ColumnName] = "Hoạt động";
+            dt.Rows.Add(row);
 
-            cmRoleTK.SelectedIndex = 0;
-            dbCon.DongKetNoi();
+            row = dt.NewRow();
+            row[dt.Columns[0].ColumnName] = -1;
+            row[dt.Columns[1].ColumnName] = "Bị khóa";
+            dt.Rows.Add(row);
 
+            row = dt.NewRow();
+            row[dt.Columns[0].ColumnName] = -2;
+            row[dt.Columns[1].ColumnName] = "Đã xóa";
+            dt.Rows.Add(row);
+
+            cmTieuChiTK.DataSource = dt;
+            cmTieuChiTK.DisplayMember = dt.Columns[1].ColumnName;
+            cmTieuChiTK.ValueMember = dt.Columns[0].ColumnName;
         }
+
 
         private void DanhSachTaiKhoan_Activated(object sender, EventArgs e)
         {
@@ -108,11 +137,19 @@ namespace home
             cbRole.SelectedIndex = -1;
             // Đóng kết nối
             dbCon.DongKetNoi();  // Đóng kết nối sau khi hoàn tất
+            cmTieuChiTK.SelectedIndex = 0;
         }
 
         private void livListAcc_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (livListAcc.SelectedItems.Count == 0) return;
+            if (livListAcc.SelectedItems.Count == 0)
+            {
+                RemoveInforOnForm();
+                btnEdit.Enabled = false;
+                btnChangePass.Enabled = false;
+                btnDelete.Enabled = false;
+                return;
+            }
 
             ListViewItem liv = livListAcc.SelectedItems[0];
             string maNV = liv.SubItems[0].Text;
@@ -137,14 +174,32 @@ namespace home
                 txtCreateAt.Text = reader.GetDateTime(7).ToString("MM/dd/yyyy");
                 txtNote.Text = reader.GetString(8);
                 cbRole.Text = reader.GetString(9);
-                if(reader.GetInt32(10)==-1) cbState.SelectedIndex = 1;
+
+                cbState.Items.Clear();
+                cbState.Items.Add("Hoạt động");
+                cbState.Items.Add("Bị khóa");
+                if (reader.GetInt32(10) == -2) cbState.Items.Add("Đã xóa");
+
+                if (reader.GetInt32(10)==-1) cbState.SelectedIndex = 1;
+                else if (reader.GetInt32(10) == -2) cbState.SelectedIndex = 2;
                 else cbState.SelectedIndex = 0;
             }
             reader.Close();
             dbCon.DongKetNoi();
             btnEdit.Enabled = true;
             btnChangePass.Enabled = true;
-            btnDelete.Enabled = true;
+            
+            if(txtMaNV.Text.Trim() == MaNV)
+            {
+                btnDelete.Enabled = false;
+            }
+            else btnDelete.Enabled = true;
+
+            if(cbState.SelectedIndex == 2)
+            {
+                btnChangePass.Enabled = false;
+                btnDelete.Enabled = false;
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -179,8 +234,10 @@ namespace home
         }
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            RemoveInforOnForm();
             groupBox3.Enabled = true;
             btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
             btnChangePass.Enabled = false;
             txtMaNV.Enabled = true;
             txtUserName.Enabled = true;
@@ -192,7 +249,7 @@ namespace home
             livListAcc.SelectedIndexChanged -= livListAcc_SelectedIndexChanged; // Unsubscribe event handler
             checkCN = 1;
             cbRole.SelectedIndex = 0;
-            RemoveInforOnForm();
+            
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -239,7 +296,8 @@ namespace home
             txtNote.Text = "";
             cbRole.Text = "";
             err.SetError(cbRole, null);
-
+            cbState.Enabled= true;
+            cbState.Items.Clear();
         }
 
         //ham luu thong tin tai khoan
@@ -299,7 +357,10 @@ namespace home
             string work = txtWork.Text.Trim();
             string note = txtNote.Text.Trim();
             string role = cbRole.SelectedValue.ToString();
-            int state = cbState.SelectedIndex == 0 ? 0 : -1;
+            int state;
+            if (cbState.SelectedIndex == 1) state = -1;//bị khóa
+            else if (cbState.SelectedIndex == 2) state = -2;//đã xóa
+            else state = 0;//hoạt động
 
             DatabaseConnection db = new DatabaseConnection();
             db.MoKetNoi();
@@ -489,14 +550,18 @@ namespace home
         private void btnSearch_Click(object sender, EventArgs e)
         {
             livListAcc.Items.Clear();
+            btnEdit.Enabled = false;
+            btnChangePass.Enabled = false;
+            btnDelete.Enabled = false;
+            RemoveInforOnForm();
             string search = "%"+txtSearch.Text.Trim()+"%";
-            string role_id = cmRoleTK.SelectedValue.ToString();
+            string tieuChi = cmTieuChiTK.SelectedValue.ToString();
 
             dbCon.MoKetNoi();
             sqlCmd = new SqlCommand();
             sqlCmd.CommandType = CommandType.StoredProcedure;
             sqlCmd.Parameters.Clear();
-            if (role_id == "")
+            if (tieuChi == "")
             {
                 sqlCmd.CommandText = "[SearchAccount]";
                 sqlCmd.Parameters.AddWithValue("@txtSearch", search);
@@ -505,7 +570,7 @@ namespace home
             {
                 sqlCmd.CommandText = "[SearchRoleAccount]";
                 sqlCmd.Parameters.AddWithValue("@txtSearch", search);
-                sqlCmd.Parameters.AddWithValue("@role_id", role_id);
+                sqlCmd.Parameters.AddWithValue("@tieuChi", tieuChi);
             }
             sqlCmd.Connection = dbCon.slqCon;
             SqlDataReader reader = sqlCmd.ExecuteReader();

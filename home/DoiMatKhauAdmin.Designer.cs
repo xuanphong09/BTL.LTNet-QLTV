@@ -91,7 +91,6 @@
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.Size = new System.Drawing.Size(278, 34);
             this.txtNewPass.TabIndex = 0;
-            this.txtNewPass.Validating += new System.ComponentModel.CancelEventHandler(this.txtNewPass_Validating);
             // 
             // panel3
             // 
@@ -104,11 +103,14 @@
             // 
             // btnChangePass
             // 
+            this.btnChangePass.Image = global::home.Properties.Resources.icons8_save_32;
             this.btnChangePass.Location = new System.Drawing.Point(145, 17);
             this.btnChangePass.Name = "btnChangePass";
-            this.btnChangePass.Size = new System.Drawing.Size(82, 38);
+            this.btnChangePass.Size = new System.Drawing.Size(90, 38);
             this.btnChangePass.TabIndex = 0;
             this.btnChangePass.Text = "OK";
+            this.btnChangePass.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnChangePass.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnChangePass.UseVisualStyleBackColor = true;
             this.btnChangePass.Click += new System.EventHandler(this.btnOK);
             // 
@@ -118,6 +120,7 @@
             // 
             // DoiMatKhauAdmin
             // 
+            this.AcceptButton = this.btnChangePass;
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
@@ -127,9 +130,11 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "DoiMatKhauAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DoiMatKhauAdmin";
+            this.Text = "Đổi mật khẩu";
             this.Load += new System.EventHandler(this.DoiMatKhauAdmin_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

@@ -378,6 +378,8 @@
     <None Include="Resources\icons8-edit-property-32.png" />
     <None Include="Resources\icons8-search-321.png" />
     <None Include="Resources\icons8-delete-32.png" />
+    <None Include="Resources\icons8-save-32.png" />
+    <None Include="Resources\change.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

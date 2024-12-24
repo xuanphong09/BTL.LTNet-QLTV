@@ -29,7 +29,7 @@ namespace home
 
         private void btnOK(object sender, EventArgs e)
         {
-            if (this.ValidateChildren())
+            if (FormValidate())
             {
                 DatabaseConnection dbCon = new DatabaseConnection();
                 dbCon.MoKetNoi();
@@ -54,19 +54,26 @@ namespace home
             
         }
 
-        private void txtNewPass_Validating(object sender, CancelEventArgs e)
+        private bool FormValidate()
         {
-            if (string.IsNullOrEmpty(txtNewPass.Text))
+            bool isValid = true;
+            if (string.IsNullOrEmpty(txtNewPass.Text.Trim()))
             {
-                e.Cancel = true;
                 txtNewPass.Focus();
                 err.SetError(txtNewPass, "Mật khẩu không được để trống");
+                isValid = false;
+            }
+            else if (txtNewPass.Text.Trim().Length < 8)
+            {
+                txtNewPass.Focus();
+                err.SetError(txtNewPass, "Mật khẩu phải có ít nhất 8 ký tự");
+                isValid = false;
             }
             else
             {
-                e.Cancel = false;
-                err.SetError(txtNewPass, null);
+                err.SetError(txtNewPass, "");
             }
+            return isValid;
         }
     }
 }

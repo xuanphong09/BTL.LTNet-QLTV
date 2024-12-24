@@ -179,6 +179,7 @@ namespace home
         private void mIQuanLyTaiKhoan_Click(object sender, EventArgs e)
         {
             DanhSachTaiKhoan danhSachTaiKhoan = new DanhSachTaiKhoan();
+            danhSachTaiKhoan.setMaNV(this.maNV);
             danhSachTaiKhoan.ShowDialog();
         }
 

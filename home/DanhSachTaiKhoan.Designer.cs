@@ -36,8 +36,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbState = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtNote = new System.Windows.Forms.TextBox();
             this.cbRole = new System.Windows.Forms.ComboBox();
@@ -72,23 +70,21 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel6 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmRoleTK = new System.Windows.Forms.ComboBox();
+            this.cmTieuChiTK = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnChangePass = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.QuickRight = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.xemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xóaTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnChangePass = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -100,7 +96,6 @@
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.QuickRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.SuspendLayout();
             // 
@@ -183,9 +178,6 @@
             this.cbState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbState.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cbState.FormattingEnabled = true;
-            this.cbState.Items.AddRange(new object[] {
-            "Hoạt động",
-            "Bị khóa"});
             this.cbState.Location = new System.Drawing.Point(171, 426);
             this.cbState.Name = "cbState";
             this.cbState.Size = new System.Drawing.Size(204, 31);
@@ -200,26 +192,6 @@
             this.label4.Size = new System.Drawing.Size(103, 23);
             this.label4.TabIndex = 18;
             this.label4.Text = "Trạng thái:";
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(247, 573);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(114, 41);
-            this.btnCancel.TabIndex = 23;
-            this.btnCancel.Text = "H&ủy";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(51, 573);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(114, 41);
-            this.btnSave.TabIndex = 22;
-            this.btnSave.Text = "&Lưu";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label8
             // 
@@ -519,7 +491,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cmRoleTK);
+            this.groupBox1.Controls.Add(this.cmTieuChiTK);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtSearch);
@@ -531,23 +503,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
             // 
-            // cmRoleTK
+            // cmTieuChiTK
             // 
-            this.cmRoleTK.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmRoleTK.FormattingEnabled = true;
-            this.cmRoleTK.Location = new System.Drawing.Point(726, 47);
-            this.cmRoleTK.Name = "cmRoleTK";
-            this.cmRoleTK.Size = new System.Drawing.Size(186, 31);
-            this.cmRoleTK.TabIndex = 3;
+            this.cmTieuChiTK.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmTieuChiTK.FormattingEnabled = true;
+            this.cmTieuChiTK.Location = new System.Drawing.Point(726, 47);
+            this.cmTieuChiTK.Name = "cmTieuChiTK";
+            this.cmTieuChiTK.Size = new System.Drawing.Size(186, 31);
+            this.cmTieuChiTK.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(610, 54);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 23);
+            this.label3.Size = new System.Drawing.Size(84, 23);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Chức vụ: ";
+            this.label3.Text = "Tiêu chí:";
             // 
             // label2
             // 
@@ -590,21 +562,12 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Chức năng";
             // 
-            // btnChangePass
-            // 
-            this.btnChangePass.Location = new System.Drawing.Point(736, 30);
-            this.btnChangePass.Name = "btnChangePass";
-            this.btnChangePass.Size = new System.Drawing.Size(176, 41);
-            this.btnChangePass.TabIndex = 3;
-            this.btnChangePass.Text = "Đổi mật khẩu";
-            this.btnChangePass.UseVisualStyleBackColor = true;
-            this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
-            // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.Red;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExit.Location = new System.Drawing.Point(1192, 30);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(97, 41);
@@ -613,47 +576,34 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // QuickRight
-            // 
-            this.QuickRight.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.QuickRight.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.QuickRight.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.xemToolStripMenuItem,
-            this.xóaTàiKhoảnToolStripMenuItem});
-            this.QuickRight.Name = "QuickRight";
-            this.QuickRight.Size = new System.Drawing.Size(206, 60);
-            // 
-            // xemToolStripMenuItem
-            // 
-            this.xemToolStripMenuItem.Name = "xemToolStripMenuItem";
-            this.xemToolStripMenuItem.Size = new System.Drawing.Size(205, 28);
-            this.xemToolStripMenuItem.Text = "Xem tài khoản";
-            // 
-            // xóaTàiKhoảnToolStripMenuItem
-            // 
-            this.xóaTàiKhoảnToolStripMenuItem.Name = "xóaTàiKhoảnToolStripMenuItem";
-            this.xóaTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(205, 28);
-            this.xóaTàiKhoảnToolStripMenuItem.Text = "Xóa tài khoản";
-            // 
             // err
             // 
             this.err.ContainerControl = this;
             // 
-            // openFileDialog1
+            // btnChangePass
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.btnChangePass.Image = global::home.Properties.Resources.change;
+            this.btnChangePass.Location = new System.Drawing.Point(736, 30);
+            this.btnChangePass.Name = "btnChangePass";
+            this.btnChangePass.Size = new System.Drawing.Size(176, 41);
+            this.btnChangePass.TabIndex = 3;
+            this.btnChangePass.Text = "Đổi mật khẩu";
+            this.btnChangePass.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnChangePass.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnChangePass.UseVisualStyleBackColor = true;
+            this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.White;
             this.btnDelete.Image = global::home.Properties.Resources.icons8_delete_32;
-            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(995, 30);
+            this.btnDelete.Location = new System.Drawing.Point(1002, 30);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(80, 41);
+            this.btnDelete.Size = new System.Drawing.Size(111, 41);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "&Xóa";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -661,13 +611,13 @@
             // 
             this.btnEdit.BackColor = System.Drawing.Color.White;
             this.btnEdit.Image = global::home.Properties.Resources.icons8_edit_property_32;
-            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEdit.Location = new System.Drawing.Point(477, 30);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(162, 41);
+            this.btnEdit.Size = new System.Drawing.Size(179, 41);
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "&Sửa thông tin";
             this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
@@ -677,13 +627,13 @@
             this.btnCreate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.err.SetIconAlignment(this.btnCreate, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
             this.btnCreate.Image = global::home.Properties.Resources.icons8_plus_32;
-            this.btnCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCreate.Location = new System.Drawing.Point(280, 30);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(86, 41);
+            this.btnCreate.Size = new System.Drawing.Size(111, 41);
             this.btnCreate.TabIndex = 1;
             this.btnCreate.Text = "T&hêm";
             this.btnCreate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCreate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCreate.UseVisualStyleBackColor = false;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
@@ -691,15 +641,41 @@
             // 
             this.btnSearch.BackColor = System.Drawing.Color.White;
             this.btnSearch.Image = global::home.Properties.Resources.icons8_search_321;
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearch.Location = new System.Drawing.Point(83, 30);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(112, 41);
+            this.btnSearch.Size = new System.Drawing.Size(138, 41);
             this.btnSearch.TabIndex = 0;
             this.btnSearch.Text = "&Tìm kiếm";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Image = global::home.Properties.Resources.icons8_clear_32;
+            this.btnCancel.Location = new System.Drawing.Point(249, 573);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(95, 41);
+            this.btnCancel.TabIndex = 23;
+            this.btnCancel.Text = "H&ủy";
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Image = global::home.Properties.Resources.icons8_save_32;
+            this.btnSave.Location = new System.Drawing.Point(62, 573);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(103, 41);
+            this.btnSave.TabIndex = 22;
+            this.btnSave.Text = "&Lưu";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // DanhSachTaiKhoan
             // 
@@ -733,7 +709,6 @@
             this.groupBox1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
-            this.QuickRight.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
             this.ResumeLayout(false);
 
@@ -753,9 +728,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ContextMenuStrip QuickRight;
-        private System.Windows.Forms.ToolStripMenuItem xemToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem xóaTàiKhoảnToolStripMenuItem;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Panel panel4;
@@ -766,7 +738,7 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Splitter splitter2;
-        private System.Windows.Forms.ComboBox cmRoleTK;
+        private System.Windows.Forms.ComboBox cmTieuChiTK;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnDelete;
@@ -800,6 +772,5 @@
         private System.Windows.Forms.ErrorProvider err;
         private System.Windows.Forms.ComboBox cbState;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

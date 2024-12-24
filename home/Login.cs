@@ -140,6 +140,11 @@ namespace home
                             MessageBox.Show("Tài khoản đã bị khóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             txtUsername.Focus();
                         }
+                        else if (state == -2)
+                        {
+                            MessageBox.Show("Tài khoản đã bị xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            txtUsername.Focus();
+                        }
                         else
                         {
                             state = 0;
