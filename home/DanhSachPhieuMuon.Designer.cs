@@ -37,13 +37,13 @@
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtTK = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSPM)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -55,6 +55,7 @@
             this.dgvDSPM.AllowUserToAddRows = false;
             this.dgvDSPM.AllowUserToDeleteRows = false;
             this.dgvDSPM.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDSPM.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvDSPM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSPM.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SoPM,
@@ -156,45 +157,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức năng:";
             // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(847, 23);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(119, 38);
-            this.btnCancel.TabIndex = 4;
-            this.btnCancel.Text = "&Quay lại";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // btnDelete
             // 
+            this.btnDelete.Image = global::home.Properties.Resources.icons8_delete_32;
             this.btnDelete.Location = new System.Drawing.Point(958, 23);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(119, 38);
+            this.btnDelete.Size = new System.Drawing.Size(112, 38);
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "&Xóa";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(778, 23);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(137, 38);
-            this.btnEdit.TabIndex = 3;
-            this.btnEdit.Text = "&Xem và sửa";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.Location = new System.Drawing.Point(545, 23);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(119, 38);
-            this.btnTimKiem.TabIndex = 2;
-            this.btnTimKiem.Text = "&Tìm kiếm";
-            this.btnTimKiem.UseVisualStyleBackColor = true;
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // txtTK
             // 
@@ -221,6 +195,45 @@
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(1135, 500);
             this.panelContent.TabIndex = 2;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Image = global::home.Properties.Resources.return_left;
+            this.btnCancel.Location = new System.Drawing.Point(847, 23);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(135, 38);
+            this.btnCancel.TabIndex = 4;
+            this.btnCancel.Text = "&Quay lại";
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Image = global::home.Properties.Resources.eye;
+            this.btnEdit.Location = new System.Drawing.Point(757, 23);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(174, 38);
+            this.btnEdit.TabIndex = 3;
+            this.btnEdit.Text = "&Xem và sửa";
+            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Image = global::home.Properties.Resources.icons8_search_32;
+            this.btnTimKiem.Location = new System.Drawing.Point(545, 23);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(148, 38);
+            this.btnTimKiem.TabIndex = 2;
+            this.btnTimKiem.Text = "&Tìm kiếm";
+            this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // DanhSachPhieuMuon
             // 

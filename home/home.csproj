@@ -380,6 +380,12 @@
     <None Include="Resources\icons8-delete-32.png" />
     <None Include="Resources\icons8-save-32.png" />
     <None Include="Resources\change.png" />
+    <None Include="Resources\Lovepik_com-450094989-Checklist flat outline icon do list.png" />
+    <None Include="Resources\return-left.png" />
+    <None Include="Resources\eye.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\return-right.png" />
+    <None Include="Resources\Green-check-mark-icon.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

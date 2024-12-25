@@ -78,21 +78,27 @@
             // 
             // btnLPTra
             // 
+            this.btnLPTra.Image = global::home.Properties.Resources.icons8_plus_32;
             this.btnLPTra.Location = new System.Drawing.Point(771, 51);
             this.btnLPTra.Name = "btnLPTra";
-            this.btnLPTra.Size = new System.Drawing.Size(152, 35);
+            this.btnLPTra.Size = new System.Drawing.Size(175, 42);
             this.btnLPTra.TabIndex = 3;
             this.btnLPTra.Text = "&Lập phiếu trả";
+            this.btnLPTra.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLPTra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLPTra.UseVisualStyleBackColor = true;
             this.btnLPTra.Click += new System.EventHandler(this.btnLPTra_Click);
             // 
             // btnTimKiem
             // 
+            this.btnTimKiem.Image = global::home.Properties.Resources.icons8_search_32;
             this.btnTimKiem.Location = new System.Drawing.Point(550, 49);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(117, 35);
+            this.btnTimKiem.Size = new System.Drawing.Size(134, 42);
             this.btnTimKiem.TabIndex = 2;
             this.btnTimKiem.Text = "&Tìm kiếm";
+            this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiem.UseVisualStyleBackColor = true;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 

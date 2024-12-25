@@ -148,15 +148,11 @@ namespace home
                 DialogResult result = MessageBox.Show("Bạn có muốn hủy phiếu mượn này không?", "Hộp thoại", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (result == DialogResult.Yes)
                 {
-                    DatabaseConnection sbCon = new DatabaseConnection();
-                    sbCon.MoKetNoi();
+                    DatabaseConnection dbCon = new DatabaseConnection();
+                    dbCon.MoKetNoi();
                     SqlCommand sqlCmd = new SqlCommand();
                     sqlCmd.CommandType = CommandType.Text;
-
-                    CapNhatSach(this.soPM);
-                    sqlCmd.CommandText = "delete from CTPhieuMuon where SoPM='" + this.soPM + "'";
-                    sqlCmd.Connection = sbCon.slqCon;
-                    sqlCmd.ExecuteNonQuery();
+                    sqlCmd.Connection = dbCon.slqCon;
 
                     sqlCmd.CommandText = "delete from PhieuMuon where SoPM='" + this.soPM + "'";
                     sqlCmd.ExecuteNonQuery();
@@ -171,19 +167,7 @@ namespace home
 
         }
 
-        //hàm cập nhật số lượng sách khi hủy
-        private void CapNhatSach(string soPM)
-        {
-            DatabaseConnection dbCon = new DatabaseConnection();
-            dbCon.MoKetNoi();
-            SqlCommand sqlCmd = new SqlCommand();
-            sqlCmd.CommandType = CommandType.Text;
-            sqlCmd.CommandText = "UPDATE Sach SET DaMuon = DaMuon - (SELECT SLMuon FROM CTPhieuMuon WHERE CTPhieuMuon.MaSach = Sach.MaSach AND CTPhieuMuon.SoPM = @SoPM) WHERE EXISTS (SELECT 1 FROM CTPhieuMuon WHERE CTPhieuMuon.MaSach = Sach.MaSach AND CTPhieuMuon.SoPM = @SoPM)";
-            sqlCmd.Parameters.AddWithValue("@SoPM", soPM);
-            sqlCmd.Connection = dbCon.slqCon;
-            sqlCmd.ExecuteNonQuery();
 
-        }
 
         //nút tiếp tục
         private void btnTiepTuc_Click(object sender, EventArgs e)
