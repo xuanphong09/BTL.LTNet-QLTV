@@ -48,6 +48,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnInPhieu = new System.Windows.Forms.Button();
             this.btnLuuChinhSua = new System.Windows.Forms.Button();
             this.dtpHanTra = new System.Windows.Forms.DateTimePicker();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -78,7 +79,6 @@
             this.NgayTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnInPhieu = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.gbTTCTPM.SuspendLayout();
@@ -169,21 +169,27 @@
             // 
             // btnHuy
             // 
+            this.btnHuy.Image = global::home.Properties.Resources.icons8_clear_32;
             this.btnHuy.Location = new System.Drawing.Point(247, 296);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(87, 36);
             this.btnHuy.TabIndex = 13;
             this.btnHuy.Text = "&Hủy";
+            this.btnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnLuu
             // 
+            this.btnLuu.Image = global::home.Properties.Resources.icons8_save_32;
             this.btnLuu.Location = new System.Drawing.Point(71, 296);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(87, 36);
+            this.btnLuu.Size = new System.Drawing.Size(93, 36);
             this.btnLuu.TabIndex = 12;
             this.btnLuu.Text = "L&ưu";
+            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
@@ -295,13 +301,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin phiếu mượn:";
             // 
+            // btnInPhieu
+            // 
+            this.btnInPhieu.Image = global::home.Properties.Resources.printer;
+            this.btnInPhieu.Location = new System.Drawing.Point(362, 297);
+            this.btnInPhieu.Name = "btnInPhieu";
+            this.btnInPhieu.Size = new System.Drawing.Size(130, 36);
+            this.btnInPhieu.TabIndex = 20;
+            this.btnInPhieu.Text = "&In phiếu";
+            this.btnInPhieu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnInPhieu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInPhieu.UseVisualStyleBackColor = true;
+            this.btnInPhieu.Click += new System.EventHandler(this.btnInPhieu_Click);
+            // 
             // btnLuuChinhSua
             // 
-            this.btnLuuChinhSua.Location = new System.Drawing.Point(550, 296);
+            this.btnLuuChinhSua.Image = global::home.Properties.Resources.icons8_save_32;
+            this.btnLuuChinhSua.Location = new System.Drawing.Point(509, 296);
             this.btnLuuChinhSua.Name = "btnLuuChinhSua";
-            this.btnLuuChinhSua.Size = new System.Drawing.Size(156, 36);
+            this.btnLuuChinhSua.Size = new System.Drawing.Size(187, 36);
             this.btnLuuChinhSua.TabIndex = 19;
             this.btnLuuChinhSua.Text = "&Lưu chỉnh sửa";
+            this.btnLuuChinhSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLuuChinhSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLuuChinhSua.UseVisualStyleBackColor = true;
             this.btnLuuChinhSua.Click += new System.EventHandler(this.btnLuuChinhSua_Click);
             // 
@@ -315,11 +337,14 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(304, 295);
+            this.btnXoa.Image = global::home.Properties.Resources.icons8_delete_32;
+            this.btnXoa.Location = new System.Drawing.Point(258, 295);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(115, 36);
+            this.btnXoa.Size = new System.Drawing.Size(87, 36);
             this.btnXoa.TabIndex = 18;
-            this.btnXoa.Text = "&Xóa sách";
+            this.btnXoa.Text = "&Xóa";
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -334,11 +359,14 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(170, 293);
+            this.btnSua.Image = global::home.Properties.Resources.icons8_edit_property_32;
+            this.btnSua.Location = new System.Drawing.Point(152, 293);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(126, 40);
+            this.btnSua.Size = new System.Drawing.Size(89, 40);
             this.btnSua.TabIndex = 17;
-            this.btnSua.Text = "&Sửa sách";
+            this.btnSua.Text = "&Sửa";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -352,11 +380,14 @@
             // 
             // btnThem
             // 
+            this.btnThem.Image = global::home.Properties.Resources.icons8_plus_32;
             this.btnThem.Location = new System.Drawing.Point(25, 291);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(137, 40);
+            this.btnThem.Size = new System.Drawing.Size(110, 40);
             this.btnThem.TabIndex = 16;
-            this.btnThem.Text = "&Thêm sách";
+            this.btnThem.Text = "&Thêm";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -573,16 +604,6 @@
             // err
             // 
             this.err.ContainerControl = this;
-            // 
-            // btnInPhieu
-            // 
-            this.btnInPhieu.Location = new System.Drawing.Point(427, 297);
-            this.btnInPhieu.Name = "btnInPhieu";
-            this.btnInPhieu.Size = new System.Drawing.Size(115, 36);
-            this.btnInPhieu.TabIndex = 20;
-            this.btnInPhieu.Text = "&In phiếu";
-            this.btnInPhieu.UseVisualStyleBackColor = true;
-            this.btnInPhieu.Click += new System.EventHandler(this.btnInPhieu_Click);
             // 
             // ChinhSuaPhieuMuon
             // 
