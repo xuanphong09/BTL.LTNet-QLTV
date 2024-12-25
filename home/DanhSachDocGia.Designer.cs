@@ -236,21 +236,27 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Image = global::home.Properties.Resources.icons8_clear_32;
             this.btnCancel.Location = new System.Drawing.Point(204, 495);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(97, 43);
             this.btnCancel.TabIndex = 19;
             this.btnCancel.Text = "&Hủy";
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(46, 502);
+            this.btnSave.Image = global::home.Properties.Resources.icons8_save_32;
+            this.btnSave.Location = new System.Drawing.Point(46, 495);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(87, 43);
+            this.btnSave.Size = new System.Drawing.Size(103, 43);
             this.btnSave.TabIndex = 18;
             this.btnSave.Text = "&Lưu";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -532,51 +538,66 @@
             // 
             // tbnExit
             // 
+            this.tbnExit.BackColor = System.Drawing.Color.Red;
+            this.tbnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tbnExit.ForeColor = System.Drawing.Color.White;
             this.tbnExit.Location = new System.Drawing.Point(1300, 29);
             this.tbnExit.Name = "tbnExit";
             this.tbnExit.Size = new System.Drawing.Size(120, 43);
             this.tbnExit.TabIndex = 4;
             this.tbnExit.Text = "Th&oát";
-            this.tbnExit.UseVisualStyleBackColor = true;
+            this.tbnExit.UseVisualStyleBackColor = false;
             this.tbnExit.Click += new System.EventHandler(this.tbnExit_Click);
             // 
             // btnDelete
             // 
+            this.btnDelete.Image = global::home.Properties.Resources.icons8_delete_32;
             this.btnDelete.Location = new System.Drawing.Point(986, 29);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(120, 43);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "&Xóa";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
+            this.btnEdit.Image = global::home.Properties.Resources.icons8_edit_property_32;
             this.btnEdit.Location = new System.Drawing.Point(672, 29);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(120, 43);
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "&Sửa";
+            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnCreate
             // 
+            this.btnCreate.Image = global::home.Properties.Resources.icons8_plus_32;
             this.btnCreate.Location = new System.Drawing.Point(358, 29);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(120, 43);
             this.btnCreate.TabIndex = 1;
             this.btnCreate.Text = "T&hêm";
+            this.btnCreate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCreate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnSearch
             // 
+            this.btnSearch.Image = global::home.Properties.Resources.icons8_search_32;
             this.btnSearch.Location = new System.Drawing.Point(44, 29);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(120, 43);
+            this.btnSearch.Size = new System.Drawing.Size(145, 43);
             this.btnSearch.TabIndex = 0;
             this.btnSearch.Text = "&Tìm kiếm";
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -599,7 +620,7 @@
             this.MaximizeBox = false;
             this.Name = "DanhSachDocGia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DanhSachDocGia";
+            this.Text = "Quản lý độc giả";
             this.Load += new System.EventHandler(this.DanhSachDocGia_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

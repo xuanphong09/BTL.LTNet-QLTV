@@ -56,24 +56,6 @@ namespace home
             MessageBox.Show("Đăng nhập tài khoản thành công!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
-        private void MenuItemAccountView_Click(object sender, EventArgs e)
-        {
-            //tao đối tượng kết nối với cơ sỏ dữ liệu
-            //DatabaseConnection dbCon = new DatabaseConnection();
-            //dbCon.MoKetNoi();
-            //SqlCommand sqlCommand = new SqlCommand();
-            //sqlCommand.CommandType = CommandType.Text;
-            //sqlCommand.CommandText = "select * from NhanVien inner join role on nhanvien.role_id=role.role_id";
-            //sqlCommand.Connection = dbCon.slqCon;
-
-            //SqlDataReader reader = sqlCommand.ExecuteReader();
-
-            DanhSachTaiKhoan danhSachTaiKhoan = new DanhSachTaiKhoan();
-            //danhSachTaiKhoan.reader = reader;
-            danhSachTaiKhoan.ShowDialog();
-
-
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -102,35 +84,9 @@ namespace home
             dbCon.DongKetNoi();
         }
 
-        private void MenuItemAccountEdit_Click(object sender, EventArgs e)
-        {
-            ChiTietTaiKhoan chiTietTaiKhoan = new ChiTietTaiKhoan();
-            chiTietTaiKhoan.setMaNV(maNV);
-            chiTietTaiKhoan.ShowDialog();
-        }
-
-        private void MenuItemAccountChangePass_Click(object sender, EventArgs e)
-        {
-            DoiMatKhauUser doiMatKhauUser = new DoiMatKhauUser(this);
-            doiMatKhauUser.setMaNV(maNV);
-            doiMatKhauUser.ShowDialog();
-        }
-
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
 
-        }
-
-        private void tsmiDanhSachTG_Click(object sender, EventArgs e)
-        {
-            DanhSachTacGia danhSachTacGia = new DanhSachTacGia();
-            danhSachTacGia.ShowDialog();
-        }
-
-        private void tsmiDanhSachDG_Click(object sender, EventArgs e)
-        {
-            DanhSachDocGia danhSachDocGia = new DanhSachDocGia();
-            danhSachDocGia.ShowDialog();
         }
 
         private void toolStripMenuItem26_Click(object sender, EventArgs e)
@@ -212,6 +168,8 @@ namespace home
             QLPP qlpp = new QLPP();
             qlpp.setMaNV(this.maNV);
             qlpp.ShowDialog();
+
         }
+
     }
 }

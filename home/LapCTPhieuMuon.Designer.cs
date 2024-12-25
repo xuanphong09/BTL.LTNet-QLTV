@@ -39,8 +39,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtSLTK = new System.Windows.Forms.TextBox();
             this.cbMaSach = new System.Windows.Forms.ComboBox();
-            this.btnHuy = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtTenSach = new System.Windows.Forms.TextBox();
@@ -54,13 +52,15 @@
             this.SLMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.err = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnInPhieu = new System.Windows.Forms.Button();
             this.btnXong = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnQuayLai = new System.Windows.Forms.Button();
-            this.err = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnInPhieu = new System.Windows.Forms.Button();
+            this.btnHuy = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.gbNTTS.SuspendLayout();
@@ -172,26 +172,7 @@
             this.cbMaSach.Size = new System.Drawing.Size(176, 31);
             this.cbMaSach.TabIndex = 1;
             this.cbMaSach.SelectedIndexChanged += new System.EventHandler(this.cbMaSach_SelectedIndexChanged);
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.Location = new System.Drawing.Point(226, 430);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(108, 33);
-            this.btnHuy.TabIndex = 13;
-            this.btnHuy.Text = "&Hủy";
-            this.btnHuy.UseVisualStyleBackColor = true;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Location = new System.Drawing.Point(31, 430);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(108, 33);
-            this.btnLuu.TabIndex = 12;
-            this.btnLuu.Text = "&Lưu";
-            this.btnLuu.UseVisualStyleBackColor = true;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            this.cbMaSach.TextChanged += new System.EventHandler(this.cbMaSach_TextChanged);
             // 
             // label13
             // 
@@ -325,69 +306,113 @@
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             // 
-            // btnXong
-            // 
-            this.btnXong.Location = new System.Drawing.Point(956, 29);
-            this.btnXong.Name = "btnXong";
-            this.btnXong.Size = new System.Drawing.Size(108, 33);
-            this.btnXong.TabIndex = 4;
-            this.btnXong.Text = "X&ong";
-            this.btnXong.UseVisualStyleBackColor = true;
-            this.btnXong.Click += new System.EventHandler(this.btnXong_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Location = new System.Drawing.Point(602, 29);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(108, 33);
-            this.btnXoa.TabIndex = 3;
-            this.btnXoa.Text = "&Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.Location = new System.Drawing.Point(425, 29);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(108, 33);
-            this.btnSua.TabIndex = 2;
-            this.btnSua.Text = "&Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnThem
-            // 
-            this.btnThem.Location = new System.Drawing.Point(248, 29);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(108, 33);
-            this.btnThem.TabIndex = 1;
-            this.btnThem.Text = "&Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnQuayLai
-            // 
-            this.btnQuayLai.Location = new System.Drawing.Point(71, 29);
-            this.btnQuayLai.Name = "btnQuayLai";
-            this.btnQuayLai.Size = new System.Drawing.Size(108, 33);
-            this.btnQuayLai.TabIndex = 0;
-            this.btnQuayLai.Text = "&Quay lại";
-            this.btnQuayLai.UseVisualStyleBackColor = true;
-            this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
-            // 
             // err
             // 
             this.err.ContainerControl = this;
             // 
             // btnInPhieu
             // 
+            this.btnInPhieu.Image = global::home.Properties.Resources.printer;
             this.btnInPhieu.Location = new System.Drawing.Point(779, 29);
             this.btnInPhieu.Name = "btnInPhieu";
-            this.btnInPhieu.Size = new System.Drawing.Size(108, 33);
+            this.btnInPhieu.Size = new System.Drawing.Size(122, 42);
             this.btnInPhieu.TabIndex = 5;
             this.btnInPhieu.Text = "&In phiếu";
+            this.btnInPhieu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnInPhieu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInPhieu.UseVisualStyleBackColor = true;
             this.btnInPhieu.Click += new System.EventHandler(this.btnInPhieu_Click);
+            // 
+            // btnXong
+            // 
+            this.btnXong.Image = global::home.Properties.Resources.Green_check_mark_icon;
+            this.btnXong.Location = new System.Drawing.Point(956, 29);
+            this.btnXong.Name = "btnXong";
+            this.btnXong.Size = new System.Drawing.Size(108, 42);
+            this.btnXong.TabIndex = 4;
+            this.btnXong.Text = "X&ong";
+            this.btnXong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXong.UseVisualStyleBackColor = true;
+            this.btnXong.Click += new System.EventHandler(this.btnXong_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Image = global::home.Properties.Resources.icons8_delete_32;
+            this.btnXoa.Location = new System.Drawing.Point(602, 29);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(108, 42);
+            this.btnXoa.TabIndex = 3;
+            this.btnXoa.Text = "&Xóa";
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Image = global::home.Properties.Resources.icons8_edit_property_32;
+            this.btnSua.Location = new System.Drawing.Point(425, 29);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(108, 42);
+            this.btnSua.TabIndex = 2;
+            this.btnSua.Text = "&Sửa";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.Image = global::home.Properties.Resources.icons8_plus_32;
+            this.btnThem.Location = new System.Drawing.Point(248, 29);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(108, 42);
+            this.btnThem.TabIndex = 1;
+            this.btnThem.Text = "&Thêm";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnQuayLai
+            // 
+            this.btnQuayLai.Image = global::home.Properties.Resources.return_left;
+            this.btnQuayLai.Location = new System.Drawing.Point(65, 29);
+            this.btnQuayLai.Name = "btnQuayLai";
+            this.btnQuayLai.Size = new System.Drawing.Size(127, 42);
+            this.btnQuayLai.TabIndex = 0;
+            this.btnQuayLai.Text = "&Quay lại";
+            this.btnQuayLai.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnQuayLai.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnQuayLai.UseVisualStyleBackColor = true;
+            this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.Image = global::home.Properties.Resources.icons8_clear_32;
+            this.btnHuy.Location = new System.Drawing.Point(226, 430);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(108, 42);
+            this.btnHuy.TabIndex = 13;
+            this.btnHuy.Text = "&Hủy";
+            this.btnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Image = global::home.Properties.Resources.icons8_save_32;
+            this.btnLuu.Location = new System.Drawing.Point(31, 430);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(126, 42);
+            this.btnLuu.TabIndex = 12;
+            this.btnLuu.Text = "&Lưu";
+            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // LapCTPhieuMuon
             // 

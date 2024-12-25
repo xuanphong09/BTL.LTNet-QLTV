@@ -74,42 +74,59 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(949, 20);
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(947, 20);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 38);
             this.button1.TabIndex = 3;
             this.button1.Text = "T&hoát";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnLPT
             // 
-            this.btnLPT.Location = new System.Drawing.Point(678, 20);
+            this.btnLPT.Font = new System.Drawing.Font("Arial", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLPT.Image = global::home.Properties.Resources.icons8_edit_property_32;
+            this.btnLPT.Location = new System.Drawing.Point(702, 20);
             this.btnLPT.Name = "btnLPT";
-            this.btnLPT.Size = new System.Drawing.Size(177, 38);
+            this.btnLPT.Size = new System.Drawing.Size(190, 38);
             this.btnLPT.TabIndex = 2;
             this.btnLPT.Text = "Lập phiếu &trả";
+            this.btnLPT.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLPT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLPT.UseVisualStyleBackColor = true;
             this.btnLPT.Click += new System.EventHandler(this.btnLPT_Click);
             // 
             // btnLPM
             // 
-            this.btnLPM.Location = new System.Drawing.Point(407, 20);
+            this.btnLPM.Font = new System.Drawing.Font("Arial", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLPM.Image = global::home.Properties.Resources.icons8_plus_32;
+            this.btnLPM.Location = new System.Drawing.Point(427, 20);
             this.btnLPM.Name = "btnLPM";
-            this.btnLPM.Size = new System.Drawing.Size(177, 38);
+            this.btnLPM.Size = new System.Drawing.Size(220, 38);
             this.btnLPM.TabIndex = 1;
             this.btnLPM.Text = "Lập phiếu &mượn";
+            this.btnLPM.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLPM.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLPM.UseVisualStyleBackColor = true;
             this.btnLPM.Click += new System.EventHandler(this.btnLPM_Click);
             // 
             // btnDSPM
             // 
             this.btnDSPM.BackColor = System.Drawing.Color.White;
+            this.btnDSPM.Font = new System.Drawing.Font("Arial", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnDSPM.Image = global::home.Properties.Resources.Lovepik_com_450094989_Checklist_flat_outline_icon_do_list;
             this.btnDSPM.Location = new System.Drawing.Point(77, 20);
             this.btnDSPM.Name = "btnDSPM";
-            this.btnDSPM.Size = new System.Drawing.Size(236, 38);
+            this.btnDSPM.Size = new System.Drawing.Size(295, 38);
             this.btnDSPM.TabIndex = 0;
             this.btnDSPM.Text = "&Danh sách phiếu mượn";
+            this.btnDSPM.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDSPM.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDSPM.UseVisualStyleBackColor = false;
             this.btnDSPM.Click += new System.EventHandler(this.btnDSPM_Click);
             // 

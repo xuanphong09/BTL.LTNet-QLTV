@@ -93,6 +93,16 @@ namespace home.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eye {
+            get {
+                object obj = ResourceManager.GetObject("eye", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eye_fill {
             get {
                 object obj = ResourceManager.GetObject("eye-fill", resourceCulture);
@@ -116,6 +126,16 @@ namespace home.Properties {
         internal static System.Drawing.Bitmap eye_slash_fill {
             get {
                 object obj = ResourceManager.GetObject("eye-slash-fill", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Green_check_mark_icon {
+            get {
+                object obj = ResourceManager.GetObject("Green-check-mark-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +213,49 @@ namespace home.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Lovepik_com_450094989_Checklist_flat_outline_icon_do_list {
+            get {
+                object obj = ResourceManager.GetObject("Lovepik_com-450094989-Checklist flat outline icon do list", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap printer {
+            get {
+                object obj = ResourceManager.GetObject("printer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap red_circle_logout_arrow_20586 {
             get {
                 object obj = ResourceManager.GetObject("red-circle-logout-arrow-20586", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap return_left {
+            get {
+                object obj = ResourceManager.GetObject("return-left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap return_right {
+            get {
+                object obj = ResourceManager.GetObject("return-right", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

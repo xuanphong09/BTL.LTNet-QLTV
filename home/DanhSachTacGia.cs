@@ -308,5 +308,16 @@ namespace home
 
             dbCon.DongKetNoi();
         }
+
+        private void btnClean_Click(object sender, EventArgs e)
+        {
+            txtCountry.Text = "";
+            txtName.Text = "";
+            HienThiDanhSach();
+            btnDelete.Enabled = false;
+            btnEdit.Enabled = false;
+            err.SetError(txtName, null);
+            err.SetError(txtCountry, null);
+        }
     }
 }

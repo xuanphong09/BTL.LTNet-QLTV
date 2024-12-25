@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -40,12 +41,38 @@ namespace home
         //nút quay lại
         private void btnQuayLai_Click(object sender, EventArgs e)
         {
-            QuanLyPhieuMuon parentForm = this.ParentForm as QuanLyPhieuMuon;
-            parentForm.panelContent.Controls.Clear();
-            LapPhieuMuon lapPhieuMuon = new LapPhieuMuon(this.maNV);
-            lapPhieuMuon.setSoPM(this.soPM);
-            lapPhieuMuon.Dock = DockStyle.Fill;
-            parentForm.panelContent.Controls.Add(lapPhieuMuon);
+            DialogResult result = MessageBox.Show("Quay lại sẽ xóa những sách đã thêm.", "Hộp thoại", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(result == DialogResult.Yes)
+            {
+                DatabaseConnection dbCon = new DatabaseConnection();
+                dbCon.MoKetNoi();
+                SqlCommand sqlCmd = new SqlCommand();
+                CapNhatSach(this.soPM);
+                sqlCmd.CommandText = "delete from CTPhieuMuon where SoPM='" + this.soPM + "'";
+                sqlCmd.Connection = dbCon.slqCon;
+                sqlCmd.ExecuteNonQuery();
+
+                QuanLyPhieuMuon parentForm = this.ParentForm as QuanLyPhieuMuon;
+                parentForm.panelContent.Controls.Clear();
+                LapPhieuMuon lapPhieuMuon = new LapPhieuMuon(this.maNV);
+                lapPhieuMuon.setSoPM(this.soPM);
+                lapPhieuMuon.Dock = DockStyle.Fill;
+                parentForm.panelContent.Controls.Add(lapPhieuMuon);
+            }
+        }
+
+        //hàm cập nhật số lượng sách khi hủy
+        private void CapNhatSach(string soPM)
+        {
+            DatabaseConnection dbCon = new DatabaseConnection();
+            dbCon.MoKetNoi();
+            SqlCommand sqlCmd = new SqlCommand();
+            sqlCmd.CommandType = CommandType.Text;
+            sqlCmd.CommandText = "UPDATE Sach SET DaMuon = DaMuon - (SELECT SLMuon FROM CTPhieuMuon WHERE CTPhieuMuon.MaSach = Sach.MaSach AND CTPhieuMuon.SoPM = @SoPM) WHERE EXISTS (SELECT 1 FROM CTPhieuMuon WHERE CTPhieuMuon.MaSach = Sach.MaSach AND CTPhieuMuon.SoPM = @SoPM)";
+            sqlCmd.Parameters.AddWithValue("@SoPM", soPM);
+            sqlCmd.Connection = dbCon.slqCon;
+            sqlCmd.ExecuteNonQuery();
+
         }
 
         //nút xong
@@ -472,6 +499,33 @@ namespace home
             InPhieuMuonTra inPhieuMuonTra = new InPhieuMuonTra();
             inPhieuMuonTra.SetSoPM(this.soPM);
             inPhieuMuonTra.ShowDialog();
+        }
+
+        private void cbMaSach_TextChanged(object sender, EventArgs e)
+        {
+            DatabaseConnection dbcon = new DatabaseConnection();
+            dbcon.MoKetNoi();
+
+            SqlCommand sqlCmd = new SqlCommand();
+            sqlCmd.CommandType = CommandType.Text;
+            sqlCmd.CommandText = "select TenSach, SoLuong, DaMuon, TenTG, TenNXB from Sach inner join TacGia on Sach.MaTG = TacGia.MaTG inner join NXB on Sach.MaNXB = NXB.MaNXB where MaSach='" + cbMaSach.Text + "'";
+            sqlCmd.Connection = dbcon.slqCon;
+
+            SqlDataReader reader = sqlCmd.ExecuteReader();
+            if (reader.Read())
+            {
+                txtTenSach.Text = reader.GetString(0);
+                txtSLTK.Text = (reader.GetInt32(1) - reader.GetInt32(2)).ToString();
+                txtTenTG.Text = reader.GetString(3);
+                txtTenNXB.Text = reader.GetString(4);
+            }
+            else
+            {
+                txtTenSach.Text = "";
+                txtSLTK.Text = "";
+                txtTenTG.Text = "";
+                txtTenNXB.Text = "";
+            }
         }
     }   
 }

@@ -210,13 +210,13 @@
             // btnThemMoi
             // 
             this.btnThemMoi.Image = global::home.Properties.Resources.icons8_plus_32;
-            this.btnThemMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemMoi.Location = new System.Drawing.Point(292, 17);
+            this.btnThemMoi.Location = new System.Drawing.Point(280, 17);
             this.btnThemMoi.Name = "btnThemMoi";
-            this.btnThemMoi.Size = new System.Drawing.Size(141, 47);
+            this.btnThemMoi.Size = new System.Drawing.Size(152, 47);
             this.btnThemMoi.TabIndex = 1;
             this.btnThemMoi.Text = "  &Thêm mới";
             this.btnThemMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThemMoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThemMoi.UseVisualStyleBackColor = true;
             this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
             // 
@@ -224,13 +224,13 @@
             // 
             this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnHuy.Image = global::home.Properties.Resources.icons8_clear_32;
-            this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHuy.Location = new System.Drawing.Point(57, 17);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(91, 47);
             this.btnHuy.TabIndex = 0;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHuy.UseVisualStyleBackColor = true;
             // 
             // err
@@ -251,7 +251,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ThemMoiPhieuPhat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ThemMoiPhieuPhat";
+            this.Text = "Thêm mới phiếu phạt";
             this.Load += new System.EventHandler(this.ThemMoiPhieuPhat_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

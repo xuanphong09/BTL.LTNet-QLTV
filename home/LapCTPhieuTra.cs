@@ -338,6 +338,7 @@ namespace home
             QuanLyPhieuMuon quanLyPhieuMuon = this.ParentForm as QuanLyPhieuMuon;
             quanLyPhieuMuon.panelContent.Controls.Clear();
             LapPhieuTra lapPTra = new LapPhieuTra();
+            lapPTra.SetMaNV(MaNV);
 
             lapPTra.Dock = DockStyle.Fill;
 
@@ -348,7 +349,7 @@ namespace home
         private void btnLapPhieuPhat_Click(object sender, EventArgs e)
         {
             ThemMoiPhieuPhat themMoiPhieuPhat = new ThemMoiPhieuPhat();
-            themMoiPhieuPhat.SetMaNV(MaNV);
+            themMoiPhieuPhat.SetMaNV(this.MaNV);
             themMoiPhieuPhat.SetMaDG(txtMaDG.Text);
             themMoiPhieuPhat.ShowDialog();
         }
