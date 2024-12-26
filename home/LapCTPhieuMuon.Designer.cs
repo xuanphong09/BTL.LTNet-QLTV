@@ -39,6 +39,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtSLTK = new System.Windows.Forms.TextBox();
             this.cbMaSach = new System.Windows.Forms.ComboBox();
+            this.btnHuy = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtTenSach = new System.Windows.Forms.TextBox();
@@ -52,15 +54,13 @@
             this.SLMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnInPhieu = new System.Windows.Forms.Button();
             this.btnXong = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnQuayLai = new System.Windows.Forms.Button();
-            this.btnHuy = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
+            this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.gbNTTS.SuspendLayout();
@@ -128,6 +128,7 @@
             // 
             this.txtTenNXB.Location = new System.Drawing.Point(188, 208);
             this.txtTenNXB.Name = "txtTenNXB";
+            this.txtTenNXB.ReadOnly = true;
             this.txtTenNXB.Size = new System.Drawing.Size(176, 30);
             this.txtTenNXB.TabIndex = 7;
             // 
@@ -144,6 +145,7 @@
             // 
             this.txtTenTG.Location = new System.Drawing.Point(188, 165);
             this.txtTenTG.Name = "txtTenTG";
+            this.txtTenTG.ReadOnly = true;
             this.txtTenTG.Size = new System.Drawing.Size(176, 30);
             this.txtTenTG.TabIndex = 5;
             // 
@@ -174,6 +176,32 @@
             this.cbMaSach.SelectedIndexChanged += new System.EventHandler(this.cbMaSach_SelectedIndexChanged);
             this.cbMaSach.TextChanged += new System.EventHandler(this.cbMaSach_TextChanged);
             // 
+            // btnHuy
+            // 
+            this.btnHuy.Image = global::home.Properties.Resources.icons8_clear_32;
+            this.btnHuy.Location = new System.Drawing.Point(226, 430);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(108, 42);
+            this.btnHuy.TabIndex = 13;
+            this.btnHuy.Text = "&Hủy";
+            this.btnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Image = global::home.Properties.Resources.icons8_save_32;
+            this.btnLuu.Location = new System.Drawing.Point(31, 430);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(126, 42);
+            this.btnLuu.TabIndex = 12;
+            this.btnLuu.Text = "&Lưu";
+            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -196,6 +224,7 @@
             // 
             this.txtTenSach.Location = new System.Drawing.Point(188, 122);
             this.txtTenSach.Name = "txtTenSach";
+            this.txtTenSach.ReadOnly = true;
             this.txtTenSach.Size = new System.Drawing.Size(176, 30);
             this.txtTenSach.TabIndex = 3;
             // 
@@ -306,10 +335,6 @@
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             // 
-            // err
-            // 
-            this.err.ContainerControl = this;
-            // 
             // btnInPhieu
             // 
             this.btnInPhieu.Image = global::home.Properties.Resources.printer;
@@ -388,31 +413,9 @@
             this.btnQuayLai.UseVisualStyleBackColor = true;
             this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
             // 
-            // btnHuy
+            // err
             // 
-            this.btnHuy.Image = global::home.Properties.Resources.icons8_clear_32;
-            this.btnHuy.Location = new System.Drawing.Point(226, 430);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(108, 42);
-            this.btnHuy.TabIndex = 13;
-            this.btnHuy.Text = "&Hủy";
-            this.btnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHuy.UseVisualStyleBackColor = true;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Image = global::home.Properties.Resources.icons8_save_32;
-            this.btnLuu.Location = new System.Drawing.Point(31, 430);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(126, 42);
-            this.btnLuu.TabIndex = 12;
-            this.btnLuu.Text = "&Lưu";
-            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLuu.UseVisualStyleBackColor = true;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            this.err.ContainerControl = this;
             // 
             // LapCTPhieuMuon
             // 

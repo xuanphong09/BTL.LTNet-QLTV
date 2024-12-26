@@ -299,6 +299,11 @@ namespace home
                 isvalid = false;
                 err.SetError(txtSLMuon, "Vui lòng nhập số lượng mượn.");
             }
+            else if (!int.TryParse(txtSLMuon.Text.Trim(), out int slMuon))
+            {
+                isvalid = false;
+                err.SetError(txtSLMuon, "Vui lòng nhập số hợp lệ.");
+            }
             else if (int.Parse(txtSLMuon.Text.Trim()) <= 0)
             {
                 isvalid = false;

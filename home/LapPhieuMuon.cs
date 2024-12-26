@@ -258,10 +258,16 @@ namespace home
 
             //kiểm tra ngày hẹn trả
             DateTime hantra = DateTime.Parse(dtpHanTra.Value.ToString());
+            TimeSpan soNgay = hantra - DateTime.Now.Date;
             if (DateTime.Compare(hantra, DateTime.Now.Date)<0)
             {
                 isvalid = false;
                 err.SetError(dtpHanTra, "Ngày hẹn trả không hợp lệ.");
+            }
+            else if (CheckDate(cbMaDG.Text) < soNgay.Days)
+            {
+                isvalid = false;
+                err.SetError(dtpHanTra, "Thẻ độc giả hạn còn "+ CheckDate(cbMaDG.Text) + " ngày.");
             }
             else
             {
@@ -336,8 +342,6 @@ namespace home
         //hàm kiểm tra ngày hết hạn thẻ đọc giả
         private int CheckDate(string maDG)
         {
-            bool isvalid = true;
-
             DatabaseConnection dbCon = new DatabaseConnection();
             dbCon.MoKetNoi();
             SqlCommand sqlCmd = new SqlCommand();
@@ -354,6 +358,26 @@ namespace home
             reader.Close();
             dbCon.DongKetNoi();
             return -1;
+        }
+
+        //hàm lấy hạn thẻ của độc giả
+        private DateTime GetHanThe(string maDG)
+        {
+            DatabaseConnection dbCon = new DatabaseConnection();
+            dbCon.MoKetNoi();
+            SqlCommand sqlCmd = new SqlCommand();
+            sqlCmd.CommandType = CommandType.Text;
+            sqlCmd.CommandText = "select NgayHHThe from DocGia where MaDG='" + maDG + "'";
+            sqlCmd.Connection = dbCon.slqCon;
+            SqlDataReader reader = sqlCmd.ExecuteReader();
+            if (reader.Read())
+            {
+                DateTime hanThe = reader.GetDateTime(0);
+                return hanThe;
+            }
+            reader.Close();
+            dbCon.DongKetNoi();
+            return DateTime.Now;
         }
     }
 }

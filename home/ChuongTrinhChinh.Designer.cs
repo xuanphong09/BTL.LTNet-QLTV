@@ -41,9 +41,11 @@
             this.tSMIChinhSuaThongTin = new System.Windows.Forms.ToolStripMenuItem();
             this.tSMIDoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
             this.tSMIDangXuat = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsMIPhieuPhat = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsMIQuanLyDocGia = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.tsMIDanhSachDocGia = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsMIPhieuPhat = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +61,7 @@
             this.tsMIMuonTraSach,
             this.tsMIThoat,
             this.tSMIName,
-            this.tsMIPhieuPhat});
+            this.tsMIQuanLyDocGia});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(11, 3, 0, 3);
@@ -162,12 +164,14 @@
             this.tSMIDangXuat.Text = "Đăng xuất";
             this.tSMIDangXuat.Click += new System.EventHandler(this.tSMIDangXuat_Click);
             // 
-            // tsMIPhieuPhat
+            // tsMIQuanLyDocGia
             // 
-            this.tsMIPhieuPhat.Name = "tsMIPhieuPhat";
-            this.tsMIPhieuPhat.Size = new System.Drawing.Size(132, 30);
-            this.tsMIPhieuPhat.Text = "Phiếu phạt";
-            this.tsMIPhieuPhat.Click += new System.EventHandler(this.tsMIPhieuPhat_Click);
+            this.tsMIQuanLyDocGia.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsMIDanhSachDocGia,
+            this.tsMIPhieuPhat});
+            this.tsMIQuanLyDocGia.Name = "tsMIQuanLyDocGia";
+            this.tsMIQuanLyDocGia.Size = new System.Drawing.Size(183, 30);
+            this.tsMIQuanLyDocGia.Text = "Quản lý độc giả";
             // 
             // panel1
             // 
@@ -192,6 +196,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Phần mềm quản lý thư viện";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tsMIDanhSachDocGia
+            // 
+            this.tsMIDanhSachDocGia.Name = "tsMIDanhSachDocGia";
+            this.tsMIDanhSachDocGia.Size = new System.Drawing.Size(287, 30);
+            this.tsMIDanhSachDocGia.Text = "Danh sách độc giả";
+            this.tsMIDanhSachDocGia.Click += new System.EventHandler(this.tsMIDanhSachDocGia_Click);
+            // 
+            // tsMIPhieuPhat
+            // 
+            this.tsMIPhieuPhat.Name = "tsMIPhieuPhat";
+            this.tsMIPhieuPhat.Size = new System.Drawing.Size(287, 30);
+            this.tsMIPhieuPhat.Text = "Phiếu phạt";
+            this.tsMIPhieuPhat.Click += new System.EventHandler(this.tsMIPhieuPhat_Click);
             // 
             // Form1
             // 
@@ -236,6 +254,8 @@
         private System.Windows.Forms.ToolStripMenuItem tSMITacGia;
         private System.Windows.Forms.ToolStripMenuItem tSMINhaXuatBan;
         private System.Windows.Forms.ToolStripMenuItem tsMITheLoai;
+        private System.Windows.Forms.ToolStripMenuItem tsMIQuanLyDocGia;
+        private System.Windows.Forms.ToolStripMenuItem tsMIDanhSachDocGia;
         private System.Windows.Forms.ToolStripMenuItem tsMIPhieuPhat;
     }
 }
