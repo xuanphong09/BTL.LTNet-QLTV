@@ -11,7 +11,7 @@ namespace home
     public class DatabaseConnection
     {
         //kết nối với CSDL
-        public string strCon = @"Data Source=DESKTOP-6DRK6CD;Initial Catalog=QLTV;Integrated Security=True;Encrypt=False";
+        public string strCon = @"Data Source=Phong\SQLPXP;Initial Catalog=QLTV;Integrated Security=True;";
         public SqlConnection slqCon = null;
 
         //ham ket noi
