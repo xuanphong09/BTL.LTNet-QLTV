@@ -247,6 +247,11 @@ namespace home
                 isValid = false;
                 err.SetError(txtSLTra, "Vui lòng điền số lượng sách muốn trả.");
             }
+            else if (!int.TryParse(txtSLTra.Text.Trim(), out int slMuon))
+            {
+                isValid = false;
+                err.SetError(txtSLTra, "Vui lòng nhập số hợp lệ.");
+            }
             else if (int.Parse(txtSLTra.Text.Trim()) > int.Parse(txtSLMuon.Text.Trim()))
             {
                 isValid = false;

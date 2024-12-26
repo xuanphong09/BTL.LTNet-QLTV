@@ -171,5 +171,10 @@ namespace home
 
         }
 
+        private void tsMIDanhSachDocGia_Click(object sender, EventArgs e)
+        {
+            DanhSachDocGia danhSachDocGia = new DanhSachDocGia();
+            danhSachDocGia.ShowDialog();
+        }
     }
 }
