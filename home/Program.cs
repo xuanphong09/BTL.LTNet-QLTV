@@ -18,7 +18,7 @@ namespace home
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new DanhSachTaiKhoan());
             //Application.Run(new InPhieuMuonTra());
-            Application.Run(new Login());
+            Application.Run(new frmSach());
         }
     }
 }
