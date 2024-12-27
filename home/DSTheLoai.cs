@@ -92,6 +92,9 @@ namespace home
         {
             bool isValid = true;
 
+            // Lấy tên thể loại hiện tại từ dòng đang được chọn
+            string currentTenTL = ds.Tables["DSTheLoai"].Rows[vt]["TenTL"].ToString();
+
             // Kiểm tra tên thể loại trống
             if (string.IsNullOrWhiteSpace(txtTenTL.Text.Trim()))
             {
@@ -99,13 +102,7 @@ namespace home
                 error.SetError(txtTenTL, "Tên thể loại không được để trống!");
                 txtTenTL.Focus();
             }
-            else if (IsCategory(txtTenTL.Text.Trim()) && btnThem.Enabled && !btnSua.Enabled) // Kiểm tra tên thể loại đã tồn tại
-            {
-                isValid = false;
-                error.SetError(txtTenTL, "Tên thể loại đã tồn tại!");
-                txtTenTL.Focus();
-            }
-            else if (IsCategory(txtTenTL.Text.Trim()) && !btnThem.Enabled && btnSua.Enabled) // Kiểm tra tên thể loại đã tồn tại
+            else if (txtTenTL.Text.Trim() != currentTenTL && IsCategory(txtTenTL.Text.Trim())) // Kiểm tra tên thể loại đã tồn tại (nếu có thay đổi)
             {
                 isValid = false;
                 error.SetError(txtTenTL, "Tên thể loại đã tồn tại!");
