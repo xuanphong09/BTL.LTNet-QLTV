@@ -218,6 +218,11 @@ namespace home
             txtCreateAt.Enabled = false;
             livListAcc.SelectedIndexChanged -= livListAcc_SelectedIndexChanged; // không cho kick chọn danh sách nữa
             checkCN = 2;
+            if (txtMaNV.Text.Trim() == MaNV)
+            {
+                cbRole.Enabled = false;
+                cbState.Enabled = false;
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -230,6 +235,8 @@ namespace home
             btnEdit.Enabled = false;
             btnChangePass.Enabled = false;
             livListAcc.SelectedIndexChanged += livListAcc_SelectedIndexChanged;
+            cbState.Enabled=true;
+            cbRole.Enabled=true;
             RemoveInforOnForm();
         }
         private void btnCreate_Click(object sender, EventArgs e)

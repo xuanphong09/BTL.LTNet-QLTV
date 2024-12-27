@@ -86,7 +86,7 @@
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Arial", 19.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -140,7 +140,7 @@
             this.btnSua.Location = new System.Drawing.Point(350, 31);
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(100, 49);
+            this.btnSua.Size = new System.Drawing.Size(110, 49);
             this.btnSua.TabIndex = 8;
             this.btnSua.Text = "&Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -196,7 +196,7 @@
             this.btnLuu.Location = new System.Drawing.Point(493, 31);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(100, 49);
+            this.btnLuu.Size = new System.Drawing.Size(106, 49);
             this.btnLuu.TabIndex = 4;
             this.btnLuu.Text = "&Lưu ";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -404,6 +404,7 @@
             this.AcceptButton = this.btnTimKiem;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SeaShell;
             this.CancelButton = this.btnThoat;
             this.ClientSize = new System.Drawing.Size(948, 700);
             this.Controls.Add(this.panel3);

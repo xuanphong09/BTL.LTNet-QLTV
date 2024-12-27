@@ -191,6 +191,7 @@ namespace home
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (vt == -1) return;
             DataRow row = ds.Tables["ListAuthor"].Rows[vt];
             bool isbook = IsEmptyBook(row["MaTG"].ToString());
 
@@ -258,6 +259,8 @@ namespace home
         {
             err.SetError(txtName, null);
             err.SetError(txtCountry, null);
+            btnDelete.Enabled = false;
+            btnEdit.Enabled = false;
             if (txtName.Text.Trim() != "" && txtCountry.Text.Trim()=="")
             {
                 TimKiemTheoTenTG();
