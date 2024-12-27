@@ -61,15 +61,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvListReader = new System.Windows.Forms.DataGridView();
-            this.MaDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayBDThe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayHHThe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -80,6 +71,15 @@
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
+            this.MaDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayBDThe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayHHThe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -100,7 +100,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1457, 56);
+            this.panel1.Size = new System.Drawing.Size(1504, 56);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -109,7 +109,7 @@
             this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1457, 56);
+            this.label1.Size = new System.Drawing.Size(1504, 56);
             this.label1.TabIndex = 0;
             this.label1.Text = "Danh sách độc giả";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -120,7 +120,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 56);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1457, 88);
+            this.panel2.Size = new System.Drawing.Size(1504, 88);
             this.panel2.TabIndex = 1;
             // 
             // groupBox1
@@ -130,7 +130,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1457, 88);
+            this.groupBox1.Size = new System.Drawing.Size(1504, 88);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm:";
@@ -158,16 +158,16 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 144);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1457, 558);
+            this.panel3.Size = new System.Drawing.Size(1504, 558);
             this.panel3.TabIndex = 2;
             // 
             // panel6
             // 
             this.panel6.Controls.Add(this.gbTTCT);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(1120, 0);
+            this.panel6.Location = new System.Drawing.Point(1160, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(337, 558);
+            this.panel6.Size = new System.Drawing.Size(344, 558);
             this.panel6.TabIndex = 2;
             // 
             // gbTTCT
@@ -195,7 +195,7 @@
             this.gbTTCT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbTTCT.Location = new System.Drawing.Point(0, 0);
             this.gbTTCT.Name = "gbTTCT";
-            this.gbTTCT.Size = new System.Drawing.Size(337, 558);
+            this.gbTTCT.Size = new System.Drawing.Size(344, 558);
             this.gbTTCT.TabIndex = 0;
             this.gbTTCT.TabStop = false;
             this.gbTTCT.Text = "Thông tin chi tiết:";
@@ -219,6 +219,7 @@
             // 
             // dtpStart
             // 
+            this.dtpStart.Enabled = false;
             this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpStart.Location = new System.Drawing.Point(152, 313);
             this.dtpStart.Name = "dtpStart";
@@ -385,7 +386,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1120, 558);
+            this.panel5.Size = new System.Drawing.Size(1160, 558);
             this.panel5.TabIndex = 1;
             // 
             // groupBox2
@@ -394,7 +395,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1117, 555);
+            this.groupBox2.Size = new System.Drawing.Size(1157, 555);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hiển thị danh sách:";
@@ -402,6 +403,8 @@
             // dgvListReader
             // 
             this.dgvListReader.AllowUserToAddRows = false;
+            this.dgvListReader.AllowUserToDeleteRows = false;
+            this.dgvListReader.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListReader.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListReader.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaDG,
@@ -416,97 +419,26 @@
             this.dgvListReader.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvListReader.Location = new System.Drawing.Point(3, 26);
             this.dgvListReader.Name = "dgvListReader";
+            this.dgvListReader.ReadOnly = true;
             this.dgvListReader.RowHeadersWidth = 51;
             this.dgvListReader.RowTemplate.Height = 24;
-            this.dgvListReader.Size = new System.Drawing.Size(1111, 526);
+            this.dgvListReader.Size = new System.Drawing.Size(1151, 526);
             this.dgvListReader.TabIndex = 0;
             this.dgvListReader.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListReader_CellClick);
-            // 
-            // MaDG
-            // 
-            this.MaDG.DataPropertyName = "MaDG";
-            this.MaDG.HeaderText = "Mã đọc giả";
-            this.MaDG.MinimumWidth = 6;
-            this.MaDG.Name = "MaDG";
-            this.MaDG.Width = 125;
-            // 
-            // HoTen
-            // 
-            this.HoTen.DataPropertyName = "HoTen";
-            this.HoTen.HeaderText = "Họ tên";
-            this.HoTen.MinimumWidth = 6;
-            this.HoTen.Name = "HoTen";
-            this.HoTen.Width = 125;
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.DataPropertyName = "NgaySinh";
-            this.NgaySinh.HeaderText = "Ngày sinh";
-            this.NgaySinh.MinimumWidth = 6;
-            this.NgaySinh.Name = "NgaySinh";
-            this.NgaySinh.Width = 125;
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.DataPropertyName = "GioiTinh";
-            this.GioiTinh.HeaderText = "Giới tính";
-            this.GioiTinh.MinimumWidth = 6;
-            this.GioiTinh.Name = "GioiTinh";
-            this.GioiTinh.Width = 125;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.DataPropertyName = "DiaChi";
-            this.DiaChi.HeaderText = "Địa chỉ";
-            this.DiaChi.MinimumWidth = 6;
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.Width = 125;
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "Số điện thoại";
-            this.SDT.MinimumWidth = 6;
-            this.SDT.Name = "SDT";
-            this.SDT.Width = 125;
-            // 
-            // NgayBDThe
-            // 
-            this.NgayBDThe.DataPropertyName = "NgayBDThe";
-            this.NgayBDThe.HeaderText = "Ngày bắt đầu";
-            this.NgayBDThe.MinimumWidth = 6;
-            this.NgayBDThe.Name = "NgayBDThe";
-            this.NgayBDThe.Width = 125;
-            // 
-            // NgayHHThe
-            // 
-            this.NgayHHThe.DataPropertyName = "NgayHHThe";
-            this.NgayHHThe.HeaderText = "Ngày hết hạn";
-            this.NgayHHThe.MinimumWidth = 6;
-            this.NgayHHThe.Name = "NgayHHThe";
-            this.NgayHHThe.Width = 125;
-            // 
-            // GhiChu
-            // 
-            this.GhiChu.DataPropertyName = "GhiChu";
-            this.GhiChu.HeaderText = "Ghi chú";
-            this.GhiChu.MinimumWidth = 6;
-            this.GhiChu.Name = "GhiChu";
-            this.GhiChu.Width = 125;
             // 
             // splitter2
             // 
             this.splitter2.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter2.Location = new System.Drawing.Point(0, 0);
             this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(1117, 3);
+            this.splitter2.Size = new System.Drawing.Size(1157, 3);
             this.splitter2.TabIndex = 1;
             this.splitter2.TabStop = false;
             // 
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.splitter1.Location = new System.Drawing.Point(1117, 0);
+            this.splitter1.Location = new System.Drawing.Point(1157, 0);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(3, 558);
             this.splitter1.TabIndex = 0;
@@ -518,7 +450,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 702);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1457, 88);
+            this.panel4.Size = new System.Drawing.Size(1504, 88);
             this.panel4.TabIndex = 3;
             // 
             // groupBox4
@@ -531,7 +463,7 @@
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(0, 0);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1457, 88);
+            this.groupBox4.Size = new System.Drawing.Size(1504, 88);
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Chức năng:";
@@ -605,12 +537,93 @@
             // 
             this.err.ContainerControl = this;
             // 
+            // MaDG
+            // 
+            this.MaDG.DataPropertyName = "MaDG";
+            this.MaDG.HeaderText = "Mã đọc giả";
+            this.MaDG.MinimumWidth = 6;
+            this.MaDG.Name = "MaDG";
+            this.MaDG.ReadOnly = true;
+            this.MaDG.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // HoTen
+            // 
+            this.HoTen.DataPropertyName = "HoTen";
+            this.HoTen.HeaderText = "Họ tên";
+            this.HoTen.MinimumWidth = 6;
+            this.HoTen.Name = "HoTen";
+            this.HoTen.ReadOnly = true;
+            this.HoTen.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.HeaderText = "Ngày sinh";
+            this.NgaySinh.MinimumWidth = 6;
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.ReadOnly = true;
+            this.NgaySinh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.DataPropertyName = "GioiTinh";
+            this.GioiTinh.HeaderText = "Giới tính";
+            this.GioiTinh.MinimumWidth = 6;
+            this.GioiTinh.Name = "GioiTinh";
+            this.GioiTinh.ReadOnly = true;
+            this.GioiTinh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.MinimumWidth = 6;
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.ReadOnly = true;
+            this.DiaChi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "Số điện thoại";
+            this.SDT.MinimumWidth = 6;
+            this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
+            this.SDT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // NgayBDThe
+            // 
+            this.NgayBDThe.DataPropertyName = "NgayBDThe";
+            this.NgayBDThe.HeaderText = "Ngày bắt đầu";
+            this.NgayBDThe.MinimumWidth = 6;
+            this.NgayBDThe.Name = "NgayBDThe";
+            this.NgayBDThe.ReadOnly = true;
+            this.NgayBDThe.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // NgayHHThe
+            // 
+            this.NgayHHThe.DataPropertyName = "NgayHHThe";
+            this.NgayHHThe.HeaderText = "Ngày hết hạn";
+            this.NgayHHThe.MinimumWidth = 6;
+            this.NgayHHThe.Name = "NgayHHThe";
+            this.NgayHHThe.ReadOnly = true;
+            this.NgayHHThe.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // GhiChu
+            // 
+            this.GhiChu.DataPropertyName = "GhiChu";
+            this.GhiChu.HeaderText = "Ghi chú";
+            this.GhiChu.MinimumWidth = 6;
+            this.GhiChu.Name = "GhiChu";
+            this.GhiChu.ReadOnly = true;
+            this.GhiChu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // DanhSachDocGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
-            this.ClientSize = new System.Drawing.Size(1457, 790);
+            this.ClientSize = new System.Drawing.Size(1504, 790);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -684,6 +697,7 @@
         private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.DateTimePicker dtpStart;
         private System.Windows.Forms.ComboBox cbGender;
+        private System.Windows.Forms.ErrorProvider err;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDG;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
@@ -693,6 +707,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayBDThe;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayHHThe;
         private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
-        private System.Windows.Forms.ErrorProvider err;
     }
 }

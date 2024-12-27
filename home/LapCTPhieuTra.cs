@@ -314,13 +314,21 @@ namespace home
                 CapNhatSLSach(row["MaSach"].ToString(), (int)row["SoLuongTra"]);
             }
 
-            MessageBox.Show("Trả sách thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            DialogResult result= MessageBox.Show("Trả sách thành công. Bạn có muốn in phiếu mượn trả sách không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if(result == DialogResult.Yes)
+            {
+                InPhieuMuonTra inPhieuMuonTra = new InPhieuMuonTra();
+                inPhieuMuonTra.SetSoPM(this.SoPM);
+                inPhieuMuonTra.ShowDialog();
+            }
+            {
+                QuanLyPhieuMuon quanLyPhieuMuon = this.ParentForm as QuanLyPhieuMuon;
+                quanLyPhieuMuon.panelContent.Controls.Clear();
+                LapPhieuTra lapPhieuTra = new LapPhieuTra();
+                lapPhieuTra.Dock = DockStyle.Fill;
+                quanLyPhieuMuon.panelContent.Controls.Add(lapPhieuTra);
+            }
 
-            QuanLyPhieuMuon quanLyPhieuMuon = this.ParentForm as QuanLyPhieuMuon;
-            quanLyPhieuMuon.panelContent.Controls.Clear();
-            LapPhieuTra lapPhieuTra = new LapPhieuTra();
-            lapPhieuTra.Dock = DockStyle.Fill;
-            quanLyPhieuMuon.panelContent.Controls.Add(lapPhieuTra);
 
         }
 

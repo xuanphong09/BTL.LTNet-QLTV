@@ -67,6 +67,9 @@ namespace home
             txtNote.Text = "";
             cbGender.Text = "";
             err.SetError(cbGender, "");
+            dtpBod.Value = DateTime.Now;
+            dtpStart.Value = DateTime.Now;
+            dtpEnd.Value = DateTime.Now;
         }
 
         private void tbnExit_Click(object sender, EventArgs e)
@@ -116,6 +119,8 @@ namespace home
             gbTTCT.Enabled = true;
             btnCreate.Enabled = false;
             dgvListReader.CellClick -= dgvListReader_CellClick;
+            btnDelete.Enabled = false;
+            btnEdit.Enabled = false;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -153,7 +158,7 @@ namespace home
             {
                 row["GioiTinh"] = "Nữ";
             }
-            row["NgayBDThe"] = dtpStart.Value.Year + "-" + dtpStart.Value.Month + "-" + dtpStart.Value.Day;
+            row["NgayBDThe"] = DateTime.Now.Date;
             row["NgayHHThe"] = dtpEnd.Value.Year + "-" + dtpEnd.Value.Month + "-" + dtpEnd.Value.Day;
             row["GhiChu"] = txtNote.Text.Trim();
 
@@ -276,6 +281,18 @@ namespace home
                 err.SetError(txtPhone, "Vui lòng nhập số điện thoại");
                 txtPhone.Focus();
             }
+            else if (!int.TryParse(txtPhone.Text.Trim(), out int n))
+            {
+                isValidate = false;
+                err.SetError(txtPhone, "Số điện thoại phải là số");
+                txtPhone.Focus();
+            }
+            else if (!txtPhone.Text.Trim().StartsWith("0"))
+            {
+                isValidate = false;
+                err.SetError(txtPhone, "Số điện thoại không được bắt đầu bằng số 0");
+                txtPhone.Focus();
+            }
             else if (txtPhone.Text.Length !=10)
             {
                 isValidate = false;
@@ -297,6 +314,30 @@ namespace home
                 err.SetError(cbGender, "");
             }
 
+            DateTime ngaySinh= DateTime.Parse(dtpBod.Value.ToString());
+            if (DateTime.Compare(ngaySinh, DateTime.Now.Date) > 0)
+            {
+                isValidate = false;
+                err.SetError(dtpBod, "Ngày sinh không hợp lệ");
+                dtpBod.Focus();
+            }
+            else
+            {
+                err.SetError(dtpBod, "");
+            }
+
+            DateTime ngayBDThe = DateTime.Parse(dtpStart.Value.ToString());
+            DateTime ngayHHThe = DateTime.Parse(dtpEnd.Value.ToString());
+            if (DateTime.Compare(ngayBDThe, ngayHHThe)> 0)
+            {
+                isValidate = false;
+                err.SetError(dtpEnd, "Ngày hết hạn thẻ không hợp lệ");
+                dtpEnd.Focus();
+            }
+            else
+            {
+                err.SetError(dtpEnd, "");
+            }
 
             return isValidate;
         }
@@ -358,6 +399,8 @@ namespace home
                         HienThiDanhSachDocGia();
                         XoaDuLieu();
                         gbTTCT.Enabled = false;
+                        btnDelete.Enabled = false;
+                        btnEdit.Enabled = false;
                     }
                     else
                     {
@@ -368,8 +411,8 @@ namespace home
                 {
                     MessageBox.Show("Độc giả này đang có thông tin trong hệ thống, không thể xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-
             }
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
