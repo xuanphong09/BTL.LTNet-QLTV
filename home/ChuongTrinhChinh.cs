@@ -197,7 +197,7 @@ namespace home
 
         private void tSMINhaXuatBan_Click(object sender, EventArgs e)
         {
-            QuanLyNXB quanLyNXB = new QuanLyNXB();
+            QuanLyNXB quanLyNXB = new QuanLyNXB();   
             quanLyNXB.ShowDialog();
         }
 
@@ -210,6 +210,7 @@ namespace home
         private void tsMIPhieuPhat_Click(object sender, EventArgs e)
         {
             QLPP qlpp = new QLPP();
+            qlpp.setMaNV(this.maNV);
             qlpp.ShowDialog();
         }
     }

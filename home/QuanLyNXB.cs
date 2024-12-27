@@ -16,7 +16,6 @@ namespace home
     {
         public QuanLyNXB()
         {
-            this.CenterToParent();
             InitializeComponent();
         }
 
@@ -30,8 +29,9 @@ namespace home
         {
             loadData();
             saveBtn.Enabled = false;    
-            deleteBtn.Enabled = false;    
+            cancelBtn.Enabled = false;    
             updateBtn.Enabled = false;
+            deleteBtn.Enabled = false;  
         }
 
         private void loadData()
@@ -66,7 +66,7 @@ namespace home
                 deleteBtn.Enabled = true;
                 updateBtn.Enabled = true;
             }
-            else
+             else
             {
                 nameTB.Text = "";
                 addressTB.Text = "";
@@ -142,6 +142,14 @@ namespace home
         {
             flag = 1;
             saveBtn.Enabled = true;
+            cancelBtn.Enabled = true;
+
+            updateBtn.Enabled = false;
+            deleteBtn.Enabled = false;
+            addBtn.Enabled = false;
+
+            NXBList.CellClick -= NXBList_CellClick;
+
             nameTB.Text = "";
             addressTB.Text = "";
             emailTB.Text = "";
@@ -174,7 +182,7 @@ namespace home
                     emailTB.Text = "";
 
                     saveBtn.Enabled = false;
-                    deleteBtn.Enabled = false;
+                    cancelBtn.Enabled = false;
                     updateBtn.Enabled = false;
                 }
                 else
@@ -191,6 +199,13 @@ namespace home
         {
             flag = 2;
             saveBtn.Enabled=true;
+            cancelBtn.Enabled=true;
+
+            updateBtn.Enabled=false;
+            deleteBtn.Enabled=false;
+            addBtn.Enabled=false;
+
+            NXBList.CellClick -= NXBList_CellClick;
         }
 
 
@@ -202,6 +217,10 @@ namespace home
                 validate = false;
                 errorProvider.SetError(nameTB, "Tên không được để trống");
             }
+            else
+            {
+                errorProvider.SetError(nameTB, null);
+            }
 
             if (string.IsNullOrEmpty(addressTB.Text.Trim())) 
             { 
@@ -209,24 +228,39 @@ namespace home
                 errorProvider.SetError(addressTB, "Địa chỉ không được để trống");
 
             }
+            else
+            {
+                errorProvider.SetError(addressTB, null);
+            }
 
             if (string.IsNullOrEmpty(emailTB.Text.Trim())) { 
                 validate = false;
                 errorProvider.SetError(emailTB, "Email không được để trống");
             }
-
-            if (!isEmail(emailTB.Text.Trim()))
+            else if (!isEmail(emailTB.Text.Trim()))
             {
                 validate = false;
                 errorProvider.SetError(emailTB, "Email không hợp lệ");
             }
+            else
+            {
+                errorProvider.SetError(emailTB,null);
+            }
+
+
 
             if (validate)
             {
                 if (flag == 1) { createNXB(); }
                 if (flag == 2) { updateNXB(); }
+                cancelBtn.Enabled = false;
+                NXBList.CellClick += NXBList_CellClick;
+                addBtn.Enabled = true;
             }
 
+            
+           
+            
         }
 
         private bool isEmail(string email)
@@ -243,29 +277,34 @@ namespace home
         }
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-           DataRow row = ds.Tables["NXB_DS"].Rows[currRow];
-            bool nemp = NXBisEmpty(row["MaNXB"].ToString());
-
-            if (nemp) {
-                MessageBox.Show("NXB này đang có thông tin trong hệ thống, không thể xóa", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else
+            if (currRow <= ds.Tables["NXB_DS"].Rows.Count - 1 && currRow >= 0)
             {
-                DialogResult dialog = MessageBox.Show("Bạn có thực sự muốn xóa NXB: '" + row["TenNXB"] + "' không?", "Hộp thoại", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialog == DialogResult.Yes) {
-                    row.Delete();
+                DataRow row = ds.Tables["NXB_DS"].Rows[currRow];
+                bool nemp = NXBisEmpty(row["MaNXB"].ToString());
 
-                    int res = adapter.Update(ds.Tables["NXB_DS"]);
+                if (nemp)
+                {
+                    MessageBox.Show("NXB này đang có thông tin trong hệ thống, không thể xóa", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    DialogResult dialog = MessageBox.Show("Bạn có thực sự muốn xóa NXB: '" + row["TenNXB"] + "' không?", "Hộp thoại", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialog == DialogResult.Yes)
+                    {
+                        row.Delete();
 
-                    if (res > 0) {
-                        nameTB.Text = "";
-                        addressTB.Text = "";
-                        emailTB.Text = "";
-
-                        deleteBtn.Enabled = false;
-                        updateBtn.Enabled = false;
+                        int res = adapter.Update(ds.Tables["NXB_DS"]);
                     }
+
+                    nameTB.Text = "";
+                    addressTB.Text = "";
+                    emailTB.Text = "";
+
+                    saveBtn.Enabled = false;
+                    cancelBtn.Enabled = false;
+                    updateBtn.Enabled = false;
+                    deleteBtn.Enabled = false;
                 }
             }
         }
@@ -291,7 +330,7 @@ namespace home
         private void searchBTn_Click(object sender, EventArgs e)
         {
             conn.MoKetNoi();
-            string querry = "select * from NXB where TenNXB like N  '%"+searchTB.Text.Trim()+ "%' or MaNXB ='"+searchTB.Text.Trim()+"'";
+            string querry = "select * from NXB where TenNXB like N'%"+searchTB.Text.Trim()+ "%' or MaNXB like N'%"+searchTB.Text.Trim()+"%'";
 
             adapter = new SqlDataAdapter(querry, conn.slqCon);
             SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
@@ -306,6 +345,27 @@ namespace home
         private void exitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            saveBtn.Enabled = false;
+            cancelBtn.Enabled = false;
+            updateBtn.Enabled = false;
+            deleteBtn.Enabled = false;
+            addBtn.Enabled=true;
+
+            nameTB.Text = "";
+            addressTB.Text = "";
+            emailTB.Text = "";
+
+            int flag = -1;
+
+            NXBList.CellClick += NXBList_CellClick;
+            errorProvider.SetError(emailTB, null);
+            errorProvider.SetError(addressTB, null);
+            errorProvider.SetError(nameTB, null);
+
         }
     }
 }

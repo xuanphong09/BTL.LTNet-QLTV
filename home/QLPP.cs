@@ -16,7 +16,6 @@ namespace home
     {
         public QLPP()
         {
-            this.CenterToParent();
             InitializeComponent();
         }
 
@@ -25,16 +24,12 @@ namespace home
         DatabaseConnection conn = new DatabaseConnection();
         int currRow;
         int func = -1;
-        string manv;
+        public string manv;
 
         private void Form2_Load(object sender, EventArgs e)
         {
             loadData();
-
-            searchCB.SelectedIndex = 0;
-            updateBtn.Enabled = false;
-            deleteBtn.Enabled = false;
-            saveBtn.Enabled = false;
+            searchCB.SelectedIndex = 0; 
         }
 
         private void loadData()
@@ -55,24 +50,54 @@ namespace home
 
         }
 
-        private void PPGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void exitButton_Click(object sender, EventArgs e)
         {
-            currRow = e.RowIndex;
-
-            if (currRow <= ds.Tables["PP_list"].Rows.Count - 1 && currRow >= 0)
-            {
-                DataRow row = ds.Tables["PP_list"].Rows[currRow];
-                maDGTB.Text = row["MaDG"].ToString();
-                lydoTB.Text = row["LyDoPhat"].ToString();
-                hinhthucTB.Text = row["HinhThucXL"].ToString();
-
-                updateBtn.Enabled = true;
-                deleteBtn.Enabled = true;
-            }
-
-
+            this.Close();
         }
 
+        public void setMaNV(string manv)
+        {
+            this.manv = manv;
+        }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            PhieuPhat pp=new PhieuPhat();
+            pp.set_flag(1); 
+            pp.set_manv(manv);
+            pp.set_spp(generateMa());
+            pp.ShowDialog();
+
+            if (pp.get_flag()==1)
+            {
+                conn.MoKetNoi();
+
+                DataRow row = ds.Tables["PP_list"].NewRow();
+
+                row["SoPhieuPhat"] = pp.get_Spp();
+                row["MaDG"] = pp.get_madg();
+                row["MaNV"] = pp.get_manv();
+                row["LyDoPhat"] = pp.get_lydo();
+                row["HinhThucXL"] = pp.get_hinhthuc();
+                row["NgayPhat"] = DateTime.Now.Date;
+
+                ds.Tables["PP_list"].Rows.Add(row);
+
+                int res = adapter.Update(ds.Tables["PP_list"]);
+
+                if (res > 0)
+                {
+                    MessageBox.Show("Thêm phiếu phạt thành công!", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    loadData();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm phiếu phạt không thành công!", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                conn.DongKetNoi();  
+            }
+           
+        }
 
         private string generateMa()
         {
@@ -104,87 +129,70 @@ namespace home
             return newMa;
         }
 
-
-        private void createPP()
+        private void PPGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            conn.MoKetNoi();
-
-            DataRow row = ds.Tables["PP_list"].NewRow();
-            row["SoPhieuPhat"] = generateMa();
-            row["MaDG"] = maDGTB.Text.Trim();
-            row["MaNV"] = manv;
-            row["LyDoPhat"] = lydoTB.Text.Trim();
-            row["HinhThucXL"] = hinhthucTB.Text.Trim();
-
-            row["NgayPhat"] = DateTime.Now.Date;
-
-            ds.Tables["PP_list"].Rows.Add(row);
-
-            int res = adapter.Update(ds.Tables["PP_list"]);
-
-            if (res > 0)
-            {
-                MessageBox.Show("Thêm phiếu phạt thành công!", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                loadData();
-            }
-            else
-            {
-                MessageBox.Show("Thêm phiếu phạt không thành công!", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-
-
-            conn.DongKetNoi();
+            currRow = e.RowIndex;
         }
 
-        private void updatePP()
+        private void searchBtn_Click(object sender, EventArgs e)
         {
-            conn.MoKetNoi();
+            if (searchCB.Text.Equals("Số Phiếu Phạt"))
+            {
+                searchMaPP();
+            }
+            if (searchCB.Text.Equals("Mã Độc Giả"))
+            {
+                searchMaDG();
+            }
+            if (searchCB.Text.Equals("Mã Nhân Viên"))
+            {
+                searchMaNV();
+            }
+        }
 
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn sửa thông tin phiếu phạt này không?", "Hộp thoại", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+        private void viewBtn_Click(object sender, EventArgs e)
+        {
+            PhieuPhat ph = new PhieuPhat();
+
+            if (currRow <= ds.Tables["PP_list"].Rows.Count - 1 && currRow >= 0)
             {
                 DataRow row = ds.Tables["PP_list"].Rows[currRow];
-                row.BeginEdit();
-                row["MaDG"] = maDGTB.Text.Trim();
-                row["LyDoPhat"] = lydoTB.Text.Trim();
-                row["HinhThucXL"] = hinhthucTB.Text.Trim();
-                row.EndEdit();
+                ph.set_madg(row["MaDG"].ToString());
+                ph.set_lydo(row["LyDoPhat"].ToString());
+                ph.set_manv(row["MaNV"].ToString());
+                ph.set_hinhthuc(row["HinhThucXL"].ToString());
+                ph.set_spp(row["SoPhieuPhat"].ToString());
+                ph.set_ngayphat(row["ngayPhat"].ToString());
+                ph.set_flag(0);
 
-                int res = adapter.Update(ds.Tables["PP_list"]);
+                ph.ShowDialog();
 
-                if (res > 0)
+                if (ph.get_flag() == 2)
                 {
-                    MessageBox.Show("Sửa phiếu phạt thành công!", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    loadData();
+                    conn.MoKetNoi();
+                    row.BeginEdit();
+                    row["MaDG"] = ph.get_madg();
+                    row["LyDoPhat"] = ph.get_lydo();
+                    row["HinhThucXL"] = ph.get_hinhthuc();
+                    row.EndEdit();
 
-                }
-                else
-                {
-                    MessageBox.Show("Sửa phiếu phạt thành công!", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                    int res = adapter.Update(ds.Tables["PP_list"]);
 
+                    if (res > 0)
+                    {
+                        MessageBox.Show("Sửa phiếu phạt thành công!", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                       
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa không thành công", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    conn.DongKetNoi();
+                }
             }
-
-            conn.DongKetNoi();
         }
 
-        private void deletePP()
-        {
-            conn.MoKetNoi();
-
-            DataRow row = ds.Tables["PP_List"].Rows[currRow];
-            DialogResult dialog = MessageBox.Show("Bạn có thực sự muốn xóa phiếu phạt: '" + row["SoPhieuPhat"] + "' không?", "Hộp thoại", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialog == DialogResult.Yes)
-            {
-
-                row.Delete();
-
-                int res = adapter.Update(ds.Tables["PP_List"]);
-            }
-
-            conn.DongKetNoi();
-        }
         private void searchMaPP()
         {
             conn.MoKetNoi();
@@ -215,7 +223,8 @@ namespace home
             conn.DongKetNoi();
         }
 
-        private void searchMaNV() {
+        private void searchMaNV()
+        {
 
             conn.MoKetNoi();
             string querry = "select * from PhieuPhat where MaNV like N'%" + searchTB.Text.Trim() + "%'";
@@ -230,128 +239,26 @@ namespace home
             conn.DongKetNoi();
         }
 
-        private Boolean validate()
+        private void deleteBtn_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(maDGTB.Text.Trim()))
-            {
-                errorProvider.SetError(maDGTB, "Mã Độc Giả không được để trống");
-
-                return false;
-            }
-
-            if ( string.IsNullOrEmpty(hinhthucTB.Text.Trim()))
-            {
-                errorProvider.SetError(hinhthucTB, "Hình thức phạt không được để trống");
-
-                return false;
-            }
-
-            if ( string.IsNullOrEmpty(lydoTB.Text.Trim()))
-            {
-                errorProvider.SetError(lydoTB, "Lý do phạt không được để trống");
-
-
-                return false;
-            }
-
             conn.MoKetNoi();
-            string querry = "select * from DocGia WHERE MaDG='" + maDGTB.Text.Trim() + "'";
-
-            SqlCommand cmd = new SqlCommand(querry, conn.slqCon);
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            if (!reader.Read())
+            if (currRow < ds.Tables["PP_List"].Rows.Count && currRow >= 0)
             {
-                errorProvider.SetError(hinhthucTB, "Mã Độc Giả tồn tại");
-                reader.Close();
-                conn.DongKetNoi();
-                return false;
+                DataRow row = ds.Tables["PP_List"].Rows[currRow];
+
+            
+                {
+                    DialogResult dialog = MessageBox.Show("Bạn có thực sự muốn xóa phiếu phạt: '" + row["SoPhieuPhat"] + "' không?", "Hộp thoại", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialog == DialogResult.Yes)
+                    {
+
+                        row.Delete();
+
+                        int res = adapter.Update(ds.Tables["PP_List"]);
+                    }
+                }
             }
-            reader.Close();
             conn.DongKetNoi();
-
-
-            return true;
-        }
-
-        private void clickButton_Click(object sender, EventArgs e)
-        {
-            func = 1;
-            saveBtn.Enabled = true;
-
-            maDGTB.Text = "";
-            hinhthucTB.Text = "";
-            lydoTB.Text = "";
-        }
-
-        private void updateButton_Click(object sender, EventArgs e)
-        {
-            func = 2;
-            saveBtn.Enabled = true;
-        }
-
-        private void deleteButton_Click(object sender, EventArgs e)
-        {
-            deletePP();
-
-            maDGTB.Text = "";
-            hinhthucTB.Text = "";
-            lydoTB.Text = "";
-
-            updateBtn.Enabled = false;
-            deleteBtn.Enabled = false;
-            saveBtn.Enabled = false;
-        }
-
-        private void searchButton_Click(object sender, EventArgs e)
-        {
-            if (searchCB.Text.Equals("Số Phiếu Phạt"))
-            {
-                searchMaPP();
-            }
-            if (searchCB.Text.Equals("Mã Độc Giả"))
-            {
-                searchMaDG();
-            }
-            if (searchCB.Text.Equals("Mã Nhân Viên"))
-            {
-                searchMaNV();
-            }
-        }
-
-
-        private void saveButton_Click(object sender, EventArgs e)
-        {
-            if (validate())
-            {
-                if (func == 1)
-                {
-                    createPP();
-                }
-                if (func == 2)
-                {
-                    updatePP();
-                }
-
-                maDGTB.Text = "";
-                hinhthucTB.Text = "";
-                lydoTB.Text = "";
-
-
-                updateBtn.Enabled = false;
-                deleteBtn.Enabled = false;
-                saveBtn.Enabled = false;
-            }
-        }
-
-        private void exitButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        public void setMaNV(string manv)
-        {
-            this.manv = manv;
         }
     }
 }

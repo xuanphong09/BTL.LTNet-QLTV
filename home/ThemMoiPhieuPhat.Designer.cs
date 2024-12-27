@@ -100,7 +100,7 @@
             this.dtpNgayPhat.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayPhat.Location = new System.Drawing.Point(227, 166);
             this.dtpNgayPhat.Name = "dtpNgayPhat";
-            this.dtpNgayPhat.Size = new System.Drawing.Size(195, 30);
+            this.dtpNgayPhat.Size = new System.Drawing.Size(195, 35);
             this.dtpNgayPhat.TabIndex = 12;
             // 
             // txtHinhThucXL
@@ -116,7 +116,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(53, 309);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(148, 23);
+            this.label7.Size = new System.Drawing.Size(185, 27);
             this.label7.TabIndex = 10;
             this.label7.Text = "Hình thức xử lý:";
             // 
@@ -133,7 +133,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(53, 210);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 23);
+            this.label6.Size = new System.Drawing.Size(78, 27);
             this.label6.TabIndex = 8;
             this.label6.Text = "Lý do:";
             // 
@@ -142,7 +142,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(53, 166);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 23);
+            this.label5.Size = new System.Drawing.Size(132, 27);
             this.label5.TabIndex = 6;
             this.label5.Text = "Ngày Phạt:";
             // 
@@ -151,7 +151,7 @@
             this.txtMaNV.Location = new System.Drawing.Point(227, 121);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.ReadOnly = true;
-            this.txtMaNV.Size = new System.Drawing.Size(195, 30);
+            this.txtMaNV.Size = new System.Drawing.Size(195, 35);
             this.txtMaNV.TabIndex = 5;
             // 
             // label4
@@ -159,7 +159,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(53, 121);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 23);
+            this.label4.Size = new System.Drawing.Size(166, 27);
             this.label4.TabIndex = 4;
             this.label4.Text = "Mã Nhân viên:";
             // 
@@ -168,7 +168,7 @@
             this.txtMaDG.Location = new System.Drawing.Point(227, 76);
             this.txtMaDG.Name = "txtMaDG";
             this.txtMaDG.ReadOnly = true;
-            this.txtMaDG.Size = new System.Drawing.Size(195, 30);
+            this.txtMaDG.Size = new System.Drawing.Size(195, 35);
             this.txtMaDG.TabIndex = 3;
             // 
             // label3
@@ -176,7 +176,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(53, 76);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 23);
+            this.label3.Size = new System.Drawing.Size(135, 27);
             this.label3.TabIndex = 2;
             this.label3.Text = "Mã đọc giả:";
             // 
@@ -185,7 +185,7 @@
             this.txtSoPPhat.Location = new System.Drawing.Point(227, 30);
             this.txtSoPPhat.Name = "txtSoPPhat";
             this.txtSoPPhat.ReadOnly = true;
-            this.txtSoPPhat.Size = new System.Drawing.Size(195, 30);
+            this.txtSoPPhat.Size = new System.Drawing.Size(195, 35);
             this.txtSoPPhat.TabIndex = 1;
             // 
             // label2
@@ -193,7 +193,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(53, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 23);
+            this.label2.Size = new System.Drawing.Size(174, 27);
             this.label2.TabIndex = 0;
             this.label2.Text = "Số Phiếu Phạt:";
             // 
@@ -240,7 +240,7 @@
             // ThemMoiPhieuPhat
             // 
             this.AcceptButton = this.btnThemMoi;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnHuy;
             this.ClientSize = new System.Drawing.Size(486, 565);
