@@ -55,7 +55,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnInPhieuMuon = new System.Windows.Forms.Button();
             this.btnLapPhieuPhat = new System.Windows.Forms.Button();
             this.btnQuayLai = new System.Windows.Forms.Button();
             this.btnHoanThanh = new System.Windows.Forms.Button();
@@ -327,7 +326,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnInPhieuMuon);
             this.groupBox1.Controls.Add(this.btnLapPhieuPhat);
             this.groupBox1.Controls.Add(this.btnQuayLai);
             this.groupBox1.Controls.Add(this.btnHoanThanh);
@@ -356,23 +354,10 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin phiếu mượn:";
             // 
-            // btnInPhieuMuon
-            // 
-            this.btnInPhieuMuon.Image = global::home.Properties.Resources.printer;
-            this.btnInPhieuMuon.Location = new System.Drawing.Point(461, 299);
-            this.btnInPhieuMuon.Name = "btnInPhieuMuon";
-            this.btnInPhieuMuon.Size = new System.Drawing.Size(119, 41);
-            this.btnInPhieuMuon.TabIndex = 20;
-            this.btnInPhieuMuon.Text = "&In phiếu";
-            this.btnInPhieuMuon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInPhieuMuon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInPhieuMuon.UseVisualStyleBackColor = true;
-            this.btnInPhieuMuon.Click += new System.EventHandler(this.btnInPhieuMuon_Click);
-            // 
             // btnLapPhieuPhat
             // 
             this.btnLapPhieuPhat.Image = global::home.Properties.Resources.Lovepik_com_450094989_Checklist_flat_outline_icon_do_list;
-            this.btnLapPhieuPhat.Location = new System.Drawing.Point(142, 299);
+            this.btnLapPhieuPhat.Location = new System.Drawing.Point(188, 299);
             this.btnLapPhieuPhat.Name = "btnLapPhieuPhat";
             this.btnLapPhieuPhat.Size = new System.Drawing.Size(182, 41);
             this.btnLapPhieuPhat.TabIndex = 17;
@@ -385,7 +370,7 @@
             // btnQuayLai
             // 
             this.btnQuayLai.Image = global::home.Properties.Resources.return_left;
-            this.btnQuayLai.Location = new System.Drawing.Point(6, 299);
+            this.btnQuayLai.Location = new System.Drawing.Point(25, 299);
             this.btnQuayLai.Name = "btnQuayLai";
             this.btnQuayLai.Size = new System.Drawing.Size(134, 41);
             this.btnQuayLai.TabIndex = 16;
@@ -398,7 +383,7 @@
             // btnHoanThanh
             // 
             this.btnHoanThanh.Image = global::home.Properties.Resources.Green_check_mark_icon;
-            this.btnHoanThanh.Location = new System.Drawing.Point(582, 299);
+            this.btnHoanThanh.Location = new System.Drawing.Point(570, 299);
             this.btnHoanThanh.Name = "btnHoanThanh";
             this.btnHoanThanh.Size = new System.Drawing.Size(152, 41);
             this.btnHoanThanh.TabIndex = 19;
@@ -411,7 +396,7 @@
             // btnTraSach
             // 
             this.btnTraSach.Image = global::home.Properties.Resources.icons8_edit_property_32;
-            this.btnTraSach.Location = new System.Drawing.Point(326, 299);
+            this.btnTraSach.Location = new System.Drawing.Point(407, 299);
             this.btnTraSach.Name = "btnTraSach";
             this.btnTraSach.Size = new System.Drawing.Size(133, 41);
             this.btnTraSach.TabIndex = 18;
@@ -683,6 +668,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayTra;
         private System.Windows.Forms.Button btnLapPhieuPhat;
         private System.Windows.Forms.Button btnQuayLai;
-        private System.Windows.Forms.Button btnInPhieuMuon;
     }
 }
