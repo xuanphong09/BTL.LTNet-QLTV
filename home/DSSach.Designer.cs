@@ -153,62 +153,79 @@
             // 
             // btnHuy
             // 
+            this.btnHuy.Image = global::home.Properties.Resources.icons8_clear_32;
             this.btnHuy.Location = new System.Drawing.Point(817, 41);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(139, 45);
             this.btnHuy.TabIndex = 7;
             this.btnHuy.Text = "Hủ&y";
+            this.btnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnSua
             // 
+            this.btnSua.Image = global::home.Properties.Resources.icons8_edit_property_32;
             this.btnSua.Location = new System.Drawing.Point(427, 41);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(139, 45);
             this.btnSua.TabIndex = 6;
             this.btnSua.Text = "&Sửa";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThoat
             // 
+            this.btnThoat.BackColor = System.Drawing.Color.Red;
             this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnThoat.ForeColor = System.Drawing.SystemColors.Window;
             this.btnThoat.Location = new System.Drawing.Point(1012, 41);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(139, 45);
             this.btnThoat.TabIndex = 5;
             this.btnThoat.Text = "Th&oát";
-            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnLuu
             // 
+            this.btnLuu.Image = global::home.Properties.Resources.icons8_edit_property_32;
             this.btnLuu.Location = new System.Drawing.Point(622, 41);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(139, 45);
             this.btnLuu.TabIndex = 4;
             this.btnLuu.Text = "&Lưu";
+            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoa
             // 
+            this.btnXoa.Image = global::home.Properties.Resources.icons8_delete_32;
             this.btnXoa.Location = new System.Drawing.Point(232, 41);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(139, 45);
             this.btnXoa.TabIndex = 3;
             this.btnXoa.Text = "&Xóa";
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
+            this.btnThem.Image = global::home.Properties.Resources.icons8_plus_32;
             this.btnThem.Location = new System.Drawing.Point(37, 41);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(139, 45);
             this.btnThem.TabIndex = 2;
             this.btnThem.Text = "T&hêm";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -263,11 +280,14 @@
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(110, 167);
+            this.btnTimKiem.Image = global::home.Properties.Resources.icons8_search_32;
+            this.btnTimKiem.Location = new System.Drawing.Point(101, 162);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(113, 35);
+            this.btnTimKiem.Size = new System.Drawing.Size(139, 45);
             this.btnTimKiem.TabIndex = 0;
             this.btnTimKiem.Text = "&Tìm kiếm";
+            this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiem.UseVisualStyleBackColor = true;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
