@@ -89,7 +89,12 @@ namespace home
         private void dgvListReader_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             index = e.RowIndex;
-            if (index == -1) return;
+            if (index == -1)
+            {
+                btnEdit.Enabled = false;
+                btnDelete.Enabled = false;
+                return;
+            }
             btnDelete.Enabled = true;
             btnEdit.Enabled = true;
             DataRow row = ds.Tables["ListReader"].Rows[index];

@@ -71,7 +71,8 @@ namespace home
                 nameTB.Text = "";
                 addressTB.Text = "";
                 emailTB.Text = "";
-
+                updateBtn.Enabled = false;
+                deleteBtn.Enabled = false;
             }
 
         }

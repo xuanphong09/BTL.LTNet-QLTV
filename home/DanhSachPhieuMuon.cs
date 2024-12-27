@@ -86,6 +86,8 @@ namespace home
             this.index = e.RowIndex;
             if(this.index== -1)
             {
+                btnEdit.Enabled = false;
+                btnDelete.Enabled = false;
                 return;
             }
 

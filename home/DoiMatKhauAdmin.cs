@@ -63,6 +63,12 @@ namespace home
                 err.SetError(txtNewPass, "Mật khẩu không được để trống");
                 isValid = false;
             }
+            else if (txtNewPass.Text.Trim().Contains(" "))
+            {
+                isValid = false;
+                err.SetError(txtNewPass, "Mật khẩu không được chứa khoảng trắng.");
+                txtNewPass.Focus();
+            }
             else if (txtNewPass.Text.Trim().Length < 8)
             {
                 txtNewPass.Focus();
