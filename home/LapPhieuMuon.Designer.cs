@@ -40,6 +40,8 @@
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnTiepTuc = new System.Windows.Forms.Button();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelDSPP = new System.Windows.Forms.Panel();
             this.gbDSPP = new System.Windows.Forms.GroupBox();
@@ -48,8 +50,6 @@
             this.LyDoPhat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.HinhThucXL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NgayPhat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnTiepTuc = new System.Windows.Forms.Button();
-            this.btnHuy = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -164,6 +164,32 @@
             this.panel2.Size = new System.Drawing.Size(1135, 80);
             this.panel2.TabIndex = 0;
             // 
+            // btnTiepTuc
+            // 
+            this.btnTiepTuc.Image = global::home.Properties.Resources.return_right;
+            this.btnTiepTuc.Location = new System.Drawing.Point(755, 19);
+            this.btnTiepTuc.Name = "btnTiepTuc";
+            this.btnTiepTuc.Size = new System.Drawing.Size(134, 39);
+            this.btnTiepTuc.TabIndex = 1;
+            this.btnTiepTuc.Text = "&Tiếp tục";
+            this.btnTiepTuc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTiepTuc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTiepTuc.UseVisualStyleBackColor = true;
+            this.btnTiepTuc.Click += new System.EventHandler(this.btnTiepTuc_Click);
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.Image = global::home.Properties.Resources.icons8_clear_32;
+            this.btnHuy.Location = new System.Drawing.Point(215, 19);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(110, 39);
+            this.btnHuy.TabIndex = 0;
+            this.btnHuy.Text = "&Hủy";
+            this.btnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.button1_Click);
+            // 
             // err
             // 
             this.err.ContainerControl = this;
@@ -225,36 +251,11 @@
             this.NgayPhat.Text = "Ngày Phạt";
             this.NgayPhat.Width = 828;
             // 
-            // btnTiepTuc
-            // 
-            this.btnTiepTuc.Image = global::home.Properties.Resources.return_right;
-            this.btnTiepTuc.Location = new System.Drawing.Point(755, 19);
-            this.btnTiepTuc.Name = "btnTiepTuc";
-            this.btnTiepTuc.Size = new System.Drawing.Size(134, 39);
-            this.btnTiepTuc.TabIndex = 1;
-            this.btnTiepTuc.Text = "&Tiếp tục";
-            this.btnTiepTuc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTiepTuc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTiepTuc.UseVisualStyleBackColor = true;
-            this.btnTiepTuc.Click += new System.EventHandler(this.btnTiepTuc_Click);
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.Image = global::home.Properties.Resources.icons8_clear_32;
-            this.btnHuy.Location = new System.Drawing.Point(215, 19);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(110, 39);
-            this.btnHuy.TabIndex = 0;
-            this.btnHuy.Text = "&Hủy";
-            this.btnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHuy.UseVisualStyleBackColor = true;
-            this.btnHuy.Click += new System.EventHandler(this.button1_Click);
-            // 
             // LapPhieuMuon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SeaShell;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelDSPP);
             this.Controls.Add(this.panel1);

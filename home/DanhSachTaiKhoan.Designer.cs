@@ -36,6 +36,8 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbState = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtNote = new System.Windows.Forms.TextBox();
             this.cbRole = new System.Windows.Forms.ComboBox();
@@ -76,15 +78,13 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnChangePass = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -192,6 +192,32 @@
             this.label4.Size = new System.Drawing.Size(103, 23);
             this.label4.TabIndex = 18;
             this.label4.Text = "Trạng thái:";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Image = global::home.Properties.Resources.icons8_clear_32;
+            this.btnCancel.Location = new System.Drawing.Point(249, 573);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(95, 41);
+            this.btnCancel.TabIndex = 23;
+            this.btnCancel.Text = "H&ủy";
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Image = global::home.Properties.Resources.icons8_save_32;
+            this.btnSave.Location = new System.Drawing.Point(62, 573);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(103, 41);
+            this.btnSave.TabIndex = 22;
+            this.btnSave.Text = "&Lưu";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label8
             // 
@@ -562,6 +588,19 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Chức năng";
             // 
+            // btnChangePass
+            // 
+            this.btnChangePass.Image = global::home.Properties.Resources.change;
+            this.btnChangePass.Location = new System.Drawing.Point(736, 30);
+            this.btnChangePass.Name = "btnChangePass";
+            this.btnChangePass.Size = new System.Drawing.Size(176, 41);
+            this.btnChangePass.TabIndex = 3;
+            this.btnChangePass.Text = "Đổi mật khẩu";
+            this.btnChangePass.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnChangePass.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnChangePass.UseVisualStyleBackColor = true;
+            this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
+            // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.Red;
@@ -575,23 +614,6 @@
             this.btnExit.Text = "Th&oát";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // err
-            // 
-            this.err.ContainerControl = this;
-            // 
-            // btnChangePass
-            // 
-            this.btnChangePass.Image = global::home.Properties.Resources.change;
-            this.btnChangePass.Location = new System.Drawing.Point(736, 30);
-            this.btnChangePass.Name = "btnChangePass";
-            this.btnChangePass.Size = new System.Drawing.Size(176, 41);
-            this.btnChangePass.TabIndex = 3;
-            this.btnChangePass.Text = "Đổi mật khẩu";
-            this.btnChangePass.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnChangePass.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnChangePass.UseVisualStyleBackColor = true;
-            this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
             // 
             // btnDelete
             // 
@@ -651,31 +673,9 @@
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // btnCancel
+            // err
             // 
-            this.btnCancel.Image = global::home.Properties.Resources.icons8_clear_32;
-            this.btnCancel.Location = new System.Drawing.Point(249, 573);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(95, 41);
-            this.btnCancel.TabIndex = 23;
-            this.btnCancel.Text = "H&ủy";
-            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Image = global::home.Properties.Resources.icons8_save_32;
-            this.btnSave.Location = new System.Drawing.Point(62, 573);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(103, 41);
-            this.btnSave.TabIndex = 22;
-            this.btnSave.Text = "&Lưu";
-            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.err.ContainerControl = this;
             // 
             // DanhSachTaiKhoan
             // 
@@ -683,6 +683,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.BackColor = System.Drawing.Color.SeaShell;
             this.ClientSize = new System.Drawing.Size(1399, 771);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);

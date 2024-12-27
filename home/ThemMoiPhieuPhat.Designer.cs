@@ -242,6 +242,7 @@
             this.AcceptButton = this.btnThemMoi;
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SeaShell;
             this.CancelButton = this.btnHuy;
             this.ClientSize = new System.Drawing.Size(486, 565);
             this.Controls.Add(this.panel3);

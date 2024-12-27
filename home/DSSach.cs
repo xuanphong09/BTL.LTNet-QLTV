@@ -87,6 +87,8 @@ namespace home
             vt = e.RowIndex;
             if (vt < 0 || vt >= ds.Tables["DMSach"].Rows.Count || isEditing)
             {
+                btnSua.Enabled = false;
+                btnXoa.Enabled = false;
                 return;
             }
 
@@ -314,7 +316,7 @@ namespace home
         private void btnXoa_Click(object sender, EventArgs e)
         {
             ClearAllErrors();
-
+            
             DataRow row = ds.Tables["DMSach"].Rows[vt];
             bool isBookInUse = IsBookInUse(row["MaSach"].ToString());
 

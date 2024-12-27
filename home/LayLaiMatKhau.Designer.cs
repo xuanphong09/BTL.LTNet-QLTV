@@ -192,6 +192,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.BackColor = System.Drawing.Color.SeaShell;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(438, 306);
             this.Controls.Add(this.panel2);
