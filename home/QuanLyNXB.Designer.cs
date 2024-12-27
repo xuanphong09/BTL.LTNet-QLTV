@@ -146,11 +146,11 @@
             // 
             // searchTB
             // 
-            this.searchTB.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTB.Location = new System.Drawing.Point(764, 75);
+            this.searchTB.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTB.Location = new System.Drawing.Point(724, 116);
             this.searchTB.Margin = new System.Windows.Forms.Padding(4);
             this.searchTB.Name = "searchTB";
-            this.searchTB.Size = new System.Drawing.Size(325, 40);
+            this.searchTB.Size = new System.Drawing.Size(358, 32);
             this.searchTB.TabIndex = 12;
             // 
             // deleteBtn
@@ -185,8 +185,9 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1129, 68);
+            this.button1.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::home.Properties.Resources.icons8_search_32;
+            this.button1.Location = new System.Drawing.Point(1127, 106);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(175, 50);
@@ -249,7 +250,7 @@
             this.label4.Location = new System.Drawing.Point(40, 209);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 32);
+            this.label4.Size = new System.Drawing.Size(72, 25);
             this.label4.TabIndex = 2;
             this.label4.Text = "Email:";
             // 
@@ -259,7 +260,7 @@
             this.emailTB.Location = new System.Drawing.Point(165, 205);
             this.emailTB.Margin = new System.Windows.Forms.Padding(4);
             this.emailTB.Name = "emailTB";
-            this.emailTB.Size = new System.Drawing.Size(272, 40);
+            this.emailTB.Size = new System.Drawing.Size(272, 32);
             this.emailTB.TabIndex = 5;
             // 
             // label2
@@ -269,7 +270,7 @@
             this.label2.Location = new System.Drawing.Point(40, 61);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 32);
+            this.label2.Size = new System.Drawing.Size(110, 26);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên NXB:";
             // 
@@ -279,7 +280,7 @@
             this.addressTB.Location = new System.Drawing.Point(165, 129);
             this.addressTB.Margin = new System.Windows.Forms.Padding(4);
             this.addressTB.Name = "addressTB";
-            this.addressTB.Size = new System.Drawing.Size(272, 40);
+            this.addressTB.Size = new System.Drawing.Size(272, 32);
             this.addressTB.TabIndex = 4;
             // 
             // label3
@@ -289,7 +290,7 @@
             this.label3.Location = new System.Drawing.Point(40, 133);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 32);
+            this.label3.Size = new System.Drawing.Size(84, 25);
             this.label3.TabIndex = 1;
             this.label3.Text = "Địa chỉ:";
             // 
@@ -299,7 +300,7 @@
             this.nameTB.Location = new System.Drawing.Point(165, 58);
             this.nameTB.Margin = new System.Windows.Forms.Padding(4);
             this.nameTB.Name = "nameTB";
-            this.nameTB.Size = new System.Drawing.Size(272, 40);
+            this.nameTB.Size = new System.Drawing.Size(272, 32);
             this.nameTB.TabIndex = 3;
             // 
             // panel4
@@ -393,7 +394,7 @@
             // 
             // QuanLyNXB
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1336, 670);
