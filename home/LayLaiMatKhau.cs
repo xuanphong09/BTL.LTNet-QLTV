@@ -33,6 +33,18 @@ namespace home
                 err.SetError(txtNewPass, "Vui lòng nhập mật khẩu mới.");
                 txtNewPass.Focus();
             }
+            else if (txtNewPass.Text.Length < 8)
+            {
+                isValid = false;
+                err.SetError(txtNewPass, "Mật khẩu phải có ít nhất 8 ký tự.");
+                txtNewPass.Focus();
+            }
+            else if(txtNewPass.Text.Trim().Contains(" "))
+            {
+                isValid = false;
+                err.SetError(txtNewPass, "Mật khẩu không được chứa khoảng trắng.");
+                txtNewPass.Focus();
+            }
             else
             {
                 err.SetError(txtNewPass, null);
@@ -130,8 +142,8 @@ namespace home
             if (result == DialogResult.Yes)
             {
                 this.Close();
-                Login login = new Login();
-                login.Show();
+                //Login login = new Login();
+                //login.Show();
             }
         }
 

@@ -95,12 +95,12 @@ namespace home
                 int kq = sqlCmd.ExecuteNonQuery();
                 if (kq > 0)
                 {
-                    MessageBox.Show("Thêm mới phiếu phạt thành công");
+                    MessageBox.Show("Thêm mới phiếu phạt thành công", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Thêm mới phiếu phạt thất bại");
+                    MessageBox.Show("Thêm mới phiếu phạt thất bại", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 dbCon.DongKetNoi();
             }

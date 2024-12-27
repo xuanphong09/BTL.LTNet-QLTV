@@ -133,6 +133,7 @@ namespace home
             index = e.RowIndex;
             if (index == -1)
             {
+                btnTraSach.Enabled = false;
                 return;
             }
 

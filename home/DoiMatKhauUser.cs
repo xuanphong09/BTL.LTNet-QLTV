@@ -157,6 +157,12 @@ namespace home
                 err.SetError(txtNewPass, "Vui lòng nhập mật khẩu mới");
                 txtNewPass.Focus();
             }
+            else if (txtNewPass.Text.Trim().Contains(" "))
+            {
+                isValid = false;
+                err.SetError(txtNewPass, "Mật khẩu không được chứa khoảng trắng.");
+                txtNewPass.Focus();
+            }
             else if (txtNewPass.Text.Trim().Length < 8)
             {
                 isValid = false;
