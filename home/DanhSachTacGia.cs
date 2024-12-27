@@ -109,7 +109,13 @@ namespace home
         {
 
             vt = e.RowIndex;
-            if (vt == -1) return;
+            if (vt == -1) {
+                txtCountry.Text = "";
+                txtName.Text = "";
+                btnEdit.Enabled = false;
+                btnDelete.Enabled = false;
+                return;
+            }
 
             if (vt < ds.Tables["ListAuthor"].Rows.Count)
             {
@@ -119,6 +125,7 @@ namespace home
                 txtCountry.Text = row["QueQuan"].ToString();
                 btnEdit.Enabled = true;
                 btnDelete.Enabled = true;
+                btnCreate.Enabled = false;
             }
             else if (vt == ds.Tables["ListAuthor"].Rows.Count)
             {
@@ -178,6 +185,7 @@ namespace home
                         HienThiDanhSach();
                         btnEdit.Enabled = false;
                         btnDelete.Enabled = false;
+                        btnCreate.Enabled = true;
                         txtName.Text = "";
                         txtCountry.Text = "";
                     }
@@ -200,6 +208,7 @@ namespace home
                 MessageBox.Show("Tác giả này đang có thông tin trong hệ thống, không thể xóa", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 btnEdit.Enabled = false;
                 btnDelete.Enabled = false;
+                btnCreate.Enabled = true;
                 txtCountry.Text = "";
                 txtName.Text = "";
                 HienThiDanhSach();
@@ -219,6 +228,7 @@ namespace home
                         MessageBox.Show("Xóa tác giả thành công!", "Hộp thoại", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         btnEdit.Enabled = false;
                         btnDelete.Enabled = false;
+                        btnCreate.Enabled = true;
                         txtCountry.Text = "";
                         txtName.Text = "";
                         HienThiDanhSach();
@@ -319,6 +329,7 @@ namespace home
             HienThiDanhSach();
             btnDelete.Enabled = false;
             btnEdit.Enabled = false;
+            btnCreate.Enabled = true;
             err.SetError(txtName, null);
             err.SetError(txtCountry, null);
         }

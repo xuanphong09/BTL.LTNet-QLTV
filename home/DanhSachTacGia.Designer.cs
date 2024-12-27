@@ -34,6 +34,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnClean = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -44,12 +45,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvListAuthor = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.MaTG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenTG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QueQuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.err = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnClean = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -125,6 +125,19 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chức năng";
+            // 
+            // btnClean
+            // 
+            this.btnClean.Image = global::home.Properties.Resources.icons8_clear_32;
+            this.btnClean.Location = new System.Drawing.Point(802, 25);
+            this.btnClean.Name = "btnClean";
+            this.btnClean.Size = new System.Drawing.Size(111, 39);
+            this.btnClean.TabIndex = 9;
+            this.btnClean.Text = "Clean";
+            this.btnClean.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClean.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnClean.UseVisualStyleBackColor = true;
+            this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
             // 
             // btnExit
             // 
@@ -224,6 +237,8 @@
             // 
             // dgvListAuthor
             // 
+            this.dgvListAuthor.AllowUserToAddRows = false;
+            this.dgvListAuthor.AllowUserToDeleteRows = false;
             this.dgvListAuthor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListAuthor.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvListAuthor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -235,32 +250,12 @@
             this.dgvListAuthor.GridColor = System.Drawing.SystemColors.MenuHighlight;
             this.dgvListAuthor.Location = new System.Drawing.Point(3, 26);
             this.dgvListAuthor.Name = "dgvListAuthor";
+            this.dgvListAuthor.ReadOnly = true;
             this.dgvListAuthor.RowHeadersWidth = 51;
             this.dgvListAuthor.RowTemplate.Height = 24;
             this.dgvListAuthor.Size = new System.Drawing.Size(942, 475);
             this.dgvListAuthor.TabIndex = 0;
             this.dgvListAuthor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListAuthor_CellClick);
-            // 
-            // MaTG
-            // 
-            this.MaTG.DataPropertyName = "MaTG";
-            this.MaTG.HeaderText = "Mã tác giả";
-            this.MaTG.MinimumWidth = 6;
-            this.MaTG.Name = "MaTG";
-            // 
-            // TenTG
-            // 
-            this.TenTG.DataPropertyName = "TenTG";
-            this.TenTG.HeaderText = "Tên tác giả";
-            this.TenTG.MinimumWidth = 6;
-            this.TenTG.Name = "TenTG";
-            // 
-            // QueQuan
-            // 
-            this.QueQuan.DataPropertyName = "QueQuan";
-            this.QueQuan.HeaderText = "Quê quán";
-            this.QueQuan.MinimumWidth = 6;
-            this.QueQuan.Name = "QueQuan";
             // 
             // panel4
             // 
@@ -276,18 +271,32 @@
             // 
             this.err.ContainerControl = this;
             // 
-            // btnClean
+            // MaTG
             // 
-            this.btnClean.Image = global::home.Properties.Resources.icons8_clear_32;
-            this.btnClean.Location = new System.Drawing.Point(802, 25);
-            this.btnClean.Name = "btnClean";
-            this.btnClean.Size = new System.Drawing.Size(111, 39);
-            this.btnClean.TabIndex = 9;
-            this.btnClean.Text = "Clean";
-            this.btnClean.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClean.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnClean.UseVisualStyleBackColor = true;
-            this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
+            this.MaTG.DataPropertyName = "MaTG";
+            this.MaTG.HeaderText = "Mã tác giả";
+            this.MaTG.MinimumWidth = 6;
+            this.MaTG.Name = "MaTG";
+            this.MaTG.ReadOnly = true;
+            this.MaTG.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // TenTG
+            // 
+            this.TenTG.DataPropertyName = "TenTG";
+            this.TenTG.HeaderText = "Tên tác giả";
+            this.TenTG.MinimumWidth = 6;
+            this.TenTG.Name = "TenTG";
+            this.TenTG.ReadOnly = true;
+            this.TenTG.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // QueQuan
+            // 
+            this.QueQuan.DataPropertyName = "QueQuan";
+            this.QueQuan.HeaderText = "Quê quán";
+            this.QueQuan.MinimumWidth = 6;
+            this.QueQuan.Name = "QueQuan";
+            this.QueQuan.ReadOnly = true;
+            this.QueQuan.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // DanhSachTacGia
             // 
@@ -301,7 +310,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DanhSachTacGia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DanhSachTacGia";
+            this.Text = "Quản lý độc giả";
             this.Load += new System.EventHandler(this.DanhSachTacGia_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -332,11 +341,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnCreate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaTG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenTG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QueQuan;
         private System.Windows.Forms.ErrorProvider err;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnClean;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaTG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenTG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QueQuan;
     }
 }
