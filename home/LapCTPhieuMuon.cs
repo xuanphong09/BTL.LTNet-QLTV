@@ -490,7 +490,10 @@ namespace home
         private void dgvDSCTPM_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             index = e.RowIndex;
-            if(index==-1) { return; }
+            if(index==-1) { 
+                btnSua.Enabled = false;
+                btnXoa.Enabled = false;
+                return; }
             DataRow row = ds.Tables["DSCTPM"].Rows[index];
             cbMaSach.Text = row["MaSach"].ToString().Trim();
             txtTenSach.Text = row["TenSach"].ToString();
