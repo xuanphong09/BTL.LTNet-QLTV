@@ -694,7 +694,7 @@
             this.MaximizeBox = false;
             this.Name = "DanhSachTaiKhoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DanhSachTaiKhoan";
+            this.Text = "Quản lý tài khoản";
             this.Activated += new System.EventHandler(this.DanhSachTaiKhoan_Activated);
             this.Load += new System.EventHandler(this.DanhSachTaiKhoan_Load);
             this.panel1.ResumeLayout(false);
