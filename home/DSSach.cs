@@ -166,7 +166,7 @@ namespace home
             if (!int.TryParse(txtSoLuong.Text.Trim(), out _) || int.Parse(txtSoLuong.Text.Trim()) <= 0)
             {
                 isValid = false;
-                err.SetError(txtSoLuong, "Số lượng phải lớn hơn 0!");
+                err.SetError(txtSoLuong, "Số lượng phải là số nguyên không âm!");
                 if (firstInvalidControl == null) firstInvalidControl = txtSoLuong;
             }
 
@@ -177,10 +177,14 @@ namespace home
                 if (firstInvalidControl == null) firstInvalidControl = txtDaMuon;
             }
 
-            if(int.Parse(txtSoLuong.Text.Trim()) < int.Parse(txtDaMuon.Text.Trim()))
+            if(int.TryParse(txtSoLuong.Text.Trim(), out _) && int.TryParse(txtDaMuon.Text.Trim(),out _))
             {
-                isValid = false;
-                err.SetError(txtDaMuon,"Số lượng mượn vượt quá số lượng sách");
+                if (int.Parse(txtSoLuong.Text.Trim()) < int.Parse(txtDaMuon.Text.Trim()))
+                {
+                    isValid = false;
+                    err.SetError(txtDaMuon, "Số lượng mượn vượt quá số lượng sách");
+                    if (firstInvalidControl == null) firstInvalidControl = txtSoLuong;
+                }
             }
 
             if (!int.TryParse(txtNamXB.Text.Trim(), out _) || int.Parse(txtNamXB.Text.Trim()) <= 0)
@@ -219,6 +223,7 @@ namespace home
         
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            ClearAllErrors();
             isEditing = true;
 
             // Tạo SqlCommandBuilder để tự động tạo các lệnh INSERT, UPDATE, DELETE
@@ -260,6 +265,7 @@ namespace home
             {
                 if (FormValidate())
                 {
+
                     DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn sửa thông tin sách này không?", "Hộp thoại", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {

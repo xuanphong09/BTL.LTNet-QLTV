@@ -92,26 +92,51 @@ namespace home
         {
             bool isValid = true;
 
-            // Lấy tên thể loại hiện tại từ dòng đang được chọn
-            string currentTenTL = ds.Tables["DSTheLoai"].Rows[vt]["TenTL"].ToString();
-
-            // Kiểm tra tên thể loại trống
-            if (string.IsNullOrWhiteSpace(txtTenTL.Text.Trim()))
+            if(dgvDSTheLoai.CurrentRow != null && dgvDSTheLoai.CurrentRow.Index >= 0 && dgvDSTheLoai.CurrentRow.Index < dgvDSTheLoai.Rows.Count)
             {
-                isValid = false;
-                error.SetError(txtTenTL, "Tên thể loại không được để trống!");
-                txtTenTL.Focus();
-            }
-            else if (txtTenTL.Text.Trim() != currentTenTL && IsCategory(txtTenTL.Text.Trim())) // Kiểm tra tên thể loại đã tồn tại (nếu có thay đổi)
-            {
-                isValid = false;
-                error.SetError(txtTenTL, "Tên thể loại đã tồn tại!");
-                txtTenTL.Focus();
+                // Kiểm tra tên thể loại trống
+                if (string.IsNullOrWhiteSpace(txtTenTL.Text.Trim()))
+                {
+                    isValid = false;
+                    error.SetError(txtTenTL, "Tên thể loại không được để trống!");
+                    txtTenTL.Focus();
+                }
+                else if (IsCategory(txtTenTL.Text.Trim())) // Kiểm tra tên thể loại đã tồn tại (nếu có thay đổi)
+                {
+                    isValid = false;
+                    error.SetError(txtTenTL, "Tên thể loại đã tồn tại!");
+                    txtTenTL.Focus();
+                }
+                else
+                {
+                    error.SetError(txtTenTL, null); // Xóa lỗi nếu hợp lệ
+                }
             }
             else
             {
-                error.SetError(txtTenTL, null); // Xóa lỗi nếu hợp lệ
+                // Lấy tên thể loại hiện tại từ dòng đang được chọn
+                string currentTenTL = ds.Tables["DSTheLoai"].Rows[vt]["TenTL"].ToString();
+
+                // Kiểm tra tên thể loại trống
+                if (string.IsNullOrWhiteSpace(txtTenTL.Text.Trim()))
+                {
+                    isValid = false;
+                    error.SetError(txtTenTL, "Tên thể loại không được để trống!");
+                    txtTenTL.Focus();
+                }
+                else if (txtTenTL.Text.Trim() != currentTenTL && IsCategory(txtTenTL.Text.Trim())) // Kiểm tra tên thể loại đã tồn tại (nếu có thay đổi)
+                {
+                    isValid = false;
+                    error.SetError(txtTenTL, "Tên thể loại đã tồn tại!");
+                    txtTenTL.Focus();
+                }
+                else
+                {
+                    error.SetError(txtTenTL, null); // Xóa lỗi nếu hợp lệ
+                }
+                
             }
+           
 
             return isValid;
         }
