@@ -578,6 +578,9 @@ namespace home
             ListViewItem liv = livListAcc.SelectedItems[0];
             string maNV = liv.SubItems[0].Text;
             string userName = liv.SubItems[1].Text;
+            btnEdit.Enabled = false;
+            btnChangePass.Enabled = false;
+            btnDelete.Enabled = false;
 
             DoiMatKhauAdmin dmk = new DoiMatKhauAdmin();
             dmk.maNV = maNV;

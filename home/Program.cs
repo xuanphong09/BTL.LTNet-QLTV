@@ -16,7 +16,7 @@ namespace home
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDanhSachTheLoai());
+            Application.Run(new Login());
         }
     }
 }
