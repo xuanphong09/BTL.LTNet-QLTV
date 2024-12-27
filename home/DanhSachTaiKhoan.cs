@@ -451,7 +451,25 @@ namespace home
                 err.SetError(txtPhone, "Số điện thoại không được để trống");
                 txtPhone.Focus();
             }
+            else if(txtPhone.Text.Trim().Contains(" "))
+            {
+                isValid = false;
+                err.SetError(txtPhone, "Số điện thoại không được chứa khoảng trắng.");
+                txtPhone.Focus();
+            }
+            else if(!txtPhone.Text.Trim().StartsWith("0"))
+            {
+                isValid = false;
+                err.SetError(txtPhone, "Số điện thoại phải bắt đầu từ số 0.");
+                txtPhone.Focus();
+            }
             else if (txtPhone.Text.Length != 10)
+            {
+                isValid = false;
+                err.SetError(txtPhone, "Số điện thoại không hợp lệ");
+                txtPhone.Focus();
+            }
+            else if (!int.TryParse(txtPhone.Text.Trim(), out int n))
             {
                 isValid = false;
                 err.SetError(txtPhone, "Số điện thoại không hợp lệ");
@@ -469,6 +487,12 @@ namespace home
                 err.SetError(txtEmail, "Email không được để trống");
                 txtEmail.Focus();
             }
+            else if(txtEmail.Text.Trim().Contains(" "))
+            {
+                isValid = false;
+                err.SetError(txtEmail, "Email không được chứa khoảng trắng.");
+                txtEmail.Focus();
+            }
             else if (!txtEmail.Text.Trim().EndsWith("@gmail.com"))
             {
                 isValid = false;
@@ -484,19 +508,43 @@ namespace home
             if(string.IsNullOrWhiteSpace(txtMaNV.Text.Trim()))
             {
                 isValid = false;
-                err.SetError(txtMaNV, "Tên đăng nhập không được để trống");
+                err.SetError(txtMaNV, "Tên đăng nhập không được để trống.");
+                txtMaNV.Focus();
+            }
+            else if(txtMaNV.Text.Trim().Contains(" "))
+            {
+                isValid = false;
+                err.SetError(txtMaNV, "Tên đăng nhập không được chứa khoảng trắng.");
+                txtMaNV.Focus();
+            }
+            else if (CheckUserName(txtMaNV.Text.Trim()) > 0 && checkCN == 1)
+            {
+                isValid = false;
+                err.SetError(txtMaNV, "Tên đăng nhập đã tồn tại.");
                 txtMaNV.Focus();
             }
             else
             {
-                err.SetError(txtUserName, null);
+                err.SetError(txtMaNV, null);
             }
 
             //xác thực mật khẩu
             if (string.IsNullOrWhiteSpace(txtUserName.Text.Trim()))
             {
                 isValid = false;
-                err.SetError(txtUserName, "Mật khẩu không được để trống");
+                err.SetError(txtUserName, "Mật khẩu không được để trống.");
+                txtUserName.Focus();
+            }
+            else if (txtUserName.Text.Trim().Contains(" "))
+            {
+                isValid = false;
+                err.SetError(txtUserName, "Mật khẩu không được chứa khoảng trắng.");
+                txtUserName.Focus();
+            }
+            else if(txtUserName.Text.Trim().Length < 8 && checkCN==1)
+            {
+                isValid = false;
+                err.SetError(txtUserName, "Mật khẩu phải có ít nhất 8 ký tự.");
                 txtUserName.Focus();
             }
             else
@@ -506,6 +554,21 @@ namespace home
 
 
             return isValid;
+        }
+
+        //hàm check tên đăng nhập là duy nhất
+        private int CheckUserName(string userName)
+        {
+            dbCon.MoKetNoi();
+            sqlCmd = new SqlCommand();
+            sqlCmd.CommandType = CommandType.Text;
+            sqlCmd.CommandText = "select count(*) from TaiKhoan where username ='" + userName + "'";
+            sqlCmd.Connection = dbCon.slqCon;
+            int count = 0;
+            count = (int)sqlCmd.ExecuteScalar();
+
+            dbCon.DongKetNoi();
+            return count;
         }
 
         private void btnChangePass_Click(object sender, EventArgs e)
