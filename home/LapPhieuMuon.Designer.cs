@@ -212,7 +212,7 @@
             this.gbDSPP.Size = new System.Drawing.Size(1135, 190);
             this.gbDSPP.TabIndex = 0;
             this.gbDSPP.TabStop = false;
-            this.gbDSPP.Text = "Dnah sách phiếu phạt";
+            this.gbDSPP.Text = "Danh sách phiếu phạt";
             // 
             // lvDSPP
             // 

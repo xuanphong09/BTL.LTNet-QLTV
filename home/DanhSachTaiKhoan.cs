@@ -218,6 +218,7 @@ namespace home
             txtCreateAt.Enabled = false;
             livListAcc.SelectedIndexChanged -= livListAcc_SelectedIndexChanged; // không cho kick chọn danh sách nữa
             checkCN = 2;
+            
             if (txtMaNV.Text.Trim() == MaNV)
             {
                 cbRole.Enabled = false;
@@ -499,6 +500,21 @@ namespace home
                 err.SetError(txtEmail, "Email không hợp lệ.");
                 txtEmail.Focus();
             }
+            else if (CheckEmail(txtEmail.Text.Trim()) > 0)
+            {
+                if(checkCN == 1)
+                {
+                    isValid = false;
+                    err.SetError(txtEmail, "Email đã tồn tại.");
+                    txtEmail.Focus();
+                }
+                else if(checkCN == 2 && GetEmail(txtMaNV.Text.Trim())!=txtEmail.Text.Trim())
+                {
+                    isValid = false;
+                    err.SetError(txtEmail, "Email đã tồn tại.");
+                    txtEmail.Focus();
+                }
+            }
             else
             {
                 err.SetError(txtEmail, null);
@@ -570,6 +586,37 @@ namespace home
             dbCon.DongKetNoi();
             return count;
         }
+
+        //hàm check email là duy nhất
+        private int CheckEmail(string email)
+        {
+            dbCon.MoKetNoi();
+            sqlCmd = new SqlCommand();
+            sqlCmd.CommandType = CommandType.Text;
+            sqlCmd.CommandText = "select count(*) from NhanVien where email ='" + email + "'";
+            sqlCmd.Connection = dbCon.slqCon;
+            int count = 0;
+            count = (int)sqlCmd.ExecuteScalar();
+
+            dbCon.DongKetNoi();
+            return count;
+        }
+
+        //hàm lấy email 
+        private string GetEmail(string maNV)
+        {
+            dbCon.MoKetNoi();
+            sqlCmd = new SqlCommand();
+            sqlCmd.CommandType = CommandType.Text;
+            sqlCmd.CommandText = "select email from NhanVien where MaNV ='" + maNV + "'";
+            sqlCmd.Connection = dbCon.slqCon;
+            string email = "";
+            email = (string)sqlCmd.ExecuteScalar();
+
+            dbCon.DongKetNoi();
+            return email;
+        }
+
 
         private void btnChangePass_Click(object sender, EventArgs e)
         {

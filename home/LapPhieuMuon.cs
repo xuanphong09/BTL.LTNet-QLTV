@@ -267,7 +267,18 @@ namespace home
             else if (CheckDate(cbMaDG.Text) < soNgay.Days)
             {
                 isvalid = false;
-                err.SetError(dtpHanTra, "Thẻ độc giả hạn còn "+ CheckDate(cbMaDG.Text) + " ngày.");
+                if (CheckDate(cbMaDG.Text) < 0)
+                {
+                    err.SetError(dtpHanTra, "Thẻ độc giả đã hết hạn.");
+                }
+                else if (CheckDate(cbMaDG.Text) == 0)
+                {
+                    err.SetError(dtpHanTra, "Thẻ độc giả hết hạn hôm nay.");
+                }
+                else
+                {
+                    err.SetError(dtpHanTra, "Thẻ độc giả hạn còn " + CheckDate(cbMaDG.Text) + " ngày.");
+                }
             }
             else
             {
@@ -360,24 +371,5 @@ namespace home
             return -1;
         }
 
-        //hàm lấy hạn thẻ của độc giả
-        private DateTime GetHanThe(string maDG)
-        {
-            DatabaseConnection dbCon = new DatabaseConnection();
-            dbCon.MoKetNoi();
-            SqlCommand sqlCmd = new SqlCommand();
-            sqlCmd.CommandType = CommandType.Text;
-            sqlCmd.CommandText = "select NgayHHThe from DocGia where MaDG='" + maDG + "'";
-            sqlCmd.Connection = dbCon.slqCon;
-            SqlDataReader reader = sqlCmd.ExecuteReader();
-            if (reader.Read())
-            {
-                DateTime hanThe = reader.GetDateTime(0);
-                return hanThe;
-            }
-            reader.Close();
-            dbCon.DongKetNoi();
-            return DateTime.Now;
-        }
     }
 }
