@@ -131,6 +131,23 @@ namespace home
                 err.SetError(txtPhone, "Số điện thoại không được bỏ trống!");
                 txtPhone.Focus();
             }
+            else if(!int.TryParse(txtPhone.Text, out int n)){
+                isValid = false;
+                err.SetError(txtPhone, "Số điện thoại không hợp lệ!");
+                txtPhone.Focus();
+            }
+            else if(!txtPhone.Text.Trim().StartsWith("0"))
+            {
+                isValid = false;
+                err.SetError(txtPhone, "Số điện thoại phải bắt đầu từ 0.");
+                txtPhone.Focus();
+            }
+            else if(txtPhone.Text.Trim().Contains(" "))
+            {
+                isValid = false;
+                err.SetError(txtPhone, "Số điện thoại không được có khoảng trắng.");
+                txtPhone.Focus();
+            }
             else if(txtPhone.Text.Length != 10)
             {
                 isValid = false;

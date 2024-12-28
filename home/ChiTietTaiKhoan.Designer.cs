@@ -221,6 +221,7 @@
             this.txtEmail.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtEmail.Location = new System.Drawing.Point(205, 191);
             this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(275, 30);
             this.txtEmail.TabIndex = 7;
             // 
