@@ -32,8 +32,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.exitmBtn = new System.Windows.Forms.Button();
@@ -43,9 +43,9 @@
             this.searchBtn = new System.Windows.Forms.Button();
             this.searchCB = new System.Windows.Forms.ComboBox();
             this.searchTB = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.PPGrid = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
             this.SoPhieuPhat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaDG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,8 +54,8 @@
             this.LyDoPhat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
-            this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PPGrid)).BeginInit();
             this.SuspendLayout();
@@ -85,16 +85,6 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.groupBox1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 61);
-            this.panel2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1488, 220);
-            this.panel2.TabIndex = 4;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label3);
@@ -119,12 +109,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bảng điều khiển";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(422, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(93, 25);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Tiêu chí:";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(41, 42);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(251, 26);
+            this.label2.Size = new System.Drawing.Size(242, 25);
             this.label2.TabIndex = 9;
             this.label2.Text = "Nhập thông tin tìm kiếm:";
             // 
@@ -242,6 +241,16 @@
             this.searchTB.Size = new System.Drawing.Size(339, 33);
             this.searchTB.TabIndex = 0;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.groupBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 61);
+            this.panel2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1488, 220);
+            this.panel2.TabIndex = 4;
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.PPGrid);
@@ -275,15 +284,6 @@
             this.PPGrid.Size = new System.Drawing.Size(1488, 460);
             this.PPGrid.TabIndex = 4;
             this.PPGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PPGrid_CellClick);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(422, 87);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 26);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Tiêu chí:";
             // 
             // SoPhieuPhat
             // 
@@ -343,6 +343,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SeaShell;
             this.ClientSize = new System.Drawing.Size(1488, 741);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -356,9 +357,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PPGrid)).EndInit();
             this.ResumeLayout(false);

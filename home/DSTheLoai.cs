@@ -279,19 +279,24 @@ namespace home
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             ResetAll();
+            btnHuy.Enabled = true;
             if (string.IsNullOrWhiteSpace(txtTKTenTL.Text))
             {
                 ResetAll();
                 HienThiDanhSach();
                 return;
             }
-
+            String keyword = txtTKTenTL.Text.Trim();
             DatabaseConnection dbCon = new DatabaseConnection();
             dbCon.MoKetNoi();
 
-            string query = "select * from theloai where TenTL like N'%" + txtTKTenTL.Text.Trim() + "%'";
+            string query = @"SELECT * 
+                     FROM TheLoai
+                     WHERE MaTL = @keyword 
+                        OR TenTL LIKE N'%' + @keyword + '%'"; 
 
             adapter = new SqlDataAdapter(query, dbCon.slqCon);
+            adapter.SelectCommand.Parameters.AddWithValue("@keyword", keyword);
             SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
             ds = new DataSet();
             adapter.Fill(ds, "DSTheLoai");

@@ -41,6 +41,7 @@
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.grbTimKiem = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTKTenTL = new System.Windows.Forms.TextBox();
@@ -58,12 +59,12 @@
             this.TenTL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.theLoaiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
-            this.panel7 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.grbTimKiem.SuspendLayout();
             this.panel6.SuspendLayout();
             this.grbTTCT.SuspendLayout();
@@ -72,7 +73,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTheLoai)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.theLoaiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -195,7 +195,7 @@
             // btnLuu
             // 
             this.btnLuu.Image = global::home.Properties.Resources.icons8_save_32;
-            this.btnLuu.Location = new System.Drawing.Point(565, 49);
+            this.btnLuu.Location = new System.Drawing.Point(572, 49);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(135, 49);
@@ -231,6 +231,15 @@
             this.panel4.Size = new System.Drawing.Size(1080, 203);
             this.panel4.TabIndex = 0;
             // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.grbTimKiem);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(675, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(405, 203);
+            this.panel7.TabIndex = 1;
+            // 
             // grbTimKiem
             // 
             this.grbTimKiem.Controls.Add(this.label4);
@@ -247,15 +256,15 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(53, 46);
+            this.label4.Location = new System.Drawing.Point(96, 44);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(264, 31);
+            this.label4.Size = new System.Drawing.Size(211, 25);
             this.label4.TabIndex = 3;
             this.label4.Text = "Nhập thông tin cần tìm:";
             // 
             // txtTKTenTL
             // 
-            this.txtTKTenTL.Location = new System.Drawing.Point(72, 79);
+            this.txtTKTenTL.Location = new System.Drawing.Point(67, 77);
             this.txtTKTenTL.Margin = new System.Windows.Forms.Padding(4);
             this.txtTKTenTL.Name = "txtTKTenTL";
             this.txtTKTenTL.Size = new System.Drawing.Size(270, 30);
@@ -264,7 +273,7 @@
             // btnTimKiem
             // 
             this.btnTimKiem.Image = global::home.Properties.Resources.icons8_search_32;
-            this.btnTimKiem.Location = new System.Drawing.Point(130, 116);
+            this.btnTimKiem.Location = new System.Drawing.Point(125, 115);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(163, 49);
@@ -311,7 +320,7 @@
             this.label3.Location = new System.Drawing.Point(99, 46);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(141, 31);
+            this.label3.Size = new System.Drawing.Size(113, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "Mã thể loại:";
             // 
@@ -328,7 +337,7 @@
             this.label2.Location = new System.Drawing.Point(99, 99);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 31);
+            this.label2.Size = new System.Drawing.Size(120, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên thể loại:";
             // 
@@ -401,15 +410,6 @@
             // 
             this.error.ContainerControl = this;
             // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.grbTimKiem);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(675, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(405, 203);
-            this.panel7.TabIndex = 1;
-            // 
             // frmDanhSachTheLoai
             // 
             this.AcceptButton = this.btnTimKiem;
@@ -431,6 +431,7 @@
             this.panel5.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
             this.grbTimKiem.ResumeLayout(false);
             this.grbTimKiem.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -441,7 +442,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTheLoai)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.theLoaiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
-            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

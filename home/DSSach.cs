@@ -82,40 +82,50 @@ namespace home
         private int vt = -1;
         private void dgvSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (isEditing == true) return;
             if(!isEditing)  ClearAllErrors();
 
             vt = e.RowIndex;
-            if (vt < 0 || vt >= ds.Tables["DMSach"].Rows.Count || isEditing)
+            if (vt < 0 || vt >= ds.Tables["DMSach"].Rows.Count)
             {
                 btnSua.Enabled = false;
                 btnXoa.Enabled = false;
                 return;
             }
 
-            DataGridViewRow currentRow = dgvSach.Rows[vt];
+            if(vt < ds.Tables["DMSach"].Rows.Count)
+            {
+                DataRow currentRow = ds.Tables["DMSach"].Rows[vt];
 
-            // Gán giá trị cho các trường thông tin
-            txtTenSach.Text = currentRow.Cells["TenSach"].Value.ToString();
-            txtSoLuong.Text = currentRow.Cells["SoLuong"].Value.ToString();
-            txtDaMuon.Text = currentRow.Cells["DaMuon"].Value.ToString();
-            txtNamXB.Text = currentRow.Cells["NamXB"].Value.ToString();
-            txtGhiChu.Text = currentRow.Cells["GhiChu"].Value.ToString();
+                // Gán giá trị cho các trường thông tin
+                txtTenSach.Text = currentRow["TenSach"].ToString();
+                txtSoLuong.Text = currentRow["SoLuong"].ToString();
+                txtDaMuon.Text = currentRow["DaMuon"].ToString(); 
+                txtNamXB.Text = currentRow["NamXB"].ToString();
+                txtGhiChu.Text = currentRow["GhiChu"].ToString();
 
-            cboMaTL.SelectedValue = currentRow.Cells["MaTL"].Value.ToString();
-            cboMaTG.SelectedValue = currentRow.Cells["MaTG"].Value.ToString();
-            cboMaNXB.SelectedValue = currentRow.Cells["MaNXB"].Value.ToString();
+                cboMaTL.SelectedValue = currentRow["MaTL"].ToString();
+                cboMaTG.SelectedValue = currentRow["MaTG"].ToString();
+                cboMaNXB.SelectedValue = currentRow["MaNXB"].ToString();
 
-            // Kích hoạt các nút cần thiết
-            btnXoa.Enabled = true;
-            btnSua.Enabled = true;
-            btnLuu.Enabled = false;
-            txtDaMuon.Enabled = true;
+                // Kích hoạt các nút cần thiết
+                btnXoa.Enabled = true;
+                btnSua.Enabled = true;
+                btnLuu.Enabled = false;
+                txtDaMuon.Enabled = true;
+            }
+            else if (vt == ds.Tables["DMSach"].Rows.Count)
+            {
+                ResetAll();
+            }
+
 
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             ResetAll();
+            dgvSach.CellClick -= dgvSach_CellClick;
             btnHuy.Enabled = true;
             btnLuu.Enabled = true;
             isEditing = true;
@@ -226,9 +236,6 @@ namespace home
             ClearAllErrors();
             isEditing = true;
 
-            // Tạo SqlCommandBuilder để tự động tạo các lệnh INSERT, UPDATE, DELETE
-            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(adapter);
-
             if (btnThem.Enabled && !btnSua.Enabled) // Thêm sách
             {
                 if (FormValidate())
@@ -246,6 +253,9 @@ namespace home
                     row["GhiChu"] = txtGhiChu.Text.Trim();
 
                     ds.Tables["DMSach"].Rows.Add(row);
+
+                    // Tạo SqlCommandBuilder trước khi cập nhật
+                    SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
 
                     // Lưu thay đổi vào cơ sở dữ liệu
                     int kq = adapter.Update(ds.Tables["DMSach"]);
@@ -265,7 +275,6 @@ namespace home
             {
                 if (FormValidate())
                 {
-
                     DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn sửa thông tin sách này không?", "Hộp thoại", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {
@@ -280,6 +289,9 @@ namespace home
                         row["SoLuong"] = int.Parse(txtSoLuong.Text.Trim());
                         row["GhiChu"] = txtGhiChu.Text.Trim();
                         row.EndEdit();
+
+                        // Tạo SqlCommandBuilder trước khi cập nhật
+                        SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
 
                         // Lưu thay đổi vào cơ sở dữ liệu
                         int kq = adapter.Update(ds.Tables["DMSach"]);
@@ -299,6 +311,7 @@ namespace home
 
         private void ResetAll()
         {
+            dgvSach.CellClick += dgvSach_CellClick;
             txtTenSach.Text = "";
             txtSoLuong.Text = "0";
             txtDaMuon.Text = "0";
@@ -376,6 +389,7 @@ namespace home
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
+            btnHuy.Enabled = true;
             if (string.IsNullOrWhiteSpace(txtTK.Text))
             {
                 ResetAll();
@@ -401,7 +415,11 @@ namespace home
             adapter.SelectCommand.Parameters.AddWithValue("@keyword", keyword);
 
             // Xóa dữ liệu cũ trong DataSet và tải dữ liệu tìm kiếm
-            ds.Tables["DMSach"].Clear();
+            if (ds.Tables["DMSach"] != null)
+            {
+                ds.Tables["DMSach"].Clear();
+            }
+            SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
             adapter.Fill(ds, "DMSach");
 
             // Cập nhật DataGridView với dữ liệu tìm kiếm
