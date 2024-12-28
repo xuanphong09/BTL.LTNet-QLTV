@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.exitBtn = new System.Windows.Forms.Button();
             this.searchTB = new System.Windows.Forms.TextBox();
             this.deleteBtn = new System.Windows.Forms.Button();
@@ -55,7 +56,6 @@
             this.TenNXB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -74,9 +74,9 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1336, 80);
+            this.panel1.Size = new System.Drawing.Size(1179, 77);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -84,9 +84,9 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1336, 80);
+            this.label1.Size = new System.Drawing.Size(1179, 77);
             this.label1.TabIndex = 0;
             this.label1.Text = "Quản lý Nhà xuất bản";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -95,10 +95,10 @@
             // 
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 80);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(0, 77);
+            this.panel2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1336, 297);
+            this.panel2.Size = new System.Drawing.Size(1179, 286);
             this.panel2.TabIndex = 1;
             // 
             // groupBox1
@@ -121,13 +121,24 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Arial Narrow", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1336, 297);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.groupBox1.Size = new System.Drawing.Size(1179, 286);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bảng điều khiển";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Location = new System.Drawing.Point(623, 55);
+            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(242, 25);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Nhập thông tin tìm kiếm:";
             // 
             // exitBtn
             // 
@@ -135,10 +146,10 @@
             this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitBtn.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitBtn.ForeColor = System.Drawing.Color.White;
-            this.exitBtn.Location = new System.Drawing.Point(1127, 196);
-            this.exitBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.exitBtn.Location = new System.Drawing.Point(994, 187);
+            this.exitBtn.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(175, 50);
+            this.exitBtn.Size = new System.Drawing.Size(152, 40);
             this.exitBtn.TabIndex = 13;
             this.exitBtn.Text = "Thoát";
             this.exitBtn.UseVisualStyleBackColor = false;
@@ -147,20 +158,20 @@
             // searchTB
             // 
             this.searchTB.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTB.Location = new System.Drawing.Point(724, 116);
-            this.searchTB.Margin = new System.Windows.Forms.Padding(4);
+            this.searchTB.Location = new System.Drawing.Point(631, 106);
+            this.searchTB.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.searchTB.Name = "searchTB";
-            this.searchTB.Size = new System.Drawing.Size(358, 32);
+            this.searchTB.Size = new System.Drawing.Size(322, 32);
             this.searchTB.TabIndex = 12;
             // 
             // deleteBtn
             // 
             this.deleteBtn.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteBtn.Image = global::home.Properties.Resources.icons8_delete_32;
-            this.deleteBtn.Location = new System.Drawing.Point(959, 196);
-            this.deleteBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.deleteBtn.Location = new System.Drawing.Point(836, 185);
+            this.deleteBtn.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(123, 51);
+            this.deleteBtn.Size = new System.Drawing.Size(117, 42);
             this.deleteBtn.TabIndex = 11;
             this.deleteBtn.Text = "Xóa";
             this.deleteBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -172,10 +183,10 @@
             // 
             this.saveBtn.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveBtn.Image = global::home.Properties.Resources.icons8_save_32;
-            this.saveBtn.Location = new System.Drawing.Point(482, 120);
-            this.saveBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.saveBtn.Location = new System.Drawing.Point(454, 106);
+            this.saveBtn.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(131, 51);
+            this.saveBtn.Size = new System.Drawing.Size(115, 42);
             this.saveBtn.TabIndex = 7;
             this.saveBtn.Text = "Lưu";
             this.saveBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -187,10 +198,10 @@
             // 
             this.button1.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::home.Properties.Resources.icons8_search_32;
-            this.button1.Location = new System.Drawing.Point(1127, 106);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(994, 96);
+            this.button1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(175, 50);
+            this.button1.Size = new System.Drawing.Size(152, 42);
             this.button1.TabIndex = 6;
             this.button1.Text = "Tìm Kiếm";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -202,10 +213,10 @@
             // 
             this.cancelBtn.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelBtn.Image = global::home.Properties.Resources.icons8_clear_32;
-            this.cancelBtn.Location = new System.Drawing.Point(482, 48);
-            this.cancelBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.cancelBtn.Location = new System.Drawing.Point(454, 49);
+            this.cancelBtn.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(131, 51);
+            this.cancelBtn.Size = new System.Drawing.Size(115, 42);
             this.cancelBtn.TabIndex = 10;
             this.cancelBtn.Text = "Hủy";
             this.cancelBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -217,10 +228,10 @@
             // 
             this.updateBtn.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateBtn.Image = global::home.Properties.Resources.icons8_edit_property_32;
-            this.updateBtn.Location = new System.Drawing.Point(723, 196);
-            this.updateBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.updateBtn.Location = new System.Drawing.Point(606, 185);
+            this.updateBtn.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(131, 50);
+            this.updateBtn.Size = new System.Drawing.Size(121, 42);
             this.updateBtn.TabIndex = 9;
             this.updateBtn.Text = "Sửa";
             this.updateBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -232,10 +243,10 @@
             // 
             this.addBtn.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addBtn.Image = global::home.Properties.Resources.icons8_plus_32;
-            this.addBtn.Location = new System.Drawing.Point(482, 195);
-            this.addBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.addBtn.Location = new System.Drawing.Point(454, 185);
+            this.addBtn.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(131, 50);
+            this.addBtn.Size = new System.Drawing.Size(115, 42);
             this.addBtn.TabIndex = 8;
             this.addBtn.Text = "Thêm";
             this.addBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -247,8 +258,8 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(40, 209);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(28, 200);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 25);
             this.label4.TabIndex = 2;
@@ -257,38 +268,38 @@
             // emailTB
             // 
             this.emailTB.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailTB.Location = new System.Drawing.Point(165, 205);
-            this.emailTB.Margin = new System.Windows.Forms.Padding(4);
+            this.emailTB.Location = new System.Drawing.Point(142, 200);
+            this.emailTB.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.emailTB.Name = "emailTB";
-            this.emailTB.Size = new System.Drawing.Size(272, 32);
+            this.emailTB.Size = new System.Drawing.Size(267, 32);
             this.emailTB.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(40, 61);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(28, 58);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 26);
+            this.label2.Size = new System.Drawing.Size(107, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên NXB:";
             // 
             // addressTB
             // 
             this.addressTB.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressTB.Location = new System.Drawing.Point(165, 129);
-            this.addressTB.Margin = new System.Windows.Forms.Padding(4);
+            this.addressTB.Location = new System.Drawing.Point(142, 127);
+            this.addressTB.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.addressTB.Name = "addressTB";
-            this.addressTB.Size = new System.Drawing.Size(272, 32);
+            this.addressTB.Size = new System.Drawing.Size(267, 32);
             this.addressTB.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(40, 133);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(28, 127);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 25);
             this.label3.TabIndex = 1;
@@ -297,20 +308,20 @@
             // nameTB
             // 
             this.nameTB.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameTB.Location = new System.Drawing.Point(165, 58);
-            this.nameTB.Margin = new System.Windows.Forms.Padding(4);
+            this.nameTB.Location = new System.Drawing.Point(142, 59);
+            this.nameTB.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.nameTB.Name = "nameTB";
-            this.nameTB.Size = new System.Drawing.Size(272, 32);
+            this.nameTB.Size = new System.Drawing.Size(267, 32);
             this.nameTB.TabIndex = 3;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.panel3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 377);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Location = new System.Drawing.Point(0, 363);
+            this.panel4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1336, 293);
+            this.panel4.Size = new System.Drawing.Size(1179, 254);
             this.panel4.TabIndex = 3;
             // 
             // panel3
@@ -318,9 +329,9 @@
             this.panel3.Controls.Add(this.NXBList);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1336, 293);
+            this.panel3.Size = new System.Drawing.Size(1179, 254);
             this.panel3.TabIndex = 0;
             // 
             // NXBList
@@ -336,12 +347,12 @@
             this.Email});
             this.NXBList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NXBList.Location = new System.Drawing.Point(0, 0);
-            this.NXBList.Margin = new System.Windows.Forms.Padding(4);
+            this.NXBList.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.NXBList.Name = "NXBList";
             this.NXBList.ReadOnly = true;
             this.NXBList.RowHeadersWidth = 62;
             this.NXBList.RowTemplate.Height = 28;
-            this.NXBList.Size = new System.Drawing.Size(1336, 293);
+            this.NXBList.Size = new System.Drawing.Size(1179, 254);
             this.NXBList.TabIndex = 0;
             this.NXBList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.NXBList_CellClick);
             // 
@@ -381,28 +392,17 @@
             this.Email.ReadOnly = true;
             this.Email.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(718, 63);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(251, 26);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Nhập thông tin tìm kiếm:";
-            // 
             // QuanLyNXB
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 26F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1336, 670);
+            this.ClientSize = new System.Drawing.Size(1179, 617);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Arial Narrow", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Font = new System.Drawing.Font("Arial", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "QuanLyNXB";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Nhà Xuất Bản";
